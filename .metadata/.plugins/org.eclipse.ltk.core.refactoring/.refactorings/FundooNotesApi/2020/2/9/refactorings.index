@@ -1,2 +1,6 @@
 1582611287451	Delete element
 1582611357507	Rename package 'com.bridzelabz.fundoonotes.entity'
+1582632085586	Delete element
+1582632952708	Rename type 'UserRepository'
+1582632988698	Rename type 'UserDto'
+1582633005043	Rename type 'UserEntity'
