@@ -68,4 +68,10 @@
 	</section>
 	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="513"/>
+		<item key="x" value="475"/>
+		<item key="y" value="68"/>
+	</section>
 </section>
