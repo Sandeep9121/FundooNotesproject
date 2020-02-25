@@ -1,0 +1,21 @@
+
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+spring.datasource.url=jdbc:mysql://localhost:3306/Sandeep
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+# ===============================
+# = LOGGING
+# ===============================
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate=ERROR
+# ===============================
+# = HYBERNATE
+# ===============================
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+

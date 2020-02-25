@@ -1,0 +1,10 @@
+package com.bridzelabz.fundoonotes.model;
+
+public class UserEntity {
+	private String name;
+	private String password;
+	private String email;
+	private long mobileNumber;
+	private LocalDateTime date;
+
+}
