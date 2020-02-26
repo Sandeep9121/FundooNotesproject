@@ -18,24 +18,34 @@ import com.bridzelabz.fundoonotes.repository.UsersRepository;
 
 @Service
 public class ServiceImplementation implements UsersServices {
-	@Autowired
-	private UsersEntity user;
+//	@Autowired
+//	private UsersEntity user;
 	@Autowired
 	private UsersRepository userRepository;
+	
 
+	
 	@Autowired
 	private BCryptPasswordEncoder encryptPass;
 
+	
+	
 	@Override
 	@Transactional
 	public void addUsers(UsersDto usersdto) {
-		BeanUtils.copyProperties(usersdto, user);
-		user.setPassword(encryptPass.encode(usersdto.getPassword()));
-		user.setDate(LocalDateTime.now());
+		UsersEntity user = new UsersEntity();
+          BeanUtils.copyProperties(usersdto, UsersEntity.class);
+       //  user.setName(usersdto.getName());
+        // user.setEmail(usersdto.getEmail());
+         user.setPassword(encryptPass.encode(usersdto.getPassword()));
+      //.   user.setMobile_number(usersdto.getMobile_number());
+         user.setDate(LocalDateTime.now());
+         
+         System.out.println("USER DETAILS :"+user);
+         
 		userRepository.save(user);
 
 	}
-
 	@Override
 	public List<UsersEntity> getUserDetails() {
 		// TODO Auto-generated method stub
@@ -53,5 +63,6 @@ public class ServiceImplementation implements UsersServices {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 }

@@ -22,20 +22,27 @@ public class ServiceImplementation implements UsersServices {
 	private UsersEntity user;
 	@Autowired
 	private UsersRepository userRepository;
+	
 
+	
 	@Autowired
 	private BCryptPasswordEncoder encryptPass;
 
+	
+	
 	@Override
 	@Transactional
 	public void addUsers(UsersDto usersdto) {
-		BeanUtils.copyProperties(usersdto, user);
-		user.setPassword(encryptPass.encode(usersdto.getPassword()));
-		user.setDate(LocalDateTime.now());
+          BeanUtils.copyProperties(usersdto, UsersEntity.class);
+       //  user.setName(usersdto.getName());
+        // user.setEmail(usersdto.getEmail());
+         user.setPassword(encryptPass.encode(usersdto.getPassword()));
+      //.   user.setMobile_number(usersdto.getMobile_number());
+         user.setDate(LocalDateTime.now());
+         
 		userRepository.save(user);
 
 	}
-
 	@Override
 	public List<UsersEntity> getUserDetails() {
 		// TODO Auto-generated method stub
@@ -53,5 +60,6 @@ public class ServiceImplementation implements UsersServices {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 }

@@ -3244,3 +3244,293 @@ java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:19:18.208
 !MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:13.920
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:13.920
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:13.925
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:13.928
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:13.928
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:13.981
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:14.996
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:14.997
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:15.000
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:15.003
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:15.003
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:38:15.029
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.447
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.447
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.456
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.458
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.459
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.506
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.792
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.793
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.802
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.804
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.804
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:39:20.811
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:40:08.678
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:40:08.679
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:40:08.683
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:40:08.685
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:40:08.686
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:40:08.725
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:15.072
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:15.072
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:15.081
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:15.083
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:15.084
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:15.102
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:23.654
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:23.654
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:23.658
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:23.660
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:23.660
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 16:42:23.676
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.eclipse.jface.text 4 0 2020-02-26 17:13:41.559
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.getField(BinaryTypeBinding.java:1279)
+	at org.eclipse.jdt.internal.compiler.lookup.AnnotationBinding.buildTargetAnnotation(AnnotationBinding.java:169)
+	at org.eclipse.jdt.internal.compiler.lookup.AnnotationBinding.addStandardAnnotations(AnnotationBinding.java:79)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.retrieveAnnotations(BinaryTypeBinding.java:1691)
+	at org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding.getAnnotations(ReferenceBinding.java:1052)
+	at org.eclipse.jdt.core.dom.TypeBinding.getAnnotations(TypeBinding.java:122)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getAnnotations(JavadocHover.java:1192)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.addAnnotations(JavadocHover.java:1149)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:757)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:25:52.233
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:25:52.234
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:25:52.250
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:25:52.252
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:25:52.252
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:25:52.296
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:25.645
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:25.646
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:25.650
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:25.652
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:25.652
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:25.671
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:50.352
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:50.353
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:50.356
+!MESSAGE classpath=122 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:50.358
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:50.359
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:26:50.372
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.474
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.474
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.478
+!MESSAGE classpath=123 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.488
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.488
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.517
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.617
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.618
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.622
+!MESSAGE classpath=123 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.624
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.624
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:00.964
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:01.702
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:01.702
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:01.706
+!MESSAGE classpath=123 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:01.708
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 122
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:01.708
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:01.721
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.519
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.519
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.525
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.529
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.529
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.659
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.660
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.660
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.674
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.680
+!MESSAGE buffering callback sts4.classpath.mWUkGXpW FundooNotesApi false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.681
+!MESSAGE executing callback sts4.classpath.mWUkGXpW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-26 17:28:09.694
+!MESSAGE executing callback sts4.classpath.mWUkGXpW SUCCESS [done]
