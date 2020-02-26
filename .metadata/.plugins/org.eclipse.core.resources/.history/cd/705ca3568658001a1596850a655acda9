@@ -1,0 +1,5 @@
+package com.bridzelabz.fundoonotes.configuration;
+
+public class PasswordEncryption {
+
+}
