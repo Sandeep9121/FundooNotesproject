@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -37,7 +36,7 @@ public class ServiceImplementation implements UsersServices {
 
 	}
 /*
- * to get all details in 
+ * to get all details userDetails......
  */
 	@Override
 	public List<UsersEntity> getUserDetails() {
@@ -46,17 +45,16 @@ public class ServiceImplementation implements UsersServices {
 		return users;
 	}
 
-	
+	@Override
+	public Map<String, Object> getUserIdById(long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public boolean getUserById(long userId) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-	@Override
-	public Optional<UsersEntity> getuserById(long userId) {
-		return userRepository.findById(userId);
-		
 	}
 
 }

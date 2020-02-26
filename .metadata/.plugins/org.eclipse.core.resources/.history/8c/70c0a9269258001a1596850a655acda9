@@ -11,6 +11,6 @@ public class UsersDto {
 private String name;
 private String email;
 private String password;
-private Long mobileNumber;
+private Long mobile_number;
  
 }

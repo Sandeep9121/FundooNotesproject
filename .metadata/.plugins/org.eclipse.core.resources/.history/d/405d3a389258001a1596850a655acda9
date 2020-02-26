@@ -32,7 +32,7 @@ public class UsersEntity {
 
 	private String password;
 	
-	private Long mobileNumber;
+	private Long mobile_number;
 
 	private LocalDateTime date;
 
