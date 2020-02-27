@@ -48,7 +48,7 @@ public class ServiceImplementation implements UsersServices {
 		BeanUtils.copyProperties(usersdto, user);
 		user.setPassword(encryptPass.encode(usersdto.getPassword()));
 		user.setDate(LocalDateTime.now());
-		//System.out.println(generateToken.generateWebToken(usersdto.getEmail()));
+		System.out.println(generateToken.generateWebToken(usersdto.getEmail()));
 		userRepository.save(user);
 		
 		

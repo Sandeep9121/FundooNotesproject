@@ -1,0 +1,8 @@
+package com.bridzelabz.fundoonotes.reponse;
+
+public class EmailResponse {
+  public String messageFormat(String url,String token) {
+	return url+"/"+token;
+	  
+  }
+}
