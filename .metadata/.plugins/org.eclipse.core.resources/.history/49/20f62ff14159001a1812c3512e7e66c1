@@ -1,0 +1,18 @@
+package com.bridzelabz.fundoonotes.utility;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+
+public class JWTGenerator {
+	public static final String SECRETE="9121837953";
+	
+	public String webToken(long l) {
+		String token=null;
+		
+		token=JWT.create().withClaim("id", 1).sign(Algorithm.HMAC512(SECRETE));
+				return null;
+		
+	}
+
+
+}
