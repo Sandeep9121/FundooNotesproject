@@ -7647,3 +7647,75 @@ org.apache.maven.project.ProjectBuildingException: Some problems were encountere
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 12:39:42.395
 !MESSAGE executing callback sts4.classpath.dCmrQpiZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:10.313
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:10.313
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:10.317
+!MESSAGE classpath=126 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:10.323
+!MESSAGE buffering callback sts4.classpath.dCmrQpiZ FundooNotesApi false 126
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:10.326
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:10.333
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:57.106
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:57.106
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:57.111
+!MESSAGE classpath=126 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:57.113
+!MESSAGE buffering callback sts4.classpath.dCmrQpiZ FundooNotesApi false 126
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:57.113
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:42:57.125
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:34.716
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:34.716
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:34.728
+!MESSAGE classpath=126 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:34.731
+!MESSAGE buffering callback sts4.classpath.dCmrQpiZ FundooNotesApi false 126
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:34.731
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:34.769
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:37.581
+!MESSAGE Preparing classpath changed notification FundooNotesApi
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:37.582
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:37.588
+!MESSAGE classpath=126 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:37.590
+!MESSAGE buffering callback sts4.classpath.dCmrQpiZ FundooNotesApi false 126
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:37.591
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-02-27 16:54:37.614
+!MESSAGE executing callback sts4.classpath.dCmrQpiZ SUCCESS [done]

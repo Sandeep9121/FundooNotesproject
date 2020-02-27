@@ -2149,3 +2149,151 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2020-02-27 15:29:21,038 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-02-27 15:29:21,049 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-02-27 15:29:21,050 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 15:33:53,463 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 15:33:53,464 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 15:33:53,466 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 15:33:53,468 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 15:33:53,469 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 15:45:24,090 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 15:45:24,091 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 15:45:24,107 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 15:45:24,112 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 15:45:24,112 [Worker-56: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:27:08,287 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:27:08,288 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:27:08,289 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:27:08,292 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:27:08,292 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:34:57,527 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:34:57,532 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:34:57,534 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:34:57,538 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:34:57,538 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:40:43,156 [Worker-73: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bridzelabz:FundooNotesApi:0.0.1-SNAPSHOT @ /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/pom.xml.
+2020-02-27 16:40:44,717 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.2.RELEASE/spring-boot-starter-mail-2.2.2.RELEASE.pom
+2020-02-27 16:40:44,923 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.2.RELEASE/spring-boot-starter-mail-2.2.2.RELEASE.pom
+2020-02-27 16:40:45,091 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starters/2.2.2.RELEASE/spring-boot-starters-2.2.2.RELEASE.pom
+2020-02-27 16:40:45,251 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starters/2.2.2.RELEASE/spring-boot-starters-2.2.2.RELEASE.pom
+2020-02-27 16:40:45,416 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-parent/2.2.2.RELEASE/spring-boot-parent-2.2.2.RELEASE.pom
+2020-02-27 16:40:45,580 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-parent/2.2.2.RELEASE/spring-boot-parent-2.2.2.RELEASE.pom
+2020-02-27 16:40:45,743 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/2.2.2.RELEASE/spring-boot-dependencies-2.2.2.RELEASE.pom
+2020-02-27 16:40:47,467 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/2.2.2.RELEASE/spring-boot-dependencies-2.2.2.RELEASE.pom
+2020-02-27 16:40:47,773 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.10.1/jackson-bom-2.10.1.pom
+2020-02-27 16:40:48,485 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.10.1/jackson-bom-2.10.1.pom
+2020-02-27 16:40:48,648 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.3.1/micrometer-bom-1.3.1.pom
+2020-02-27 16:40:48,809 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.3.1/micrometer-bom-1.3.1.pom
+2020-02-27 16:40:48,972 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.43.Final/netty-bom-4.1.43.Final.pom
+2020-02-27 16:40:49,288 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.43.Final/netty-bom-4.1.43.Final.pom
+2020-02-27 16:40:49,451 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/Dysprosium-SR2/reactor-bom-Dysprosium-SR2.pom
+2020-02-27 16:40:49,661 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/Dysprosium-SR2/reactor-bom-Dysprosium-SR2.pom
+2020-02-27 16:40:49,825 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/9.4.24.v20191120/jetty-bom-9.4.24.v20191120.pom
+2020-02-27 16:40:50,459 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/9.4.24.v20191120/jetty-bom-9.4.24.v20191120.pom
+2020-02-27 16:40:50,624 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.2/kotlinx-coroutines-bom-1.3.2.pom
+2020-02-27 16:40:51,252 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.2/kotlinx-coroutines-bom-1.3.2.pom
+2020-02-27 16:40:51,414 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/5.2.2.RELEASE/spring-framework-bom-5.2.2.RELEASE.pom
+2020-02-27 16:40:52,175 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/5.2.2.RELEASE/spring-framework-bom-5.2.2.RELEASE.pom
+2020-02-27 16:40:52,417 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-releasetrain/Moore-SR3/spring-data-releasetrain-Moore-SR3.pom
+2020-02-27 16:40:52,740 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-releasetrain/Moore-SR3/spring-data-releasetrain-Moore-SR3.pom
+2020-02-27 16:40:52,955 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-build/2.2.3.RELEASE/spring-data-build-2.2.3.RELEASE.pom
+2020-02-27 16:40:53,411 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-build/2.2.3.RELEASE/spring-data-build-2.2.3.RELEASE.pom
+2020-02-27 16:40:53,718 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/5.2.2.RELEASE/spring-integration-bom-5.2.2.RELEASE.pom
+2020-02-27 16:40:54,118 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/5.2.2.RELEASE/spring-integration-bom-5.2.2.RELEASE.pom
+2020-02-27 16:40:54,306 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/5.2.3.RELEASE/spring-context-support-5.2.3.RELEASE.pom
+2020-02-27 16:40:55,060 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/5.2.3.RELEASE/spring-context-support-5.2.3.RELEASE.pom
+2020-02-27 16:40:55,224 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/mail/jakarta.mail/1.6.4/jakarta.mail-1.6.4.pom
+2020-02-27 16:40:55,683 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/mail/jakarta.mail/1.6.4/jakarta.mail-1.6.4.pom
+2020-02-27 16:40:55,931 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/mail/all/1.6.4/all-1.6.4.pom
+2020-02-27 16:40:58,032 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/mail/all/1.6.4/all-1.6.4.pom
+2020-02-27 16:40:58,280 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.4/project-1.0.4.pom
+2020-02-27 16:40:58,810 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.4/project-1.0.4.pom
+2020-02-27 16:40:59,119 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/1.2.1/jakarta.activation-1.2.1.pom
+2020-02-27 16:41:00,032 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/1.2.1/jakarta.activation-1.2.1.pom
+2020-02-27 16:41:00,217 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.2.RELEASE/spring-boot-starter-mail-2.2.2.RELEASE.jar
+2020-02-27 16:41:00,409 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.2.RELEASE/spring-boot-starter-mail-2.2.2.RELEASE.jar
+2020-02-27 16:41:00,606 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/5.2.3.RELEASE/spring-context-support-5.2.3.RELEASE.jar
+2020-02-27 16:41:11,903 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/5.2.3.RELEASE/spring-context-support-5.2.3.RELEASE.jar
+2020-02-27 16:41:12,948 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/mail/jakarta.mail/1.6.4/jakarta.mail-1.6.4.jar
+2020-02-27 16:42:02,913 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/mail/jakarta.mail/1.6.4/jakarta.mail-1.6.4.jar
+2020-02-27 16:42:04,017 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/1.2.1/jakarta.activation-1.2.1.jar
+2020-02-27 16:42:08,843 [Worker-73: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/1.2.1/jakarta.activation-1.2.1.jar
+2020-02-27 16:42:09,306 [Worker-73: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bridzelabz:FundooNotesApi:0.0.1-SNAPSHOT @ /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/pom.xml.
+2020-02-27 16:42:09,735 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:42:09,741 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:42:09,741 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:42:09,747 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:42:09,748 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:42:13,064 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.2.RELEASE/spring-boot-starter-mail-2.2.2.RELEASE-sources.jar
+2020-02-27 16:42:13,231 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.2.RELEASE/spring-boot-starter-mail-2.2.2.RELEASE-sources.jar
+2020-02-27 16:42:13,461 [Worker-73: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-mail:2.2.2.RELEASE
+2020-02-27 16:42:14,124 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/5.2.3.RELEASE/spring-context-support-5.2.3.RELEASE-sources.jar
+2020-02-27 16:42:20,845 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/5.2.3.RELEASE/spring-context-support-5.2.3.RELEASE-sources.jar
+2020-02-27 16:42:20,897 [Worker-73: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-context-support:5.2.3.RELEASE
+2020-02-27 16:42:21,918 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/mail/jakarta.mail/1.6.4/jakarta.mail-1.6.4-sources.jar
+2020-02-27 16:42:26,441 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:42:26,442 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:42:26,474 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:42:26,477 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:42:26,477 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:42:48,215 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/mail/jakarta.mail/1.6.4/jakarta.mail-1.6.4-sources.jar
+2020-02-27 16:42:48,374 [Worker-73: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.sun.mail:jakarta.mail:1.6.4
+2020-02-27 16:42:49,231 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/1.2.1/jakarta.activation-1.2.1-sources.jar
+2020-02-27 16:42:56,803 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/1.2.1/jakarta.activation-1.2.1-sources.jar
+2020-02-27 16:42:56,814 [Worker-73: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.sun.activation:jakarta.activation:1.2.1
+2020-02-27 16:42:57,428 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:42:57,428 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:42:57,429 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:42:57,434 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:42:57,435 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:43:12,268 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:43:12,269 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:43:12,271 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:43:12,276 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:43:12,276 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:43:20,445 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:43:20,446 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:43:20,448 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:43:20,450 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:43:20,451 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:43:43,466 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:43:43,467 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:43:43,469 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:43:43,473 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:43:43,473 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:44:14,444 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:44:14,444 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:44:14,447 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:44:14,455 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:44:14,455 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:52:51,155 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:52:51,156 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:52:51,158 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:52:51,176 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:52:51,176 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:53:29,373 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:53:29,374 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:53:29,375 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:53:29,379 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:53:29,379 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:54:30,480 [Worker-74: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bridzelabz:FundooNotesApi:0.0.1-SNAPSHOT @ /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/pom.xml.
+2020-02-27 16:54:31,655 [Worker-74: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.4.RELEASE/spring-boot-starter-mail-2.2.4.RELEASE.pom
+2020-02-27 16:54:31,809 [Worker-74: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.4.RELEASE/spring-boot-starter-mail-2.2.4.RELEASE.pom
+2020-02-27 16:54:32,000 [Worker-74: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.4.RELEASE/spring-boot-starter-mail-2.2.4.RELEASE.jar
+2020-02-27 16:54:32,991 [Worker-74: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.4.RELEASE/spring-boot-starter-mail-2.2.4.RELEASE.jar
+2020-02-27 16:54:33,694 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:54:33,704 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:54:33,743 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:54:33,749 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:54:33,749 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:54:36,781 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.4.RELEASE/spring-boot-starter-mail-2.2.4.RELEASE-sources.jar
+2020-02-27 16:54:36,820 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:54:36,821 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-27 16:54:36,823 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:54:36,827 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:54:36,828 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-02-27 16:54:36,941 [Worker-73: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/2.2.4.RELEASE/spring-boot-starter-mail-2.2.4.RELEASE-sources.jar
+2020-02-27 16:54:37,112 [Worker-73: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-mail:2.2.4.RELEASE
+2020-02-27 16:54:38,049 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:54:38,049 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:54:38,049 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-27 16:54:38,054 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-27 16:54:38,054 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources

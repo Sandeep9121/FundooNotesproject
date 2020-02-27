@@ -12,7 +12,7 @@ public class JWTGenerator {
 	
 	public String generateWebToken(String  email) {
 		
-		//System.out.println(JWT.create().withClaim("email",email).sign(Algorithm.HMAC512(SECRETE)));
+		System.out.println(JWT.create().withClaim("email",email).sign(Algorithm.HMAC512(SECRETE)));
 		return JWT.create().withClaim("email",email).sign(Algorithm.HMAC512(SECRETE));
 				
 	}
