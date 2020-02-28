@@ -40,8 +40,8 @@ public class EmailProviderService
 {
 	public static void sendMail(String emailContact, String emailSubject, String body) {
 
-		String fromEmail ="nayangundithjyn;setnyiuowetniletnoaru@gmail.com" ;    //System.getenv("email");
-		String password ="nakjetbojnojrnoyan@123";        //System.getenv("password");
+		String fromEmail ="sandeep.rayala14@gmail.com" ;    //System.getenv("email");
+		String password ="S114D5516@sanjuluishg1997";        //System.getenv("password");
 		Properties property = new Properties();
 		property.put("mail.smtp.auth", "true");
 		property.put("mail.smtp.starttls.enable", "true");
@@ -70,17 +70,17 @@ public class EmailProviderService
 
 			MimeMessage mimeMessage = new MimeMessage(session);
 
-		mimeMessage.addHeader("Content-type", "text/HTML; charset=UTF-8");
+		/*	mimeMessage.addHeader("Content-type", "text/HTML; charset=UTF-8");
 
-			mimeMessage.addHeader("format","flowed");
+			mimeMessage.addHeader("format", "flowed");
 
-			mimeMessage.addHeader("Content-Transfer-Encoding", "8bit");
+			mimeMessage.addHeader("Content-Transfer-Encoding", "8bit");*/
 
-			mimeMessage.setFrom(new InternetAddress(fromEmail,"Mr.Sandeep"));
+			mimeMessage.setFrom(new InternetAddress(fromEmail, "Mr.Sandeep"));
 
 			mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(emailContact));
 
-			mimeMessage.setReplyTo(InternetAddress.parse(" u cannot sandeep.rayala14@gmial.com",false));
+			//mimeMessage.setReplyTo(InternetAddress.parse(" u cannosandeep.rayala14@gmial.com", false));
 
 			mimeMessage.setSubject(emailSubject);
 

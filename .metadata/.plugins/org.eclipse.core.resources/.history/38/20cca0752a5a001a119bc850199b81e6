@@ -49,7 +49,7 @@ public class ServiceImplementation implements UsersServices {
 		
 		emailData.setEmail(usersdto.getEmail());
 		
-		emailData.setSubject("click below link to verify your registration");
+		emailData.setSubject("click here to verify");
 		
 		emailData.setBody(subject);
 		

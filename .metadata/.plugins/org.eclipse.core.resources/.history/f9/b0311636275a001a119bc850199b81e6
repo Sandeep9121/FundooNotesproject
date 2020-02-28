@@ -42,20 +42,14 @@ public class ServiceImplementation implements UsersServices {
 		user.setPassword(encryptPass.encode(usersdto.getPassword()));
 		user.setDate(LocalDateTime.now());
 		user.setVerified(false);
-		
+		userRepository.save(user);
 		String token = generateToken.generateWebToken(user.getUserId());
 		String url = "http://localhost:8080/users/verify/";
 		String subject = url + token;
-		
 		emailData.setEmail(usersdto.getEmail());
-		
-		emailData.setSubject("click below link to verify your registration");
-		
-		emailData.setBody(subject);
-		
+		emailData.setSubject(subject);
+		emailData.setBody("click here to verify");
 		EmailProviderService.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
-		
-		userRepository.save(user);
 	}
 
 	public boolean getUserById(long userId) {

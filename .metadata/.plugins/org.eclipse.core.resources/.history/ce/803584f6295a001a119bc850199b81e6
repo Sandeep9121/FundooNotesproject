@@ -49,9 +49,9 @@ public class ServiceImplementation implements UsersServices {
 		
 		emailData.setEmail(usersdto.getEmail());
 		
-		emailData.setSubject("click below link to verify your registration");
+		emailData.setSubject(subject);
 		
-		emailData.setBody(subject);
+		emailData.setBody("click here to verify");
 		
 		EmailProviderService.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
 		
