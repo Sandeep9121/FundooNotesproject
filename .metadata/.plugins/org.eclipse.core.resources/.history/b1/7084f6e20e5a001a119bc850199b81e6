@@ -55,7 +55,11 @@ public class ServiceImplementation implements UsersServices {
 		emailData.setBody("click here to verify");
 		em.sendMail(emailData.getEmail(),emailData.getSubject(),emailData.getBody());
 		}
-	
+	@Override
+	public List<UsersEntity> getUserDetails() {	
+		return null;
+	}
+
 	@Override
 	public boolean getUserById(long userId) {
 		return false;

@@ -12,7 +12,9 @@ public interface UsersServices {
 	
 	
 	public Optional<UsersEntity> getuserById(long userId);
-	
+	public List<UsersEntity> getUserDetails();
+
+	//public Map<String, Object> getUserIdById(long userId);
     
 	public boolean getUserById(long userId);
 	
