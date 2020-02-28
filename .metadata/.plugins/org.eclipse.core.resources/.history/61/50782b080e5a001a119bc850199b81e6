@@ -49,10 +49,7 @@ public class ServiceImplementation implements UsersServices {
 		user.setDate(LocalDateTime.now());
 		user.setVerified(false);
 		userRepository.save(user);
-		//String subject=emailResponse.mailform("http://localhost:8081/users/verify/",generateToken.generateWebToken( user.getUserId() ));
-		String token=generateToken.generateWebToken( user.getUserId() );
-		String url="http://localhost:8081/users/verify/";
-		String subject=url+token;
+		String subject=emailResponse.mailform("http://localhost:8081/users/verify/",generateToken.generateWebToken( user.getUserId() ));
 		emailData.setEmail(usersdto.getEmail());
 		emailData.setSubject(subject);
 		emailData.setBody("click here to verify");
