@@ -30,7 +30,6 @@ public class UserController {
    }
    @GetMapping(value="/users/{userId}")
    public Optional<UsersEntity> getUserById(@PathVariable long userId){
-	return usersService.getuserById(userId);
-	   
+	return usersService.getuserById(userId);	   
    }
 }

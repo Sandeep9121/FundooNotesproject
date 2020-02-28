@@ -3,7 +3,6 @@ package com.bridzelabz.fundoonotes.services;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -17,7 +16,7 @@ import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.EmailData;
 import com.bridzelabz.fundoonotes.reponse.EmailResponse;
-import com.bridzelabz.fundoonotes.reponse.Response;
+//import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.EmailProviderService;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
@@ -31,47 +30,38 @@ public class ServiceImplementation implements UsersServices {
 	@Autowired
 	private BCryptPasswordEncoder encryptPass;
 	@Autowired
-	private JWTGenerator generateToken;
-    @Autowired
-	private EmailProviderService mailProvider;	
+	private JWTGenerator generateToken;	
     @Autowired
     private EmailData emailData;
-    @Autowired
-    private Response response; 
+  /* @Autowired
+    private Response response; */
     @Autowired
     private EmailResponse emailResponse;
     
+    @Autowired
+    private EmailProviderService em;
     
 	@Override
 	@Transactional
-	public void addUsers(UsersDto usersdto) {
+	public void addUsers(UsersDto usersdto){
 		BeanUtils.copyProperties(usersdto, user);
 		user.setPassword(encryptPass.encode(usersdto.getPassword()));
 		user.setDate(LocalDateTime.now());
-		//System.out.println(generateToken.generateWebToken(usersdto.getEmail()));
+		user.setVerified(false);
 		userRepository.save(user);
-		
-		
-		/*String response=emailResponse.mailform("http://localhost:8080/users/verify/",
-				generateToken.generateWebToken( usersdto.getEmail() ));*/
-		String response=emailResponse.mailform("http://localhost:8080/users/verify/",
-				generateToken.generateWebToken( user.getUserId() ));
-
-	}
-
-	/*
-	 * to get all details in
-	 */
+		String subject=emailResponse.mailform("http://localhost:8081/users/verify/",generateToken.generateWebToken( user.getUserId() ));
+		emailData.setEmail(usersdto.getEmail());
+		emailData.setSubject(subject);
+		emailData.setBody("click here to verify");
+		em.sendMail(emailData.getEmail(),emailData.getSubject(),emailData.getBody());
+		}
 	@Override
-	public List<UsersEntity> getUserDetails() {
-		List<UsersEntity> users = new ArrayList<>();
-		userRepository.findAll().forEach(users::add);
-		return users;
+	public List<UsersEntity> getUserDetails() {	
+		return null;
 	}
 
 	@Override
 	public boolean getUserById(long userId) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

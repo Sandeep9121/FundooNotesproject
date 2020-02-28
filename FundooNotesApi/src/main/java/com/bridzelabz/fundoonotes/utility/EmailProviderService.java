@@ -14,40 +14,56 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmailProviderService {
-	public static void sendMail(String emailContact, String emailSubject, String body) {
+	public  void sendMail(String emailContact, String emailSubject, String body) {
 
 		String fromEmail = System.getenv("email");
 		String password = System.getenv("password");
-		Properties prop = new Properties();
-		prop.put("mail.smtp.auth", "true");
-		prop.put("mail.smtp.starttls.enable", "true");
-		prop.put("mail.smtp.host", "smtp.gmail.com");
-		prop.put("mail.smtp.port", "587");
+		Properties property = new Properties();
+		property.put("mail.smtp.auth", "true");
+		property.put("mail.smtp.starttls.enable", "true");
+		property.put("mail.smtp.host", "smtp.gmail.com");
+		property.put("mail.smtp.port", "587");
 
 		Authenticator auth = new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(fromEmail, password);
-			}
-		};
+			}};
 
-		Session session = Session.getInstance(prop, auth);
+		Session session = Session.getInstance(property, auth);
+		
 		send(session, fromEmail, emailContact, emailSubject, body);
+		
 		// sendMail(emailContact, emailSubject, body);
 		// send(session, fromEmail, emailContact, emailSubject, body);
 	}// end of send mail
 
-	private static void send(Session session, String fromEmail, String emailContact, String emailSubject, String body) {
+	private void send(Session session, String fromEmail, String emailContact, String emailSubject, String body) {
 		// TODO Auto-generated method stub
 		try {
-			MimeMessage message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(fromEmail, "Mr.Sandeep"));
-			message.setRecipient(Message.RecipientType.TO, new InternetAddress());
-			message.setSubject(emailSubject);
-			message.setText(body);
-			Transport.send(message);
+			
+			MimeMessage mimeMessage = new MimeMessage(session);
+			
+			mimeMessage.addHeader("Content-type", "text/HTML; charset=UTF-8");
 
-		} catch (Exception e) {
+			mimeMessage.addHeader("format", "flowed");
+
+			mimeMessage.addHeader("Content-Transfer-Encoding","8bit");
+
+			mimeMessage.setFrom(new InternetAddress(fromEmail, "Mr.Sandeep"));
+
+			mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress());
+
+			mimeMessage.setReplyTo(InternetAddress.parse("Sorry u cannot reply to sandeep.rayala14@gmial.com", false));
+
+			mimeMessage.setSubject(emailSubject);
+
+			mimeMessage.setText(body);
+
+			Transport.send(mimeMessage);
+
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("exception occured while sending mail");
 

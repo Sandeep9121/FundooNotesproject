@@ -12,9 +12,12 @@ public class JWTGenerator {
 	
 	public String generateWebToken(long  l) {
 		
-		//System.out.println(JWT.create().withClaim("email",email).sign(Algorithm.HMAC512(SECRETE)));
-		return JWT.create().withClaim("email",l).sign(Algorithm.HMAC512(SECRETE));
-				
+	
+			//System.out.println(JWT.create().withClaim("email",email).sign(Algorithm.HMAC512(SECRETE)));
+			return JWT.create().withClaim("email",l).sign(Algorithm.HMAC512(SECRETE));
+					
+			
+	
 	}
 	/*
 	 * method to parse token to long

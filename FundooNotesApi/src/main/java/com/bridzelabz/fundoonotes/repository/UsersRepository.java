@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 
 @Repository
-public interface UsersRepository extends CrudRepository<UsersEntity, Long>{
+public interface UsersRepository extends CrudRepository<UsersEntity,Long>{
 
 }
