@@ -1,6 +1,7 @@
 package com.bridzelabz.fundoonotes.services;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.EmailData;
+//import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.EmailProviderService;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
@@ -30,7 +32,9 @@ public class ServiceImplementation implements UsersServices {
 	private JWTGenerator generateToken;	
     @Autowired
     private EmailData emailData;
-
+  /* @Autowired
+    private Response response; */
+  
     @Autowired
     private EmailProviderService em;
     
@@ -51,17 +55,21 @@ public class ServiceImplementation implements UsersServices {
 		emailData.setBody("click here to verify");
 		em.sendMail(emailData.getEmail(),emailData.getSubject(),emailData.getBody());
 		}
-
+	
+	@Override
 	public boolean getUserById(long userId) {
 		return false;
 	}
 
-
+	@Override
 	public Optional<UsersEntity> getuserById(long userId) {
 		return userRepository.findById(userId);
 
 	}
+
+
 	public List<UsersEntity> getUserDetails() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -15,9 +15,6 @@ public interface UsersServices {
 	
     
 	public boolean getUserById(long userId);
-
-
-	List<UsersEntity> getUserDetails();
 	
 	
 	

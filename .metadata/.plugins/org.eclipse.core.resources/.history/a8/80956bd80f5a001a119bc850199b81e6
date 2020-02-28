@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.EmailData;
+//import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.EmailProviderService;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
