@@ -31,8 +31,8 @@ public class ServiceImplementation implements UsersServices {
 	@Autowired
 	private EmailData emailData;
 
-	//@Autowired
-	//private EmailProviderService em;
+	@Autowired
+	private EmailProviderService em;
 
 	@Override
 	@Transactional
@@ -44,12 +44,12 @@ public class ServiceImplementation implements UsersServices {
 		user.setVerified(false);
 		userRepository.save(user);
 		String token = generateToken.generateWebToken(user.getUserId());
-		String url = "http://localhost:8080/users/verify/";
+		String url = "http://localhost:8081/users/verify/";
 		String subject = url + token;
 		emailData.setEmail(usersdto.getEmail());
 		emailData.setSubject(subject);
 		emailData.setBody("click here to verify");
-		EmailProviderService.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
+		em.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
 	}
 
 	public boolean getUserById(long userId) {

@@ -78,7 +78,7 @@ public class EmailProviderService
 
 			mimeMessage.setFrom(new InternetAddress(fromEmail, "Mr.Sandeep"));
 
-			mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(emailContact));
+			mimeMessage.setRecipients(Message.RecipientType.TO,InternetAddress.parse(emailContact));
 
 			//mimeMessage.setReplyTo(InternetAddress.parse(" u cannosandeep.rayala14@gmial.com", false));
 
