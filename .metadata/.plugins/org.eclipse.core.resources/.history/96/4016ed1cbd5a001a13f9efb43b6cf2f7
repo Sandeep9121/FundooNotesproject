@@ -3,7 +3,6 @@ package com.bridzelabz.fundoonotes.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,8 +25,7 @@ public class UsersEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	private long userId;
-	
-    @Embedded
+
 	private String fullName;
 
 	private String email;
