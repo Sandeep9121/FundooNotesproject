@@ -4,6 +4,8 @@ import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+@Data
 @Embeddable
 public class FullName {
 	@NotNull

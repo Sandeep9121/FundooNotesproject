@@ -13,35 +13,12 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EmailProviderService
-/*
- * { private String from; private String to; private String subject; private
- * String text; public EmailProviderService (String from, String to, String
- * subject, String text){ this.from = from; this.to = to; this.subject =
- * subject; this.text = text; } public void send(){
- * 
- * Properties props = new Properties(); props.put("mail.smtp.host",
- * "smtp.gmail.com"); props.put("mail.smtp.port", "465");
- * 
- * Session mailSession = Session.getDefaultInstance(props); Message
- * simpleMessage = new MimeMessage(mailSession);
- * 
- * InternetAddress fromAddress = null; InternetAddress toAddress = null; try {
- * fromAddress = new InternetAddress(from); toAddress = new InternetAddress(to);
- * } catch (AddressException e) { e.printStackTrace(); }
- * 
- * try { simpleMessage.setFrom(fromAddress);
- * simpleMessage.setRecipient(RecipientType.TO, toAddress);
- * simpleMessage.setSubject(subject); simpleMessage.setText(text);
- * Transport.send(simpleMessage); } catch (MessagingException e) {
- * e.printStackTrace(); } } }
- */
+public class EmailProviderService{
 
-{
-	public static void sendMail(String emailContact, String emailSubject, String body) {
+	public  void sendMail(String emailContact, String emailSubject, String body) {
 
-		String fromEmail =System.getenv("email");
-		String password =System.getenv("password");
+		String fromEmail ="nayangunditharu@gmail.com" ;      //System.getenv("email");
+		String password =   "nayan@123"  ;    //System.getenv("password");
 		Properties property = new Properties();
 		property.put("mail.smtp.auth", "true");
 		property.put("mail.smtp.starttls.enable", "true");
@@ -64,7 +41,7 @@ public class EmailProviderService
 		// send(session, fromEmail, emailContact, emailSubject, body);
 	}// end of send mail
 
-	private static void send(Session session, String fromEmail, String emailContact, String emailSubject, String body) {
+	private void send(Session session, String fromEmail, String emailContact, String emailSubject, String body) {
 		// TODO Auto-generated method stub
 		try {
 
