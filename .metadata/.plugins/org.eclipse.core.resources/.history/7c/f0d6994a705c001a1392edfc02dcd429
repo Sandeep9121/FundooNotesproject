@@ -107,8 +107,6 @@ public class ServiceImplementation implements UsersServices {
 		}
 	}
 
-	
-	
 	@Override
 	@Transactional
 	public UsersEntity login(UsersDto usersdto) {
