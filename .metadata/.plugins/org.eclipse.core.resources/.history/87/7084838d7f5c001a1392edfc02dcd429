@@ -85,7 +85,24 @@ public class UserController {
 	}
 
 	
-	
+	/*@PostMapping("/users/login")
+	@ApiOperation(value = "Api for Login", response = Response.class)
+		@CachePut(key = "#token", value = "userId")
+	public ResponseEntity<UserAuntication> login(@RequestBody LoginDetails loginDetails) throws Exception {
+
+		UserDemo userInformation = userService.login(loginDetails);
+		loginDetails.setPassword("******");
+		if (userInformation != null) {
+			String token = generate.jwtToken(userInformation.getUserId());
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserAuntication(token, 200, loginDetails));
+		} else {
+
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+					.body(new UserAuntication("Login failed", 404, loginDetails));
+		}
+	}
+ 
+	 */
 	@PostMapping("/users/login")
 	public ResponseEntity<UserAuthentication> login(@RequestBody LoginDto loginData){
 		UsersEntity userLogin=usersService.login(loginData);

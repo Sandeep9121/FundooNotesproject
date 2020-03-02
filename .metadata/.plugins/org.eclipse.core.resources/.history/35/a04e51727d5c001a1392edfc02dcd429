@@ -21,12 +21,8 @@ import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
-import com.bridzelabz.fundoonotes.reponse.UserAuthentication;
 import com.bridzelabz.fundoonotes.services.UsersServices;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
-
-
-
 
 @RestController
 public class UserController {
@@ -34,27 +30,18 @@ public class UserController {
 	private UsersEntity user;
 
 	@Autowired
-	private JWTGenerator generateToken;
-	
-	@Autowired
 	private UsersServices usersService;
 
 	@PostMapping("/users/register")
 	// @RequestMapping(method = RequestMethod.POST,value = "users/register")
 	public ResponseEntity<Response> userRegistration(@RequestBody UsersDto userdto) {
-		try {
-			if (usersService.addUsers(userdto)) {
-				return ResponseEntity.status(HttpStatus.CREATED)
-						.body(new Response("U have been Registered Successfully", 200, userdto));
-			} else {
-				return ResponseEntity.status(HttpStatus.ALREADY_REPORTED)
-						.body(new Response("U are already Registered", 400, userdto));
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (usersService.addUsers(userdto)) {
+			return ResponseEntity.status(HttpStatus.CREATED)
+					.body(new Response("U have been Registered Successfully", 200, userdto));
+		} else {
+			return ResponseEntity.status(HttpStatus.ALREADY_REPORTED)
+					.body(new Response("U are already Registered", 400, userdto));
 		}
-		return null;
 	}
 
 	/*
@@ -85,13 +72,32 @@ public class UserController {
 	}
 
 	
-	
-	@PostMapping("/users/login")
-	public ResponseEntity<UserAuthentication> login(@RequestBody LoginDto loginData){
+	/*@PostMapping("/users/login")
+	@ApiOperation(value = "Api for Login", response = Response.class)
+		@CachePut(key = "#token", value = "userId")
+	public ResponseEntity<UserAuntication> login(@RequestBody LoginDetails loginDetails) throws Exception {
+
+		UserDemo userInformation = userService.login(loginDetails);
+		loginDetails.setPassword("******");
+		if (userInformation != null) {
+			String token = generate.jwtToken(userInformation.getUserId());
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserAuntication(token, 200, loginDetails));
+		} else {
+
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+					.body(new UserAuntication("Login failed", 404, loginDetails));
+		}
+	}
+ 
+	 */
+	public ResponseEntity<Response> login(@RequestBody LoginDto loginData){
 		UsersEntity userLogin=usersService.login(loginData);
 		 userLogin.setPassword("*******");
-		  String token = generateToken.generateWebToken(userLogin.getUserId());
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserAuthentication(token, 200, userLogin));
+		  if(userLogin !=null) {
+			  String token= 
+		  }
+		return null;
+		
 	}
 	
 	

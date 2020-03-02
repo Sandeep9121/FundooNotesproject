@@ -116,8 +116,8 @@ public class ServiceImplementation implements UsersServices {
 	@Override
 	@Transactional
 	public UsersEntity login(LoginDto logindto) {
-		Optional<UsersEntity> userPresent = userRepository.findUserByEmail(logindto.getEmail());
-		log.info("user------------sdgisdgifgsdfiuiugf----------------------------------------"+userPresent);
+		Optional<UsersEntity> userPresent = userRepository.findUserByEmail(logIn.getEmail());
+		log.info("user"+userPresent);
 		if (userPresent.isPresent()) {
 			log.info("Check------------------------------------odhwfonefonfonf");
 			if (userPresent.get().isVerified()

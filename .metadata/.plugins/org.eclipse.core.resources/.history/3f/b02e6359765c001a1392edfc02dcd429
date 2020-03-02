@@ -9,9 +9,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import com.bridzelabz.fundoonotes.custom_exceptions.ExitsEmailException;
-import com.bridzelabz.fundoonotes.custom_exceptions.MailNotFoundException;
-import com.bridzelabz.fundoonotes.custom_exceptions.UserNotVerifiedException;
 import com.bridzelabz.fundoonotes.dto.LoginDto;
 import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
@@ -111,30 +110,58 @@ public class ServiceImplementation implements UsersServices {
 		}
 	}
 
-
+	/*
+	 * @Transactional
+	 * 
+	 * @Override public UserDemo login(LoginDetails loginDetails) throws Exception {
+	 * Optional<UserDemo> userInfo =
+	 * userRepository.findOneByEmail(loginDetails.getEmail());
+	 * 
+	 * if (userInfo.isPresent()) { // log.info("User Information " + userInfo); if
+	 * ((userInfo.get().isVerified()) &&
+	 * encryption.matches(loginDetails.getPassword(), userInfo.get().getPswd())) {
+	 * 
+	 * log.info("Generated Token :" +
+	 * generate.jwtToken(userInfo.get().getUserId()));
+	 * 
+	 * return userInfo.get(); } else { String response =
+	 * mailresponse.formMessage("http://localhost:8080/users/verify",
+	 * generate.jwtToken(userInfo.get().getUserId()));
+	 * 
+	 * //log.info("Verification Link :" + response);
+	 * 
+	 * MailServiceProvider.sendEmail(loginDetails.getEmail(), "verification",
+	 * response);
+	 * 
+	 * throw new UserNotVerifiedException("Invalid credentials"); }
+	 * 
+	 * } else { throw new
+	 * EmailNotFoundException(loginDetails.getEmail()+"Please register before login"
+	 * ); } }
+	 * 
+	 */
 
 	@Override
 	@Transactional
-	public UsersEntity login(LoginDto logindto) {
-		Optional<UsersEntity> userPresent = userRepository.findUserByEmail(logindto.getEmail());
-		log.info("user------------sdgisdgifgsdfiuiugf----------------------------------------"+userPresent);
+	public UsersEntity login(UsersDto usersdto) {
+		Optional<UsersEntity> userPresent = userRepository.findUserByEmail(logIn.getEmail());
 		if (userPresent.isPresent()) {
-			log.info("Check------------------------------------odhwfonefonfonf");
 			if (userPresent.get().isVerified()
 					&& encryptPass.matches(logIn.getPaswword(), userPresent.get().getEmail())) {
 				return userPresent.get();
-			} else {
-				String body = "http://192.168.1.127:8081/users/verify/"
-						+ generateToken.generateWebToken(userPresent.get().getUserId());
-				em.sendMail(logIn.getEmail(), "login failed click here for verification", body);
+
+			}
+			else {
+				
+				String body= "http://192.168.1.127:8081/users/verify/"+
+				generateToken.generateWebToken(userPresent.get().getUserId());
+				
+				em.sendMail(logIn.getEmail(),"login failed click here for verification", body);
 				throw new UserNotVerifiedException("Not a valid credentials");
 			}
-		} // if
-		else {
-
-			throw new MailNotFoundException("user not found");
 		}
 
+		return null;
 	}
 
 	@Override

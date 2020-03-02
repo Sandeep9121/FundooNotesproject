@@ -23,7 +23,7 @@ public class UsersEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@Column(name = "user_id")
+	@Column(name = "user_id")
 	//@NotNull
 	private long userId;
 
