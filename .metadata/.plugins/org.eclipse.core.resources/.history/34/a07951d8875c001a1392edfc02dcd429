@@ -164,6 +164,7 @@ public class ServiceImplementation implements UsersServices {
 		}
 	}
 
+	@Override
 	@Transactional
 	public UsersEntity updatePassword(String token, UpdatePassword password) {
 		if (psw.getNewPassword().equals(psw.getChangepassword())) {
@@ -189,17 +190,14 @@ public class ServiceImplementation implements UsersServices {
 		return null;
 	}
 
+	@Override
 	@Transactional
-	public boolean forgotPassword(UsersEntity user) {
+	public boolean updateDetails(UsersEntity user) {
 		long userId=user.getUserId();
 		String password=user.getPassword();
 		
 		String encryptpass= encryptPass.encode(password);
-	    Optional<UsersEntity> userUpdate= userRepository.findUserByIdandPass(userId, encryptpass);
-	    if(userUpdate.isPresent()) {
-	    	userRepository.save(user);
-	    	return true;
-	    }
+		     userRepository.findUserByIdandPass(userId, encryptpass);
 		return false;
 	}
 

@@ -110,7 +110,19 @@ public class UserController {
 
 	}
 	
+	/*
+	 * @PostMapping("users/forgotpassword")
+	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email) throws Exception {
+		
+		log.info("Email :" + email);
 
+		boolean result = userService.isUserAvailable(email);
+		return (result) ? ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("User Exist", 200))
+				: ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("User Doesn't Exist", 400));
+	}
+
+	 */
+	
 	@PutMapping("users/forgotpassword")
 	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email){
 		boolean value=usersService.isUserAlreadyRegistered(email);

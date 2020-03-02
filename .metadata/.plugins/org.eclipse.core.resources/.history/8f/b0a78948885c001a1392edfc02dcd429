@@ -195,11 +195,7 @@ public class ServiceImplementation implements UsersServices {
 		String password=user.getPassword();
 		
 		String encryptpass= encryptPass.encode(password);
-	    Optional<UsersEntity> userUpdate= userRepository.findUserByIdandPass(userId, encryptpass);
-	    if(userUpdate.isPresent()) {
-	    	userRepository.save(user);
-	    	return true;
-	    }
+		     Optional<UsersEntity> userUpdate= userRepository.findUserByIdandPass(userId, encryptpass);
 		return false;
 	}
 

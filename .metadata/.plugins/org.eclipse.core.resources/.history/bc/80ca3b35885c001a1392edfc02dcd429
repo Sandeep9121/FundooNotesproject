@@ -17,9 +17,9 @@ public interface UsersServices {
 	
 	public boolean getUserById(long userId);
 	
-	public boolean forgotPassword(UsersEntity user);
+	public boolean updateDetails(UsersEntity user);
 	
-	public UsersEntity updatePassword(String token,UpdatePassword password);
+	public UsersEntity forgotPassword(String token,UpdatePassword password);
 
 	public Optional<UsersEntity> getuserById(long userId);
 	
