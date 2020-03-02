@@ -1,6 +1,6 @@
 package com.bridzelabz.fundoonotes.utility;
 
-import java.io.UnsupportedEncodingException;
+
 
 import org.springframework.stereotype.Component;
 

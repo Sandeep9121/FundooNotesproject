@@ -1,0 +1,19 @@
+package com.bridzelabz.fundoonotes.dto;
+
+import org.springframework.stereotype.Component;
+
+import lombok.Data;
+@Component
+public class UpdatePassword {
+	private String newPassword;
+	private String changepassword;
+	public String getChangepassword() {
+		return changepassword;
+	}
+	public void setChangepassword(String changepassword) {
+		this.changepassword = changepassword;
+	}
+       
+	}
+
+

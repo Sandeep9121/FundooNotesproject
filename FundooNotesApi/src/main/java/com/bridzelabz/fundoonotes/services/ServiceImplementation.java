@@ -9,6 +9,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.EmailData;
@@ -30,11 +32,12 @@ public class ServiceImplementation implements UsersServices {
 	private JWTGenerator generateToken;
 	@Autowired
 	private EmailData emailData;
+	@Autowired
+	private UpdatePassword psw;
 
 	@Autowired
 	private EmailProviderService em;
 
-	@Override
 	@Transactional
 	public boolean addUsers(UsersDto usersdto) {
 		// UsersEntity user = new UsersEntity();
@@ -64,15 +67,17 @@ public class ServiceImplementation implements UsersServices {
 
 		emailData.setBody(body);
 
-		em.sendMail(emailData.getEmail(), emailData.getSubject(),emailData.getBody());
+		em.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
 
 		return true;
 	}
 
+	@Transactional
 	public boolean getUserById(long userId) {
 		return false;
 	}
 
+	@Transactional
 	public Optional<UsersEntity> getuserById(long userId) {
 		return userRepository.findById(userId);
 	}
@@ -92,21 +97,67 @@ public class ServiceImplementation implements UsersServices {
 			// userRepository.save(userRepository.findById(userid).get());
 
 			return true;
-		}
-		else {
-		return false;
+		} else {
+			return false;
 		}
 	}
 
 	@Override
+	@Transactional
 	public UsersEntity login(UsersDto usersdto) {
 		return null;
 	}
 
 	@Override
+	@Transactional
 	public List<UsersEntity> getUserDetails() {
 		List<UsersEntity> users = new ArrayList<>();
 		userRepository.findAll().forEach(users::add);
+		return null;
+	}
+
+	@Override
+	@Transactional
+	public boolean isUserAlreadyRegistered(String email) {
+
+		Optional<UsersEntity> isUserAlreadyRegistered = userRepository.findUserByEmail(email);
+
+		if (isUserAlreadyRegistered.isPresent() && isUserAlreadyRegistered.get().isVerified()) {
+
+			String body = "http://192.168.1.127:8081/users/updatePassword/"
+					+ generateToken.generateWebToken(isUserAlreadyRegistered.get().getUserId());
+
+			em.sendMail(isUserAlreadyRegistered.get().getEmail(), "Updated", body);
+
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	@Transactional
+	public UsersEntity updatePassword(String token, UpdatePassword password) {
+		if (psw.getNewPassword().equals(psw.getChangepassword())) {
+
+			long userId = generateToken.parseJWTToken(token);
+
+			Optional<UsersEntity> isUserPresent = userRepository.findById(userId);
+
+			if (isUserPresent.isPresent()) {
+
+				String encryptass = encryptPass.encode(psw.getNewPassword());
+
+				isUserPresent.get().setPassword(encryptass);
+
+				userRepository.save(isUserPresent.get());
+
+				return isUserPresent.get();
+
+			}
+
+		}
+
 		return null;
 	}
 

@@ -37,17 +37,17 @@ public class UsersEntity {
 	//@NotNull
 	private String email;
 
-	@Column(name = "Password" )
-	@Size(min = 8)
+	//@Column(name = "Password" )
+	//@Size(min = 8)
 	private String password;
 
-	@Column(name = "mobile_number")
+//	@Column(name = "mobile_number")
 	//@Size(min = 10, max = 12)
 	@NotNull
 	private Long mobileNumber;
 
 	@Column(name = "Registered_date")
-	@NotNull
+	//@NotNull
 	private LocalDateTime date;
 
 	@Column(name = "is_verified")
