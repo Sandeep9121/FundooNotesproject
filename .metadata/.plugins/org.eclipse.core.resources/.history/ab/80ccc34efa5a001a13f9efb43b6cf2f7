@@ -64,7 +64,7 @@ public class ServiceImplementation implements UsersServices {
 
 		emailData.setBody(body);
 
-		em.sendMail(emailData.getEmail(), "verfiied", "rrtrr");
+		em.sendMail(emailData.getEmail(), "verfiied", emailData.getBody());
 
 		return true;
 	}

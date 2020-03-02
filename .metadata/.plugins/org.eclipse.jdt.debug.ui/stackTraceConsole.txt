@@ -1,0 +1,2 @@
+ @NotNull
+    @Size(max = 40)

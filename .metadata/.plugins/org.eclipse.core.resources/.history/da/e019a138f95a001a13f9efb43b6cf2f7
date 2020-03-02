@@ -20,8 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class ServiceImplementation implements UsersServices {
-	@Autowired
-	private UsersEntity user;
+	 @Autowired
+	 private UsersEntity user;
 	@Autowired
 	private UsersRepository userRepository;
 	@Autowired
@@ -37,7 +37,7 @@ public class ServiceImplementation implements UsersServices {
 	@Override
 	@Transactional
 	public boolean addUsers(UsersDto usersdto) {
-		// UsersEntity user = new UsersEntity();
+		//UsersEntity user = new UsersEntity();
 
 		BeanUtils.copyProperties(usersdto, user);
 
@@ -55,7 +55,7 @@ public class ServiceImplementation implements UsersServices {
 		 */
 		log.info("your token to collect-" + token);
 
-		String url = "http://192.168.1.127:8080/users/verify";
+		String url = "http://localhost:8080/users/verify/";
 		String body = url + token;
 
 		emailData.setEmail(usersdto.getEmail());
@@ -64,7 +64,7 @@ public class ServiceImplementation implements UsersServices {
 
 		emailData.setBody(body);
 
-		em.sendMail(emailData.getEmail(), "verfiied", "rrtrr");
+		em.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
 
 		return true;
 	}

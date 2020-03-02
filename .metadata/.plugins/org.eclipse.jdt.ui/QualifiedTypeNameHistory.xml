@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
-<fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.model.UserEntity"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="javax.persistence.Table"/>
-<fullyQualifiedTypeName name="org.hibernate.annotations.Entity"/>
-<fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.dto.UsersDto"/>
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 <fullyQualifiedTypeName name="org.hibernate.service.ServiceRegistry"/>
 <fullyQualifiedTypeName name="org.modelmapper.ModelMapper"/>
-<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -27,7 +16,6 @@
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtilsBean"/>
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
 <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Optional"/>
@@ -47,17 +35,29 @@
 <fullyQualifiedTypeName name="javax.mail.Message"/>
 <fullyQualifiedTypeName name="javax.mail.Transport"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 <fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.reponse.EmailData"/>
-<fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.reponse.Response"/>
 <fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.reponse.EmailResponse"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="javax.mail.internet.InternetAddress"/>
 <fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.utility.EmailProviderService"/>
 <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
-<fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.model.UsersEntity"/>
 <fullyQualifiedTypeName name="javax.mail.internet.AddressException"/>
 <fullyQualifiedTypeName name="javax.mail.MessagingException"/>
 <fullyQualifiedTypeName name="javax.mail.Message.RecipientType"/>
+<fullyQualifiedTypeName name="javax.persistence.Embeddable"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.Size"/>
+<fullyQualifiedTypeName name="javax.persistence.UniqueConstraint"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.Email"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
+<fullyQualifiedTypeName name="javax.persistence.Embedded"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.model.UsersEntity"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="com.bridzelabz.fundoonotes.reponse.Response"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 </qualifiedTypeNameHistroy>
