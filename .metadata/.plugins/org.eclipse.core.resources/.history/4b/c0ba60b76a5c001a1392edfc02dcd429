@@ -69,20 +69,44 @@ public class UserController {
 		return usersService.getuserById(userId);
 	}
 
-	
+	/*
+	 * 
+	 * @PutMapping("users/updatepassword/{token}")
+	 * 
+	 * @ApiOperation(value = "Api for update password", response = Response.class)
+	 * public ResponseEntity<Response> updatePassword(@Valid @PathVariable("token")
+	 * String token,
+	 * 
+	 * @RequestBody UpdatePassword pswd, BindingResult bindingResult) throws
+	 * Exception { log.info("Token :" + token); log.info("New Password :" +
+	 * pswd.getNewpassword());
+	 * 
+	 * if (bindingResult.hasErrors()) { return
+	 * ResponseEntity.status(HttpStatus.BAD_REQUEST) .body(new
+	 * Response(bindingResult.getAllErrors().get(0).getDefaultMessage(), 400,
+	 * null)); } UserDemo userInfo = userService.updatePassword(token, pswd);
+	 * userInfo.setPswd("*******");
+	 * 
+	 * return userInfo != null ? ResponseEntity.status(HttpStatus.OK) .body(new
+	 * Response("Password is Update Successfully", 200, userInfo)) :
+	 * ResponseEntity.status(HttpStatus.NOT_MODIFIED) .body(new
+	 * Response("Password and Confirm Password doesn't matched", 400,userInfo)); }
+	 */
 
 	@PutMapping("users/updatePassword/{token}")
 	public ResponseEntity<Response> updatePassword(@Valid @PathVariable("token") String token,
-			@RequestBody UpdatePassword password, BindingResult bindingResult) {
-		if (bindingResult.hasErrors()) {
+			@RequestBody UpdatePassword password,BindingResult bindingResult){
+		if(bindingResult.hasErrors()) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Response("failed ", 400));
 		}
-		user = usersService.updatePassword(token, password);
-		if (user != null)
-			return ResponseEntity.status(HttpStatus.OK).body(new Response("password is updated Succesfully", 200));
-		else
-			return ResponseEntity.status(HttpStatus.NOT_MODIFIED)
-					.body(new Response("password and confirm password is not matched", 304));
-
+		user=usersService.updatePassword(token, password);
+		  if(user!=null) 
+			  return ResponseEntity.status(HttpStatus.OK).body(new Response("password is updated Succesfully", 200));
+		  
+		  else 	  
+  
+		return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body(new Response("password and confirm password is not matched",304));
+		
+		
 	}
 }
