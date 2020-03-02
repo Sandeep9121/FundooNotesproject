@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.bridzelabz.fundoonotes.custom_exceptions.ExitsEmailException;
 import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
@@ -44,7 +43,7 @@ public class ServiceImplementation implements UsersServices {
 		// UsersEntity user = new UsersEntity();
 		Optional<UsersEntity> emailExists=userRepository.findUserByEmail(usersdto.getEmail());
 		  if(emailExists.isPresent()) {
-			 throw new ExitsEmailException("u have been already registered");
+			  throw new EmailAlready
 		  }
 
 		BeanUtils.copyProperties(usersdto, user);
