@@ -37,7 +37,7 @@ public class UserController {
 	 * ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new
 	 * Response(bindingResult.getAllErrors().get(0).getDefaultMessage(),400,null));
 	 */
-	@PostMapping(value = "/users")
+	@GetMapping(value = "/users")
 	public List<UsersEntity> getUsers() {
 		return usersService.getUserDetails();
 	}
@@ -46,7 +46,7 @@ public class UserController {
 	public ResponseEntity<Response> userVerification(@PathVariable("token") String token) {
 
 		if (usersService.verify(token)) {
-			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("U have verified Successfully", 200));
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("U have verified Successfully", 400));
 		}
 
 		else {

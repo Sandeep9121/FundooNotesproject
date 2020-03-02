@@ -18,16 +18,16 @@ public class JWTGenerator {
 	
 	public String generateWebToken(long  l) {
 	
-			return JWT.create().withClaim("userId",l).sign(Algorithm.HMAC512(SECRETE));
+			return JWT.create().withClaim("email",l).sign(Algorithm.HMAC512(SECRETE));
 					
 	}
 	public long parseJWTToken(String jwtToken) {
 		log.info("token"+jwtToken);
 		int userId=0;
 		if(jwtToken !=null) { 
-			log.info("id:"+JWT.require(Algorithm.HMAC512(SECRETE)).build().verify(jwtToken).getClaim("userId").asLong());
+			log.info("id:"+JWT.require(Algorithm.HMAC512(SECRETE)).build().verify(jwtToken).getClaim("id").asLong());
 			try {
-				userId = JWT.require(Algorithm.HMAC512(SECRETE)).build().verify(jwtToken).getClaim("userId").asInt();
+				userId = JWT.require(Algorithm.HMAC512(SECRETE)).build().verify(jwtToken).getClaim("id").asInt();
 				return userId;
 				
 			} catch (JWTVerificationException e) {
@@ -35,7 +35,7 @@ public class JWTGenerator {
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
 			} 
-//			  return JWT.require(Algorithm.HMAC512(SECRETE)).build().verify(jwtToken).getClaim("id").asLong();
+			  return JWT.require(Algorithm.HMAC512(SECRETE)).build().verify(jwtToken).getClaim("id").asLong();
 		}
 		return 0 ;	
 		

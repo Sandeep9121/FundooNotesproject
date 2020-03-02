@@ -93,9 +93,8 @@ public class ServiceImplementation implements UsersServices {
 
 			return true;
 		}
-		else {
+
 		return false;
-		}
 	}
 
 	@Override

@@ -18,7 +18,7 @@ public class JWTGenerator {
 	
 	public String generateWebToken(long  l) {
 	
-			return JWT.create().withClaim("userId",l).sign(Algorithm.HMAC512(SECRETE));
+			return JWT.create().withClaim("email",l).sign(Algorithm.HMAC512(SECRETE));
 					
 	}
 	public long parseJWTToken(String jwtToken) {

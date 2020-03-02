@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class UsersDto {
 @Embedded
-private String name;
+private String fullName;
 private String email;
 private String password;
 private Long mobileNumber;

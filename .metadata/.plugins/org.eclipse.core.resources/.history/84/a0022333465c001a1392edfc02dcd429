@@ -26,15 +26,15 @@ public class UsersEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	//@NotNull
+	@NotNull
 	private long userId;
 
 	@Column(name = "user_Name")
 	private String name;
 
 	@Column(name = "email", unique = true)
-	//@Size(min = 8)
-	//@NotNull
+	@Size(min = 8)
+	@NotNull
 	private String email;
 
 	@Column(name = "Password" )
@@ -42,7 +42,7 @@ public class UsersEntity {
 	private String password;
 
 	@Column(name = "mobile_number")
-	//@Size(min = 10, max = 12)
+	@Size(min = 10, max = 12)
 	@NotNull
 	private Long mobileNumber;
 
@@ -51,7 +51,7 @@ public class UsersEntity {
 	private LocalDateTime date;
 
 	@Column(name = "is_verified")
-	//@NotNull
+	@NotNull
 	private boolean isVerified;
 
 }

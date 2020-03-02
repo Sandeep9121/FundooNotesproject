@@ -81,7 +81,7 @@ public class ServiceImplementation implements UsersServices {
 	@Transactional
 	public boolean verify(String token) {
 
-		long userid = generateToken.parseJWTToken(token);
+		long userid = (Long)generateToken.parseJWTToken(token);
 
 		Optional<UsersEntity> checkUser = userRepository.findById(userid);
 

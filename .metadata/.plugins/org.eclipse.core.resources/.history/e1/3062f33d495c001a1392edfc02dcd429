@@ -46,7 +46,7 @@ public class UserController {
 	public ResponseEntity<Response> userVerification(@PathVariable("token") String token) {
 
 		if (usersService.verify(token)) {
-			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("U have verified Successfully", 200));
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("U have verified Successfully", 400));
 		}
 
 		else {

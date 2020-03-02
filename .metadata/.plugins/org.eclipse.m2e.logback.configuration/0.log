@@ -3345,3 +3345,113 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2020-03-02 10:40:51,815 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-03-02 10:40:51,819 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-03-02 10:40:51,832 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 10:50:43,511 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:50:43,512 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 10:50:43,515 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 10:50:43,519 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:50:43,519 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 10:51:18,462 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:51:18,463 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 10:51:18,465 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 10:51:18,476 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:51:18,477 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 10:51:52,210 [Worker-7: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:51:52,211 [Worker-7: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 10:51:52,212 [Worker-7: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 10:51:52,219 [Worker-7: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:51:52,220 [Worker-7: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 10:55:16,677 [Worker-8: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:55:16,679 [Worker-8: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 10:55:16,680 [Worker-8: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 10:55:16,692 [Worker-8: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 10:55:16,692 [Worker-8: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:00:22,300 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:00:22,301 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:00:22,303 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:00:22,307 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:00:22,307 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:06:57,806 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:06:57,811 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:06:57,813 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:06:57,823 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:06:57,823 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:11:56,854 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:11:56,855 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:11:56,857 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:11:56,860 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:11:56,861 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:13:58,267 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:13:58,268 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:13:58,270 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:13:58,276 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:13:58,277 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:14:22,838 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:14:22,841 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:14:22,844 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:14:22,848 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:14:22,848 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:17:03,297 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:17:03,298 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:17:03,299 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:17:03,303 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:17:03,303 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:18:53,742 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:18:53,746 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:18:53,747 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:18:53,751 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:18:53,751 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:22:49,760 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:22:49,761 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:22:49,762 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:22:49,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:22:49,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:23:02,413 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:23:02,414 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:23:02,415 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:23:02,419 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:23:02,420 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:28:51,985 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:28:51,986 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:28:51,987 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:28:52,010 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:28:52,010 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:32:25,478 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:32:25,479 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:32:25,480 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:32:25,484 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:32:25,484 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:33:11,014 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:33:11,014 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:33:11,016 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:33:11,019 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:33:11,019 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:34:03,850 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:34:03,852 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:34:03,853 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:34:03,857 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:34:03,857 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:35:38,665 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:35:38,665 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:35:38,666 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:35:38,670 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:35:38,670 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:39:04,805 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:39:04,806 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:39:04,807 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:39:04,810 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:39:04,810 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:39:12,134 [Worker-39: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:39:12,134 [Worker-39: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:39:12,135 [Worker-39: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:39:12,160 [Worker-39: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:39:12,160 [Worker-39: Launching FundooNotesApi - FundooNotesApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:40:13,039 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:40:13,040 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:40:13,041 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:40:13,045 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:40:13,045 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources
+2020-03-02 11:41:00,620 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:41:00,620 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-02 11:41:00,622 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-02 11:41:00,625 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-02 11:41:00,625 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/user/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotesApi/src/test/resources

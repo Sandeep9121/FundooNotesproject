@@ -64,7 +64,7 @@ public class ServiceImplementation implements UsersServices {
 
 		emailData.setBody(body);
 
-		em.sendMail(emailData.getEmail(), emailData.getSubject(),emailData.getBody());
+		em.sendMail(emailData.getEmail(), "verfiied", "rrtrr");
 
 		return true;
 	}
@@ -93,9 +93,8 @@ public class ServiceImplementation implements UsersServices {
 
 			return true;
 		}
-		else {
+
 		return false;
-		}
 	}
 
 	@Override
