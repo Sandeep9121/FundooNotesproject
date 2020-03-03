@@ -1,0 +1,13 @@
+package com.bridzelabz.fundoonotes.custom_exceptions;
+
+public class UserNotVerifiedException extends RuntimeException {
+
+
+	public UserNotVerifiedException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+}

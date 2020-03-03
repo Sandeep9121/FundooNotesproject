@@ -9,10 +9,10 @@ import com.bridzelabz.fundoonotes.model.UsersEntity;
 
 @Repository
 public interface UsersRepository extends CrudRepository<UsersEntity,Long>{
-	
-	public Optional<UsersEntity> findUserByIdandPass(long userId,Object pass);
-     
-	public Optional<UsersEntity> findUserByEmail(String email);
+
+	Optional<UsersEntity> findOneByEmail(String email);
 
 	
+//
+//	
 }

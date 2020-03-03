@@ -95,7 +95,7 @@ public class UserController {
 	
 	
 
-	@PutMapping("users/updatePassword/{token}")
+	@PutMapping("/users/updatePassword/{token}")
 	public ResponseEntity<Response> updatePassword(@Valid @PathVariable("token") String token,
 			@RequestBody UpdatePassword password, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
@@ -111,7 +111,7 @@ public class UserController {
 	}
 	
 
-	@PutMapping("users/forgotpassword")
+	@PutMapping("/users/forgotpassword/{email}")
 	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email){
 		boolean value=usersService.isUserAlreadyRegistered(email);
 		if(value) {

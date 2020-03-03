@@ -7,7 +7,7 @@ import lombok.Data;
 @Component
 public class LoginDto {
 	private String email;
-	private  String paswword;
+	private  String password;
 
 	}
 

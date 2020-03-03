@@ -4,7 +4,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,8 +30,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class ServiceImplementation implements UsersServices {
+
 	@Autowired
-	private UsersEntity user;
+	private EntityManager entityManager;
+	private UsersEntity user = new UsersEntity();
 	@Autowired
 	private UsersRepository userRepository;
 	@Autowired
@@ -37,16 +44,17 @@ public class ServiceImplementation implements UsersServices {
 	private EmailData emailData;
 	@Autowired
 	private UpdatePassword psw;
-	@Autowired
-	private LoginDto logIn;
+
 
 	@Autowired
 	private EmailProviderService em;
+	
+
 
 	@Transactional
 	public boolean addUsers(UsersDto usersdto) {
 		// UsersEntity user = new UsersEntity();
-		Optional<UsersEntity> emailExists = userRepository.findUserByEmail(usersdto.getEmail());
+		Optional<UsersEntity> emailExists = userRepository.findOneByEmail(usersdto.getEmail());
 		if (emailExists.isPresent()) {
 			throw new ExitsEmailException("u have been already registered");
 		}
@@ -102,31 +110,38 @@ public class ServiceImplementation implements UsersServices {
 		if (checkUser.isPresent()) {
 			checkUser.get().setVerified(true);
 			userRepository.save(checkUser.get());
-			// userRepository.findById(userid).get().setVerified(true);
-			// userRepository.save(userRepository.findById(userid).get());
-
 			return true;
 		} else {
 			return false;
 		}
 	}
 
+	@Transactional
+	public UsersEntity findByEmail(String email_id) {
+		Session session =entityManager.unwrap(Session.class);
+		Query<?> query=session.createQuery("from UsersEntity where email=:email_id");
+		query.setParameter("email_id",email_id);
+		return (UsersEntity) query.uniqueResult();
+		
+	}
+	
 
 
 	@Override
 	@Transactional
 	public UsersEntity login(LoginDto logindto) {
-		Optional<UsersEntity> userPresent = userRepository.findUserByEmail(logindto.getEmail());
+		UsersEntity userPresent = findByEmail(logindto.getEmail());
 		log.info("user------------sdgisdgifgsdfiuiugf----------------------------------------"+userPresent);
-		if (userPresent.isPresent()) {
+		if (userPresent!=null) {
 			log.info("Check------------------------------------odhwfonefonfonf");
-			if (userPresent.get().isVerified()
-					&& encryptPass.matches(logIn.getPaswword(), userPresent.get().getEmail())) {
-				return userPresent.get();
+			log.info("------------------------password getted:----"+logindto.getPassword());
+			if (userPresent.isVerified()==true
+					&& encryptPass.matches(logindto.getPassword(), userPresent.getPassword())) {
+				return userPresent;
 			} else {
 				String body = "http://192.168.1.127:8081/users/verify/"
-						+ generateToken.generateWebToken(userPresent.get().getUserId());
-				em.sendMail(logIn.getEmail(), "login failed click here for verification", body);
+						+ generateToken.generateWebToken(userPresent.getUserId());
+				em.sendMail(logindto.getEmail(), "login failed click here for verification", body);
 				throw new UserNotVerifiedException("Not a valid credentials");
 			}
 		} // if
@@ -149,7 +164,8 @@ public class ServiceImplementation implements UsersServices {
 	@Transactional
 	public boolean isUserAlreadyRegistered(String email) {
 
-		Optional<UsersEntity> isUserAlreadyRegistered = userRepository.findUserByEmail(email);
+		Optional<UsersEntity> isUserAlreadyRegistered = userRepository.findOneByEmail(email);
+		log.info("my token:"+generateToken.generateWebToken(isUserAlreadyRegistered.get().getUserId()));
 
 		if (isUserAlreadyRegistered.isPresent() && isUserAlreadyRegistered.get().isVerified()) {
 
@@ -195,7 +211,7 @@ public class ServiceImplementation implements UsersServices {
 		String password=user.getPassword();
 		
 		String encryptpass= encryptPass.encode(password);
-	    Optional<UsersEntity> userUpdate= userRepository.findUserByIdandPass(userId, encryptpass);
+	    Optional<UsersEntity> userUpdate= userRepository.findById(userId);
 	    if(userUpdate.isPresent()) {
 	    	userRepository.save(user);
 	    	return true;

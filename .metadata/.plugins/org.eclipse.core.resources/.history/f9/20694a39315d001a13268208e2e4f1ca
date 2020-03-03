@@ -1,0 +1,25 @@
+package com.bridzelabz.fundoonotes.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.bridzelabz.fundoonotes.model.UsersEntity;
+
+@Repository
+public interface UsersRepository extends CrudRepository<UsersEntity,Long>{
+
+	Optional<UsersEntity> findOneByEmail(String email);
+
+	Optional<UsersEntity> findUserByIdandPass(long userId, String encryptpass);
+
+
+	
+	//public Optional<UsersEntity> findOneByUserEntityIdandPass(long userId,Object pass);
+// Optional<UsersEntity> findOneByEmail(String email);
+//
+// Optional<UsersEntity> findUserByIdandPass(long userId, String encryptpass);
+//
+//	
+}
