@@ -29,6 +29,14 @@ public class NotesRepository implements NoteRepository{
 		return (NotesEntity) q.uniqueResult();
 	}
 
+@Override
+public NotesEntity deleteNote(long notesId, NotesEntity note) {
+	Session session = entityManager.unwrap(Session.class);
+	Query<?> q=session.createQuery("delete from NotesEntity where notesId=:notesId");
+	q.setParameter("notesId",notesId);
+	return (NotesEntity) q.uniqueResult();
+}
+
 
 
 }
