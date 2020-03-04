@@ -1,4 +1,4 @@
-package com.bridzelabz.fundoonotes.custom_exceptions;
+package com.bridzelabz.fundoonotes.customexception;
 
 public class NoteNotFoundException extends RuntimeException {
 

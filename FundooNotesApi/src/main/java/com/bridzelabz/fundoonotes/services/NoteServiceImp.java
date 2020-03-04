@@ -6,8 +6,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.bridzelabz.fundoonotes.custom_exceptions.NoteNotFoundException;
-import com.bridzelabz.fundoonotes.custom_exceptions.UserException;
+
+import com.bridzelabz.fundoonotes.customexception.NoteNotFoundException;
+import com.bridzelabz.fundoonotes.customexception.UserException;
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 import com.bridzelabz.fundoonotes.model.NotesEntity;

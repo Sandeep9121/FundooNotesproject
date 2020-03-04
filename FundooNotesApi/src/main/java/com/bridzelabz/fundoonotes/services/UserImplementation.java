@@ -14,9 +14,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.bridzelabz.fundoonotes.custom_exceptions.ExitsEmailException;
-import com.bridzelabz.fundoonotes.custom_exceptions.MailNotFoundException;
-import com.bridzelabz.fundoonotes.custom_exceptions.UserNotVerifiedException;
+
+import com.bridzelabz.fundoonotes.customexception.ExitsEmailException;
+import com.bridzelabz.fundoonotes.customexception.MailNotFoundException;
+import com.bridzelabz.fundoonotes.customexception.UserNotVerifiedException;
 import com.bridzelabz.fundoonotes.dto.LoginDto;
 import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
@@ -209,7 +210,6 @@ public class UserImplementation implements IUsersServices {
 	public boolean forgotPassword(UsersEntity user) {
 		long userId=user.getUserId();
 		String password=user.getPassword();
-		
 		String encryptpass= encryptPass.encode(password);
 	    Optional<UsersEntity> userUpdate= userRepository.findById(userId);
 	    if(userUpdate.isPresent()) {
