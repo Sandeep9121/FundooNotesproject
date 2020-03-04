@@ -22,7 +22,7 @@ import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
-import com.bridzelabz.fundoonotes.reponse.UserAuthentication;
+
 import com.bridzelabz.fundoonotes.reponse.UserVerification;
 import com.bridzelabz.fundoonotes.services.IUsersServices;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;

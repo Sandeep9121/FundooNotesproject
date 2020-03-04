@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class ServiceImplementation implements IUsersServices {
+public class UserImplementation implements IUsersServices {
 
 	@Autowired
 	private EntityManager entityManager;
