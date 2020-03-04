@@ -1,9 +1,0 @@
-package com.bridzelabz.fundoonotes.repository;
-
-import org.springframework.data.repository.CrudRepository;
-
-import com.bridzelabz.fundoonotes.model.UserEntity;
-
-public interface UsersRepository extends CrudRepository<UserEntity, Long>{
-
-}
