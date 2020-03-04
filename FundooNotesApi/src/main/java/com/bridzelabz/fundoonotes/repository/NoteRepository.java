@@ -7,4 +7,5 @@ public interface NoteRepository {
 
 
 	public NotesEntity createNote(NotesEntity note);
+	public NotesEntity  findBynotesId(long notesid);
 }

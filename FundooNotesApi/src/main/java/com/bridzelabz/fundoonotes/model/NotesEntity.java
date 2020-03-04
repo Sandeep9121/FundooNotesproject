@@ -36,6 +36,11 @@ public class NotesEntity {
 
 	private LocalDateTime notesCreatedDate;
 	
+	private LocalDateTime updateDate; 
+	
 	private LocalDateTime reminder;
 
+	
+
+	
 }
