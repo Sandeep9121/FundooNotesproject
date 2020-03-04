@@ -8,5 +8,5 @@ public interface NoteRepository {
 
 	public NotesEntity createNote(NotesEntity note);
 	public NotesEntity  findBynotesId(long notesid);
-	public NotesEntity deleteNote(long notesId, NotesEntity note);
+	public  int deleteNote(long notesId, NotesEntity note);
 }

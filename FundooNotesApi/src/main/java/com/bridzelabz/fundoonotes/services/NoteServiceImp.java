@@ -83,11 +83,11 @@ public class NoteServiceImp implements NoteServices {
 		return true;
 	}
 
-	public boolean deleteNote(long notesId, String token) {
+	public int deleteNote(long notesId, String token) {
 		note =notesRepository.findBynotesId(notesId);
 		note.setTrashed(!note.isTrashed());// it will give false make it true 
-		notesRepository.deleteNote(notes id,note);
-		return false;
+		return notesRepository.deleteNote(notesId,note);
+		
 	}
 
 }

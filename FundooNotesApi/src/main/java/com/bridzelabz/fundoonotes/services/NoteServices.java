@@ -9,7 +9,7 @@ public interface NoteServices {
 
 	public boolean updateNote(NoteUpdate updateNote, String token);
 	
-	public boolean deleteNote(long notesId , String token);
+	public int deleteNote(long notesId , String token);
 
 
 }
