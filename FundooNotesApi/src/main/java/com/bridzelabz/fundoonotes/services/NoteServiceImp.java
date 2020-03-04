@@ -36,7 +36,6 @@ public class NoteServiceImp implements NoteServices {
 	@Transactional
 	@Override
 	public boolean createNote(NoteDto noteDto, String token) {
-
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours-----------token " + token);
 		Optional<UsersEntity> user = usersRespository.findById(userId);
@@ -74,11 +73,21 @@ public class NoteServiceImp implements NoteServices {
 				note.setTrashed(updateInfo.isTrashed());
 				note.setUpdateDate(LocalDateTime.now());
 			}
-		} catch (Exception e) {
+			else {
+				throw new NoteNotFoundException("note is note present with given token");
+			}
+		} 
+		catch (Exception e) {
 			throw new UserException("user is not present with the given id ");
-		}
-
+			}
 		return true;
+	}
+
+	public boolean deleteNote(long notesId, String token) {
+		note =notesRepository.findBynotesId(notesId);
+		note.setTrashed(!note.isTrashed());// it will give false make it true 
+		notesRepository.deleteNote(notes id,note);
+		return false;
 	}
 
 }
