@@ -23,6 +23,7 @@ import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.reponse.UserAuthentication;
+import com.bridzelabz.fundoonotes.reponse.UserVerification;
 import com.bridzelabz.fundoonotes.services.IUsersServices;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 
@@ -46,13 +47,13 @@ public class UserController {
 		try {
 			if (usersService.addUsers(userdto)) {
 				return ResponseEntity.status(HttpStatus.CREATED)
-						.body(new Response("U have been Registered Successfully", 200, userdto));
+						.body(new Response("U have been Registered Successfully"));
 			} else {
 				return ResponseEntity.status(HttpStatus.ALREADY_REPORTED)
-						.body(new Response("U are already Registered", 400, userdto));
+						.body(new Response("U are already Registered"));
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return null;
@@ -85,11 +86,10 @@ public class UserController {
 	
 	
 	@PostMapping("/users/login")
-	public ResponseEntity<UserAuthentication> login(@RequestBody LoginDto loginData){
+	public ResponseEntity<UserVerification> login(@RequestBody LoginDto loginData){
 		UsersEntity userLogin=usersService.login(loginData);
-		 userLogin.setPassword("*******");
 		  String token = generateToken.generateWebToken(userLogin.getUserId());
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserAuthentication(token, 200, userLogin));
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserVerification(token));
 	}
 	
 	
@@ -99,14 +99,14 @@ public class UserController {
 	public ResponseEntity<Response> updatePassword(@Valid @PathVariable("token") String token,
 			@RequestBody UpdatePassword password, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Response("failed ", 400));
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Response("failed "));
 		}
 		user = usersService.updatePassword(token, password);
 		if (user != null)
-			return ResponseEntity.status(HttpStatus.OK).body(new Response("password is updated Succesfully", 200));
+			return ResponseEntity.status(HttpStatus.OK).body(new Response("password is updated Succesfully"));
 		else
 			return ResponseEntity.status(HttpStatus.NOT_MODIFIED)
-					.body(new Response("password and confirm password is not matched", 304));
+					.body(new Response("password and confirm password is not matched"));
 
 	}
 	
@@ -115,10 +115,10 @@ public class UserController {
 	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email){
 		boolean value=usersService.isUserAlreadyRegistered(email);
 		if(value) {
-			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("User is Exists", 200));
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("User is Exists"));
 		}
 		else {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("Users is not Availablle",400));
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("Users is not Availablle"));
 		}
 		
 	}
