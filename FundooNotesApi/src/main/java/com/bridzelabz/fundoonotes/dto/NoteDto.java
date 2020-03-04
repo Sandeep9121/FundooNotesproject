@@ -1,7 +1,9 @@
 package com.bridzelabz.fundoonotes.dto;
 
-import lombok.Data;
+import org.springframework.stereotype.Component;
 
+import lombok.Data;
+@Component
 @Data
 public class NoteDto {
    private String title;

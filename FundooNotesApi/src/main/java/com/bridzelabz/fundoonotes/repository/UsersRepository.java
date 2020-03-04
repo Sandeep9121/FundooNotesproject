@@ -13,6 +13,4 @@ public interface UsersRepository extends CrudRepository<UsersEntity,Long>{
 	Optional<UsersEntity> findOneByEmail(String email);
 
 	
-//
-//	
 }
