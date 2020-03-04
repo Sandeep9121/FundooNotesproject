@@ -9,7 +9,7 @@ import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 
-public interface UsersServices {
+public interface IUsersServices {
 	
 	public boolean addUsers(UsersDto userdto) throws Exception;
 	

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 @Repository
-public class NotesRepository implements NoteRepository{
+public class NotesRepository implements INoteRepository{
 	@Autowired
 	private EntityManager entityManager;
   @Transactional

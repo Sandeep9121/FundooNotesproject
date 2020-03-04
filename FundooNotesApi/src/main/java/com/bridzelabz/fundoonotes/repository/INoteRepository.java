@@ -3,7 +3,7 @@ package com.bridzelabz.fundoonotes.repository;
 
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 
-public interface NoteRepository {
+public interface INoteRepository {
 
 
 	public NotesEntity createNote(NotesEntity note);

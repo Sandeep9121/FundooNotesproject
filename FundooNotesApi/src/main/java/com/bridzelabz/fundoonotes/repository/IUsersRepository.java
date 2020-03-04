@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 
 @Repository
-public interface UsersRepository extends CrudRepository<UsersEntity,Long>{
+public interface IUsersRepository extends CrudRepository<UsersEntity,Long>{
 
 	Optional<UsersEntity> findOneByEmail(String email);
 

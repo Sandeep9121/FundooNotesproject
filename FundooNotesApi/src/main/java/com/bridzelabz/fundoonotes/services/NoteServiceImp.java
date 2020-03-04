@@ -12,18 +12,18 @@ import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
-import com.bridzelabz.fundoonotes.repository.NoteRepository;
-import com.bridzelabz.fundoonotes.repository.UsersRepository;
+import com.bridzelabz.fundoonotes.repository.INoteRepository;
+import com.bridzelabz.fundoonotes.repository.IUsersRepository;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class NoteServiceImp implements NoteServices {
+public class NoteServiceImp implements INoteServices {
 	@Autowired
-	private NoteRepository notesRepository;
+	private INoteRepository notesRepository;
 	@Autowired
-	private UsersRepository usersRespository;
+	private IUsersRepository usersRespository;
 	@Autowired
 	private NotesEntity note;
 	@Autowired

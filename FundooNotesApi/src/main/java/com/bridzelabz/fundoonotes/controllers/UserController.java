@@ -23,7 +23,7 @@ import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.reponse.UserAuthentication;
-import com.bridzelabz.fundoonotes.services.UsersServices;
+import com.bridzelabz.fundoonotes.services.IUsersServices;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 
 
@@ -38,7 +38,7 @@ public class UserController {
 	private JWTGenerator generateToken;
 	
 	@Autowired
-	private UsersServices usersService;
+	private IUsersServices usersService;
 
 	@PostMapping("/users/register")
 	// @RequestMapping(method = RequestMethod.POST,value = "users/register")

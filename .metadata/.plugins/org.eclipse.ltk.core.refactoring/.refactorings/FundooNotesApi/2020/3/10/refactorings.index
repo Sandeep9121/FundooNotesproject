@@ -1,3 +1,7 @@
 1583134579946	Encapsulate field 'changepassword'
 1583134589686	Encapsulate field 'newPassword'
 1583295755982	Delete element
+1583326759642	Rename type 'NoteServices'
+1583326788168	Rename type 'UsersServices'
+1583326812981	Rename type 'NoteRepository'
+1583326831286	Rename type 'UsersRepository'

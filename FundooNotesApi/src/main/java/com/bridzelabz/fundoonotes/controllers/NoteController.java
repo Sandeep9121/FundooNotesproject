@@ -14,13 +14,13 @@ import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 
 import com.bridzelabz.fundoonotes.reponse.Response;
-import com.bridzelabz.fundoonotes.services.NoteServices;
+import com.bridzelabz.fundoonotes.services.INoteServices;
 
 @RestController
 
 public class NoteController {
 	@Autowired
-	private NoteServices noteServices;
+	private INoteServices noteServices;
 	@PostMapping("/note/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto, @RequestHeader("token") String token) {
 	noteServices.createNote(noteDto,token);

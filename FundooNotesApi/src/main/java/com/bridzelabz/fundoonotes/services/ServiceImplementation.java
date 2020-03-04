@@ -22,20 +22,20 @@ import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.EmailData;
-import com.bridzelabz.fundoonotes.repository.UsersRepository;
+import com.bridzelabz.fundoonotes.repository.IUsersRepository;
 import com.bridzelabz.fundoonotes.utility.EmailProviderService;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class ServiceImplementation implements UsersServices {
+public class ServiceImplementation implements IUsersServices {
 
 	@Autowired
 	private EntityManager entityManager;
 	private UsersEntity user = new UsersEntity();
 	@Autowired
-	private UsersRepository userRepository;
+	private IUsersRepository userRepository;
 	@Autowired
 	private BCryptPasswordEncoder encryptPass;
 	@Autowired
