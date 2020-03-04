@@ -25,10 +25,12 @@ public class NoteServiceImp implements INoteServices {
 	private INoteRepository notesRepository;
 	@Autowired
 	private IUsersRepository usersRespository;
-	@Autowired
-	private NotesEntity note;
+	
+	private NotesEntity note=new NotesEntity();
+	
 	@Autowired
 	private NoteDto noteDto;
+	
 	@Autowired
 	private JWTGenerator generateToken;
 	@Autowired
@@ -62,7 +64,7 @@ public class NoteServiceImp implements INoteServices {
 	public boolean updateNote(NoteUpdate updateInfo, String token) {
 		try {
 			log.info("----------------------ours-----------token " + token);
-			note = notesRepository.findBynotesId(updateInfo.getNoteId());	
+			NotesEntity note = notesRepository.findBynotesId(updateInfo.getNoteId());	
 			if(note!=null) {
 				log.info("--------------------------------------note"+note);
 				note.setNotesId(updateInfo.getNoteId());
@@ -86,14 +88,14 @@ public class NoteServiceImp implements INoteServices {
 
 	
 	public int deleteNote(long notesId, String token) {
-		note =notesRepository.findBynotesId(notesId);
+		NotesEntity note =notesRepository.findBynotesId(notesId);
 		note.setTrashed(!note.isTrashed());// it will give false make it true 
 		return notesRepository.deleteNote(notesId,note);
 		}
 
 	@Transactional
 	public boolean archieveNote(long notesId, String token) {
-		note =notesRepository.findBynotesId(notesId);
+		NotesEntity	note =notesRepository.findBynotesId(notesId);
 		note.setArchieved(!note.isArchieved());
 		notesRepository.createNote(note);
 		return true;
@@ -101,7 +103,7 @@ public class NoteServiceImp implements INoteServices {
 
 	@Override
 	public boolean pinNote(long notesId, String token) {
-		note=notesRepository.findBynotesId(notesId);
+		NotesEntity note=notesRepository.findBynotesId(notesId);
 		note.setPinned(!note.isPinned());
 		notesRepository.createNote(note);
 		return true;

@@ -21,41 +21,38 @@ import com.bridzelabz.fundoonotes.services.INoteServices;
 public class NoteController {
 	@Autowired
 	private INoteServices noteServices;
+
 	@PostMapping("/note/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto, @RequestHeader("token") String token) {
-	noteServices.createNote(noteDto,token);
-	return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created"));
+		noteServices.createNote(noteDto, token);
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created"));
 	}
-	
 
 	@PostMapping("/note/update")
-	public ResponseEntity<Response> updatenote(@RequestBody NoteUpdate updateNote,@RequestHeader String token){
+	public ResponseEntity<Response> updatenote(@RequestBody NoteUpdate updateNote, @RequestHeader String token) {
 		noteServices.updateNote(updateNote, token);
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Updated"));
 
 	}
-	
-	
+
 	@DeleteMapping("/note/delete/{notesId}")
-	public ResponseEntity<Response> delete(@PathVariable long notesId,@RequestHeader("token") String token ){
+	public ResponseEntity<Response> delete(@PathVariable long notesId, @RequestHeader("token") String token) {
 		noteServices.deleteNote(notesId, token);
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Deleted"));
-		}
-		
-	
-	
+	}
+
 	@PostMapping("/note/archieve/{notesId}")
-	public ResponseEntity<Response> archieve ( @PathVariable long notesId,@RequestHeader("token") String token){
+	public ResponseEntity<Response> archieve(@PathVariable long notesId, @RequestHeader("token") String token) {
 		noteServices.archieveNote(notesId, token);
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is archieved"));
 
 	}
+
 	@PostMapping("/note/pinNote/{notesId}")
-  public ResponseEntity<Response> pinNote(@PathVariable long userId,@RequestHeader("token") String token){
-	return null;
-		
-		
+	public ResponseEntity<Response> pinNote(@PathVariable long notesId, @RequestHeader("token") String token) {
+		noteServices.pinNote(notesId, token);
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is pinned"));
+
 	}
 
-	
 }
