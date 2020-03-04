@@ -95,7 +95,15 @@ public class NoteServiceImp implements NoteServices {
 		note =notesRepository.findBynotesId(notesId);
 		note.setArchieved(!note.isArchieved());
 		notesRepository.createNote(note);
-		return false;
+		return true;
+	}
+
+	@Override
+	public boolean pinNote(long notesId, String token) {
+		note=notesRepository.findBynotesId(notesId);
+		note.setPinned(!note.isPinned());
+		notesRepository.createNote(note);
+		return true;
 	}
 
 }

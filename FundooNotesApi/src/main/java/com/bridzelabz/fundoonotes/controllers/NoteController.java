@@ -24,14 +24,14 @@ public class NoteController {
 	@PostMapping("/note/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto, @RequestHeader("token") String token) {
 	noteServices.createNote(noteDto,token);
-	return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created", 201,noteDto));
+	return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created"));
 	}
 	
 
 	@PostMapping("/note/update")
 	public ResponseEntity<Response> updatenote(@RequestBody NoteUpdate updateNote,@RequestHeader String token){
 		noteServices.updateNote(updateNote, token);
-		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Updated", 201,updateNote));
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Updated"));
 
 	}
 	
@@ -39,7 +39,7 @@ public class NoteController {
 	@DeleteMapping("/note/delete/{notesId}")
 	public ResponseEntity<Response> delete(@PathVariable long notesId,@RequestHeader("token") String token ){
 		noteServices.deleteNote(notesId, token);
-		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Deleted", 201,notesId));
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Deleted"));
 		}
 		
 	
@@ -47,13 +47,15 @@ public class NoteController {
 	@PostMapping("/note/archieve/{notesId}")
 	public ResponseEntity<Response> archieve ( @PathVariable long notesId,@RequestHeader("token") String token){
 		noteServices.archieveNote(notesId, token);
-		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is archieved", 201));
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is archieved"));
 
 	}
-	
-	
-	
-	
-	
+	@PostMapping("/note/pinNote/{notesId}")
+  public ResponseEntity<Response> pinNote(@PathVariable long userId,@RequestHeader("token") String token){
+	return null;
+		
+		
+	}
+
 	
 }

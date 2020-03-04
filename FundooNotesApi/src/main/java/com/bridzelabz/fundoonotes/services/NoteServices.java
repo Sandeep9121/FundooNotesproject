@@ -11,6 +11,7 @@ public interface NoteServices {
 	
 	public int deleteNote(long notesId , String token);
     
-	 boolean archieveNote(long notesId,String token);
-
+	boolean archieveNote(long notesId,String token);
+    
+	public boolean pinNote(long notesId, String token);
 }

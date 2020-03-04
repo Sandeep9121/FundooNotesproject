@@ -25,5 +25,10 @@ public class Response {
 		this.message = message;
 	}
 	
+	public Response(String message) {
+		super();
+		this.message = message;
+	}
+	
 	
 }
