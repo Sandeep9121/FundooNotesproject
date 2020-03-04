@@ -32,7 +32,6 @@ public class NotesRepository implements NoteRepository{
 @Override
 @Transactional
 public int deleteNote(long notesId, NotesEntity note) {
-
 	Session session = entityManager.unwrap(Session.class);
 	Query<?> q=session.createQuery("delete from NotesEntity where notesId=:notesId");
 	q.setParameter("notesId",notesId);

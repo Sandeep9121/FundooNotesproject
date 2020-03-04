@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
+
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.services.NoteServices;
 
@@ -23,22 +24,36 @@ public class NoteController {
 	@PostMapping("/note/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto, @RequestHeader("token") String token) {
 	noteServices.createNote(noteDto,token);
-	return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created", 200,noteDto));
+	return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created", 201,noteDto));
 	}
+	
 
 	@PostMapping("/note/update")
 	public ResponseEntity<Response> updatenote(@RequestBody NoteUpdate updateNote,@RequestHeader String token){
 		noteServices.updateNote(updateNote, token);
-		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Updated", 200,updateNote));
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Updated", 201,updateNote));
 
 	}
+	
 	
 	@DeleteMapping("/note/delete/{notesId}")
 	public ResponseEntity<Response> delete(@PathVariable long notesId,@RequestHeader("token") String token ){
 		noteServices.deleteNote(notesId, token);
-		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Deleted", 200,notesId));
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Deleted", 201,notesId));
+		}
+		
+	
+	
+	@PostMapping("/note/archieve/{notesId}")
+	public ResponseEntity<Response> archieve ( @PathVariable long notesId,@RequestHeader("token") String token){
+		noteServices.archieveNote(notesId, token);
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is archieved", 201));
 
-		
-		
 	}
+	
+	
+	
+	
+	
+	
 }

@@ -10,6 +10,7 @@ public interface NoteServices {
 	public boolean updateNote(NoteUpdate updateNote, String token);
 	
 	public int deleteNote(long notesId , String token);
-
+    
+	 boolean archieveNote(long notesId,String token);
 
 }
