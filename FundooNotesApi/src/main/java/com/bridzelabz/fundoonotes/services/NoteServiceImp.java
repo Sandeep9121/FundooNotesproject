@@ -16,7 +16,7 @@ import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.repository.INoteRepository;
 import com.bridzelabz.fundoonotes.repository.IUsersRepository;
-import com.bridzelabz.fundoonotes.repository.UsersRepository;
+
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 import lombok.extern.slf4j.Slf4j;
 
