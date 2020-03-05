@@ -60,4 +60,10 @@ public class NoteController {
 		
 	}
 	
+	@PostMapping("/note/trashed/{notesId}")
+	public ResponseEntity<Response> trashed(@PathVariable Long notesId, @RequestHeader String token){
+		noteServices.trashed(token, notesId);
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is trashed"));
+		
+	}
 }

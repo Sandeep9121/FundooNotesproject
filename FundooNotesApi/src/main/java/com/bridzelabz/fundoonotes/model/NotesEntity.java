@@ -20,7 +20,7 @@ public class NotesEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long notesId;
+	private Long notesId;
 	
 	private String title;
 	

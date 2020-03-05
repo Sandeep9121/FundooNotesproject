@@ -17,4 +17,6 @@ public interface INoteServices {
 	public boolean pinNote(long notesId, String token);
 	
 	public boolean addColor(long noteId, String token,String color);
+	
+	public boolean trashed(String token,long notesId);
 }

@@ -26,7 +26,7 @@ public class NoteServiceImp implements INoteServices {
 	@Autowired
 	private IUsersRepository usersRespository;
 	
-	private NotesEntity note=new NotesEntity();
+	private NotesEntity notes=new NotesEntity();
 
 	@Autowired
 	private JWTGenerator generateToken;
@@ -34,19 +34,19 @@ public class NoteServiceImp implements INoteServices {
 
 	@Transactional
 	@Override
-	public boolean createNote(NoteDto noteDto, String token) {
+	public boolean createNote(NoteDto notesDto, String token) {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours-----------token " + token);
 		Optional<UsersEntity> user = usersRespository.findById(userId);
 		try {
 			if (user != null) {
-				BeanUtils.copyProperties(noteDto, note);
-				note.setArchieved(false);
-				note.setColor("white");
-				note.setNotesCreatedDate(LocalDateTime.now());
-				note.setPinned(false);
-				note.setTrashed(false);
-				notesRepository.createNote(note);
+				BeanUtils.copyProperties(notesDto, notes);
+				notes.setArchieved(false);
+				notes.setColor("white");
+				notes.setNotesCreatedDate(LocalDateTime.now());
+				notes.setPinned(false);
+				notes.setTrashed(false);
+				notesRepository.createNote(notes);
 			} else {
 				throw new NoteNotFoundException("note is note present with given userId");
 			}
@@ -63,17 +63,17 @@ public class NoteServiceImp implements INoteServices {
 			Long userId = generateToken.parseJWTToken(token);
 			log.info("----------------------ours----urs userid " + userId);
 			
-			NotesEntity note = notesRepository.findBynotesId(updateInfo.getNoteId());	
-			if(note!=null) {
-				log.info("--------------------------------------note"+note);
-				note.setNotesId(updateInfo.getNoteId());
-				note.setTitle(updateInfo.getTitle());
-				note.setDescription(updateInfo.getDescription());
-				note.setColor(updateInfo.getColor());
-				note.setPinned(updateInfo.isPinned());
-				note.setArchieved(updateInfo.isArchieved());
-				note.setTrashed(updateInfo.isTrashed());
-				note.setUpdateDate(LocalDateTime.now());
+			NotesEntity notes = notesRepository.findBynotesId(updateInfo.getNoteId());	
+			if(notes!=null) {
+				log.info("--------------------------------------note"+notes);
+				notes.setNotesId(updateInfo.getNoteId());
+				notes.setTitle(updateInfo.getTitle());
+				notes.setDescription(updateInfo.getDescription());
+				notes.setColor(updateInfo.getColor());
+				notes.setPinned(updateInfo.isPinned());
+				notes.setArchieved(updateInfo.isArchieved());
+				notes.setTrashed(updateInfo.isTrashed());
+				notes.setUpdateDate(LocalDateTime.now());
 			}
 			else {
 				throw new NoteNotFoundException("note is note present with given token");
@@ -87,35 +87,44 @@ public class NoteServiceImp implements INoteServices {
 
 	
 	public int deleteNote(long notesId, String token) {
-		NotesEntity note =notesRepository.findBynotesId(notesId);
-		note.setTrashed(!note.isTrashed());// it will give false make it true 
-		return notesRepository.deleteNote(notesId,note);
+		NotesEntity notes =notesRepository.findBynotesId(notesId);
+		notes.setTrashed(!notes.isTrashed());// it will give false make it true 
+		return notesRepository.deleteNote(notesId,notes);
 		}
 
 	@Transactional
 	public boolean archieveNote(long notesId, String token) {
-		NotesEntity	note =notesRepository.findBynotesId(notesId);
-		note.setArchieved(!note.isArchieved());
-		notesRepository.createNote(note);
+		NotesEntity	notes =notesRepository.findBynotesId(notesId);
+		notes.setArchieved(!notes.isArchieved());
+		notesRepository.createNote(notes);
 		return true;
 	}
-
-	@Override
+	@Transactional
 	public boolean pinNote(long notesId, String token) {
-		NotesEntity note=notesRepository.findBynotesId(notesId);
-		note.setPinned(!note.isPinned());
-		notesRepository.createNote(note);
+		NotesEntity notes=notesRepository.findBynotesId(notesId);
+		notes.setPinned(!notes.isPinned());
+		notesRepository.createNote(notes);
 		return true;
 	}
 
-	@Override
+	@Transactional
 	public boolean addColor(long notesId, String token, String color) {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours----urs userid " + userId);
-		NotesEntity note=notesRepository.findBynotesId(notesId);
-		note.setColor(color);
-		notesRepository.createNote(note);
+		NotesEntity notes=notesRepository.findBynotesId(notesId);
+		notes.setColor(color);
+		notesRepository.createNote(notes);
 		return true;
+	}
+
+	@Transactional
+	public boolean trashed(String token, long notesId) {
+		Long userId = generateToken.parseJWTToken(token);
+		log.info("----------------------ours----urs userid " + userId);
+		 if(notesRepository.setTrashed(userId,notesId)) {
+			return true;
+		 }
+		return false;
 	}
 
 }

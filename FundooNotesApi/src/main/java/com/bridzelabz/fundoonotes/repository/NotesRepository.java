@@ -1,6 +1,8 @@
 package com.bridzelabz.fundoonotes.repository;
 
 
+import java.time.LocalDateTime;
+
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
@@ -36,6 +38,22 @@ public int deleteNote(long notesId, NotesEntity note) {
 	Query<?> q=session.createQuery("delete from NotesEntity where notesId=:notesId");
 	q.setParameter("notesId",notesId);
 	return q.executeUpdate();
+}
+
+@Override
+public boolean setTrashed(Long userId, long notesId) {
+	Session session = entityManager.unwrap(Session.class);
+	NotesEntity note=findBynotesId(notesId);
+	if(note.getNotesId().equals(userId)) {
+		if(!note.isTrashed()) {
+			note.setTrashed(true);
+			//note.setUpdateDate(LocalDateTime.now());
+			note.setNotesCreatedDate(LocalDateTime.now());
+			session.save(note);
+		}
+	}
+	
+	return true;
 }
 
 
