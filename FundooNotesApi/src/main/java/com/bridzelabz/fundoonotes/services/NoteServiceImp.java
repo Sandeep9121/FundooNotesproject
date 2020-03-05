@@ -166,4 +166,17 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
+	@Transactional
+	public boolean removeReminder(String token, Long notesId, ReminderDto reminder) {
+		NotesEntity notes=notesRepository.findBynotesId(notesId);
+		if(notes!=null) {
+			notes.setReminder(null);
+			notesRepository.createNote(notes);
+		}
+		 else {
+			 throw new NoteNotFoundException("there is no notes on userId please create a note");
+		 }
+		return true ;
+	}
+
 }

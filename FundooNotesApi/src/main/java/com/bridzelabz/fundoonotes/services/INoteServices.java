@@ -24,4 +24,6 @@ public interface INoteServices {
 	 boolean restored(String token,long notesId);
 	
 	 boolean addReminder(String token,Long notesId, ReminderDto reminder);
+	 
+	 boolean removeReminder(String token,Long notesId, ReminderDto reminder);
 }
