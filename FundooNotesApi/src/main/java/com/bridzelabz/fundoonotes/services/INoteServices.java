@@ -2,6 +2,7 @@ package com.bridzelabz.fundoonotes.services;
 
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
+import com.bridzelabz.fundoonotes.dto.ReminderDto;
 
 
 public interface INoteServices {
@@ -18,5 +19,9 @@ public interface INoteServices {
 	
 	public boolean addColor(long noteId, String token,String color);
 	
-	public boolean trashed(String token,long notesId);
+     boolean trashed(String token,long notesId);
+	
+	 boolean restored(String token,long notesId);
+	
+	 boolean addReminder(String token,Long notesId, ReminderDto reminder);
 }

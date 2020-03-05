@@ -1,13 +1,13 @@
 package com.bridzelabz.fundoonotes.customexception;
 
-public class UserException extends RuntimeException {
+public class UserNotFoundException extends RuntimeException {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public UserException(String message) {
+	public UserNotFoundException(String message) {
 		super(message);
 	}
 	

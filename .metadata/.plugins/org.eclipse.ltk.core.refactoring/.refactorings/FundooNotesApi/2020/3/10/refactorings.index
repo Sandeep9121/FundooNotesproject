@@ -7,3 +7,5 @@
 1583326831286	Rename type 'UsersRepository'
 1583327528809	Rename type 'ServiceImplementation'
 1583327967849	Rename package 'com.bridzelabz.fundoonotes.custom_exceptions'
+1583388636168	Delete element
+1583388931700	Rename type 'UserException'

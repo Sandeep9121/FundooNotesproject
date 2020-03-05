@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
+import com.bridzelabz.fundoonotes.dto.ReminderDto;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.services.INoteServices;
 
@@ -23,15 +24,19 @@ public class NoteController {
 
 	@PostMapping("/note/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto, @RequestHeader("token") String token) {
-		noteServices.createNote(noteDto, token);
+		if(noteServices.createNote(noteDto, token)) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note created"));
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("Unable to create Notes"));
+		
 	}
 
 	@PostMapping("/note/update")
 	public ResponseEntity<Response> updatenote(@RequestBody NoteUpdate updateNote, @RequestHeader String token) {
-		noteServices.updateNote(updateNote, token);
+		if(noteServices.updateNote(updateNote, token)) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is Updated"));
-
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("UNABLE TO UPDATE"));
 	}
 
 	@DeleteMapping("/note/delete/{notesId}")
@@ -42,28 +47,56 @@ public class NoteController {
 
 	@PostMapping("/note/archieve/{notesId}")
 	public ResponseEntity<Response> archieve(@PathVariable long notesId, @RequestHeader("token") String token) {
-		noteServices.archieveNote(notesId, token);
+		if(noteServices.archieveNote(notesId, token)){
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is archieved"));
-
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to archieved"));
 	}
 
 	@PostMapping("/note/pinNote/{notesId}")
 	public ResponseEntity<Response> pinNote(@PathVariable long notesId, @RequestHeader("token") String token) {
-		noteServices.pinNote(notesId, token);
+		if(noteServices.pinNote(notesId, token)) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is pinned"));
-
-	}@PostMapping("/note/addColor/{notesId}")
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to pin"));
+	}
+	
+	
+	@PostMapping("/note/addColor/{notesId}")
 	public ResponseEntity<Response> addColor(@PathVariable("notesId") Long notesId, @RequestParam("color") String color, @RequestHeader("token") String token)
 	{
-		noteServices.addColor(notesId, token, color);
+		if(noteServices.addColor(notesId, token, color)){
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is colored"));
-		
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to colored"));
 	}
 	
 	@PostMapping("/note/trashed/{notesId}")
 	public ResponseEntity<Response> trashed(@PathVariable Long notesId, @RequestHeader String token){
-		noteServices.trashed(token, notesId);
+		if(noteServices.trashed(token, notesId)) {	
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is trashed"));
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to trashed"));
+		
 		
 	}
+	
+	@PostMapping("/note/restore/{notesId}")
+	public ResponseEntity<Response> restore(@PathVariable Long notesId, @RequestHeader String token){
+		if(noteServices.restored(token, notesId)) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is restored"));
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is not deleted"));
+		
+	}
+	
+	@PostMapping("/note/addReminder/")
+	public ResponseEntity<Response> reminder(@RequestParam("notesId") Long notesId, @RequestHeader String token ,@RequestBody ReminderDto reminder){
+      if(noteServices.addReminder(token, notesId, reminder)){
+    	return  ResponseEntity.status(HttpStatus.CREATED).body(new Response("Reminder is Added"));
+      }
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to add Reminder"));
+	}
+	
+	
 }

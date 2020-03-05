@@ -9,7 +9,7 @@ public class NoteNotFoundException extends RuntimeException {
 
 	public NoteNotFoundException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
+	
 	}
 	
 	

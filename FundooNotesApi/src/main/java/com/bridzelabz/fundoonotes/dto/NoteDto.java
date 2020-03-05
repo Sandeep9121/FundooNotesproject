@@ -1,7 +1,5 @@
 package com.bridzelabz.fundoonotes.dto;
 
-import java.time.LocalDateTime;
-
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -12,17 +10,6 @@ public class NoteDto {
    
    private String description; 
 	
-	private String color;
 
-	private boolean isArchieved;
-
-	private boolean isPinned;
-
-	private boolean isTrashed;
-
-	private LocalDateTime notesCreatedDate;
-	
-	private LocalDateTime updateDate; 
-	
 	
 }

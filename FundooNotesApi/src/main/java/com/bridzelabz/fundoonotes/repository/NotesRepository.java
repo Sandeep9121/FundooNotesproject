@@ -1,6 +1,5 @@
 package com.bridzelabz.fundoonotes.repository;
 
-
 import java.time.LocalDateTime;
 
 import javax.persistence.EntityManager;
@@ -12,50 +11,62 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bridzelabz.fundoonotes.model.NotesEntity;
+
 @Repository
-public class NotesRepository implements INoteRepository{
+public class NotesRepository implements INoteRepository {
 	@Autowired
 	private EntityManager entityManager;
-  @Transactional
+
+	@Transactional
 	public NotesEntity createNote(NotesEntity note) {
-			Session session = entityManager.unwrap(Session.class);
-			session.saveOrUpdate(note);
-			return note;
+		Session session = entityManager.unwrap(Session.class);
+		session.saveOrUpdate(note);
+		return note;
 	}
 
-  @Transactional
+	@Transactional
 	public NotesEntity findBynotesId(long notesId) {
 		Session session = entityManager.unwrap(Session.class);
-		Query<?> q=session.createQuery("from NotesEntity where notesId=:notesId");
-		q.setParameter("notesId",notesId);
+		Query<?> q = session.createQuery("from NotesEntity where notesId=:notesId");
+		q.setParameter("notesId", notesId);
 		return (NotesEntity) q.uniqueResult();
 	}
 
-@Override
-@Transactional
-public int deleteNote(long notesId, NotesEntity note) {
-	Session session = entityManager.unwrap(Session.class);
-	Query<?> q=session.createQuery("delete from NotesEntity where notesId=:notesId");
-	q.setParameter("notesId",notesId);
-	return q.executeUpdate();
-}
-
-@Override
-public boolean setTrashed(Long userId, long notesId) {
-	Session session = entityManager.unwrap(Session.class);
-	NotesEntity note=findBynotesId(notesId);
-	if(note.getNotesId().equals(userId)) {
-		if(!note.isTrashed()) {
-			note.setTrashed(true);
-			//note.setUpdateDate(LocalDateTime.now());
-			note.setNotesCreatedDate(LocalDateTime.now());
-			session.save(note);
-		}
+	@Override
+	@Transactional
+	public int deleteNote(long notesId, NotesEntity note) {
+		Session session = entityManager.unwrap(Session.class);
+		Query<?> q = session.createQuery("delete from NotesEntity where notesId=:notesId");
+		q.setParameter("notesId", notesId);
+		return q.executeUpdate();
 	}
-	
-	return true;
-}
 
+	@Override
+	public boolean setTrashed(String token, long notesId) {
+		Session session = entityManager.unwrap(Session.class);
+		NotesEntity notes = findBynotesId(notesId);
+		if (!notes.isTrashed()) {
+			notes.setTrashed(true);
+			// note.setUpdateDate(LocalDateTime.now());
+			notes.setNotesCreatedDate(LocalDateTime.now());
+			session.save(notes);
+		}
+		return true;
+	}
 
+	@Override
+	public boolean setRestored(Long userId, long notesId) {
+		Session session = entityManager.unwrap(Session.class);
+		NotesEntity notes = findBynotesId(notesId);
+		if (notes.getNotesId().equals(userId)) {
+			if (notes.isTrashed())
+				notes.setTrashed(false);
+			notes.setNotesCreatedDate(LocalDateTime.now());
+			session.saveOrUpdate(notes);
+			return true;
+		}
+
+		return false;
+	}
 
 }

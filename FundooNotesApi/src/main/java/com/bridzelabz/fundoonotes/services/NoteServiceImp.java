@@ -6,11 +6,11 @@ import javax.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.bridzelabz.fundoonotes.customexception.NoteNotFoundException;
-import com.bridzelabz.fundoonotes.customexception.UserException;
+import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
+import com.bridzelabz.fundoonotes.dto.ReminderDto;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.repository.INoteRepository;
@@ -51,7 +51,7 @@ public class NoteServiceImp implements INoteServices {
 				throw new NoteNotFoundException("note is note present with given userId");
 			}
 		} catch (Exception e) {
-			throw new UserException("user is not present with the given id ");
+			throw new UserNotFoundException("user is not present with the given id ");
 		}
 		return true;
 	}
@@ -80,7 +80,7 @@ public class NoteServiceImp implements INoteServices {
 			}
 		} 
 		catch (Exception e) {
-			throw new UserException("user is not present with the given id ");
+			throw new UserNotFoundException("user is not present with the given id ");
 			}
 		return true;
 	}
@@ -88,23 +88,36 @@ public class NoteServiceImp implements INoteServices {
 	
 	public int deleteNote(long notesId, String token) {
 		NotesEntity notes =notesRepository.findBynotesId(notesId);
+		if(notes!=null) {
 		notes.setTrashed(!notes.isTrashed());// it will give false make it true 
 		return notesRepository.deleteNote(notesId,notes);
 		}
-
+		else {
+			throw new NoteNotFoundException("there is no notes please create");
+			}
+	}
 	@Transactional
 	public boolean archieveNote(long notesId, String token) {
 		NotesEntity	notes =notesRepository.findBynotesId(notesId);
+		if(notes!=null) {
 		notes.setArchieved(!notes.isArchieved());
 		notesRepository.createNote(notes);
 		return true;
+		}else {
+		throw new NoteNotFoundException("there is no notes please create");
+		}
 	}
 	@Transactional
 	public boolean pinNote(long notesId, String token) {
 		NotesEntity notes=notesRepository.findBynotesId(notesId);
+		if(notes!=null) {
 		notes.setPinned(!notes.isPinned());
 		notesRepository.createNote(notes);
 		return true;
+		}
+		else {
+			throw new NoteNotFoundException("there is no notes please create");
+			}
 	}
 
 	@Transactional
@@ -112,19 +125,45 @@ public class NoteServiceImp implements INoteServices {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours----urs userid " + userId);
 		NotesEntity notes=notesRepository.findBynotesId(notesId);
+		if(notes!=null) {
 		notes.setColor(color);
 		notesRepository.createNote(notes);
 		return true;
+		}
+		else {
+			throw new NoteNotFoundException("there is no notes please create");
+			}
 	}
 
 	@Transactional
 	public boolean trashed(String token, long notesId) {
+		if(notes!=null) {
+		 if(notesRepository.setTrashed(token,notesId)) { 
+			return true;}
+		throw new NoteNotFoundException("there is no notes please create");
+	}
+		return true;
+	}
+	@Transactional
+	public boolean restored(String token, long notesId) {
 		Long userId = generateToken.parseJWTToken(token);
-		log.info("----------------------ours----urs userid " + userId);
-		 if(notesRepository.setTrashed(userId,notesId)) {
+		if(notesRepository.setRestored(userId,notesId)) {
 			return true;
+		}
+		return true;
+	}
+
+	@Transactional
+	public boolean addReminder(String token, Long notesId,ReminderDto reminder) {
+		NotesEntity notes=notesRepository.findBynotesId(notesId);
+		 if(notes!=null) {
+			 notes.setReminder(reminder.getReminder());
+			 notesRepository.createNote(notes);
 		 }
-		return false;
+		 else {
+			 throw new NoteNotFoundException("there is no notes on userId please create a note");
+		 }
+		return true;
 	}
 
 }
