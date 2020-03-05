@@ -70,14 +70,20 @@ public class NotesRepository implements INoteRepository {
 
 		return false;
 	}
+
+	@Override
+	public List<NotesEntity> getAllNotes(long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	@Transactional
+/*	@Transactional
 	public List<NotesEntity> getAllNotes(long userId) {
 		Session session = entityManager.unwrap(Session.class);
 		/*Query<?> q = session.createQuery(" from NotesEntity where notesId='"+userId+"'"+"and  is_trashed=false and  is_archieved=false ORDER BY notes_id DESC");
 		return (List<NotesEntity>) q.getResultList();*/
-		return session.createQuery(" from NotesEntity where notesId='"+userId+"'"+"and  is_trashed=false and  is_archieved=false ORDER BY notes_id DESC").getResultList();
-	}
+	//	return session.createQuery(" from NotesEntity where notesId='"+userId+"'"+"and  is_trashed=false and  is_archieved=false ORDER BY notes_id DESC").getResultList();
+	//}*/
 
 
 

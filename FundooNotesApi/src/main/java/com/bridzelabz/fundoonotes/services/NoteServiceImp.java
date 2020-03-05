@@ -176,7 +176,15 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
-	@Transactional
+	@Override
+	public List<NotesEntity> getAllnotes(String token) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+/*	@Transactional
 	public List<NotesEntity> getAllnotes(String token) {
 		List<NotesEntity> list = null;
 		Long userId = generateToken.parseJWTToken(token);
@@ -185,17 +193,19 @@ public class NoteServiceImp implements INoteServices {
 		// notes------"+user.get());
 		try {
 			UsersEntity user= repository.getusersByid(userId);
-			
 			if (user != null) {
 				list = notesRepository.getAllNotes(user.getUserId());
-			} else {
-				throw new NoteNotFoundException("there is no notes on userId please create a note");
-			}
+			} 
 			return list;
 		} catch (Exception e) {
 			throw new UserNotFoundException("there is no UserAvailable");
 		}
 
-	}
+	}*/
+	
+	
+	
+	
+	
 
 }
