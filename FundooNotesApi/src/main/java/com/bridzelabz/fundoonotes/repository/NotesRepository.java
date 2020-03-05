@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bridzelabz.fundoonotes.model.NotesEntity;
-import com.bridzelabz.fundoonotes.model.UsersEntity;
+
 
 @Repository
 public class NotesRepository implements INoteRepository {
