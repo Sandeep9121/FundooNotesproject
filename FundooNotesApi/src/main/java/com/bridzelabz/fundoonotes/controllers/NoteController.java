@@ -1,9 +1,14 @@
 package com.bridzelabz.fundoonotes.controllers;
 
+import java.util.List;
+
+import javax.annotation.Generated;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 import com.bridzelabz.fundoonotes.dto.ReminderDto;
+import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.services.INoteServices;
 
@@ -106,5 +112,25 @@ public class NoteController {
       }
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to remove remainder"));
 	}
+	
+	@GetMapping("/note/allNotes")
+	public ResponseEntity<Response> getAllnotes(@RequestHeader("token") String token){
+		List<NotesEntity> allnotes=noteServices.getAllnotes(token);
+		if(allnotes!=null) {
+	    return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("list of your notes"));
+		}
+		return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("List is Empty"));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

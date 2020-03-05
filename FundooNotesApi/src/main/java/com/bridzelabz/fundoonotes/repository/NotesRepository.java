@@ -1,6 +1,7 @@
 package com.bridzelabz.fundoonotes.repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bridzelabz.fundoonotes.model.NotesEntity;
+import com.bridzelabz.fundoonotes.model.UsersEntity;
 
 @Repository
 public class NotesRepository implements INoteRepository {
@@ -41,7 +43,7 @@ public class NotesRepository implements INoteRepository {
 		return q.executeUpdate();
 	}
 
-	@Override
+	@Transactional
 	public boolean setTrashed(String token, long notesId) {
 		Session session = entityManager.unwrap(Session.class);
 		NotesEntity notes = findBynotesId(notesId);
@@ -54,7 +56,7 @@ public class NotesRepository implements INoteRepository {
 		return true;
 	}
 
-	@Override
+	@Transactional
 	public boolean setRestored(Long userId, long notesId) {
 		Session session = entityManager.unwrap(Session.class);
 		NotesEntity notes = findBynotesId(notesId);
@@ -68,5 +70,17 @@ public class NotesRepository implements INoteRepository {
 
 		return false;
 	}
+	
+	@Transactional
+	public List<NotesEntity> getAllNotes(long userId) {
+		Session session = entityManager.unwrap(Session.class);
+		/*Query<?> q = session.createQuery(" from NotesEntity where notesId='"+userId+"'"+"and  is_trashed=false and  is_archieved=false ORDER BY notes_id DESC");
+		return (List<NotesEntity>) q.getResultList();*/
+		return session.createQuery(" from NotesEntity where notesId='"+userId+"'"+"and  is_trashed=false and  is_archieved=false ORDER BY notes_id DESC").getResultList();
+	}
+
+
+
+
 
 }

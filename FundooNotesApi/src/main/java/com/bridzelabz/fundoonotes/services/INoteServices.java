@@ -1,8 +1,11 @@
 package com.bridzelabz.fundoonotes.services;
 
+import java.util.List;
+
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 import com.bridzelabz.fundoonotes.dto.ReminderDto;
+import com.bridzelabz.fundoonotes.model.NotesEntity;
 
 public interface INoteServices {
 
@@ -25,4 +28,7 @@ public interface INoteServices {
 	boolean addReminder(String token, Long notesId, ReminderDto reminder);
 
 	boolean removeReminder(String token, Long notesId);
+	
+	List <NotesEntity> getAllnotes(String token);
+	
 }
