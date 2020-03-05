@@ -100,8 +100,8 @@ public class NoteController {
 	
 
 	@PostMapping("/note/removeReminder/")
-	public ResponseEntity<Response> removeReminder(@RequestParam("notesId") Long notesId, @RequestHeader String token ,@RequestBody ReminderDto reminder){
-      if(noteServices.removeReminder(token, notesId, reminder)){
+	public ResponseEntity<Response> removeReminder(@RequestParam("notesId") Long notesId, @RequestHeader String token){
+      if(noteServices.removeReminder(token, notesId)){
     	return  ResponseEntity.status(HttpStatus.CREATED).body(new Response("Reminder is removed"));
       }
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("unable to remove remainder"));

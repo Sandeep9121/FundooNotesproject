@@ -167,7 +167,7 @@ public class NoteServiceImp implements INoteServices {
 	}
 
 	@Transactional
-	public boolean removeReminder(String token, Long notesId, ReminderDto reminder) {
+	public boolean removeReminder(String token, Long notesId) {
 		NotesEntity notes=notesRepository.findBynotesId(notesId);
 		if(notes!=null) {
 			notes.setReminder(null);
