@@ -5,6 +5,7 @@ import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 
 
 public interface INoteServices {
+	
 	public boolean createNote(NoteDto noteDto, String token);
 
 	public boolean updateNote(NoteUpdate updateNote, String token);
@@ -14,4 +15,6 @@ public interface INoteServices {
 	boolean archieveNote(long notesId,String token);
     
 	public boolean pinNote(long notesId, String token);
+	
+	public boolean addColor(long noteId, String token,String color);
 }

@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.bridzelabz.fundoonotes.dto.NoteDto;
 import com.bridzelabz.fundoonotes.dto.NoteUpdate;
-
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.services.INoteServices;
 
@@ -53,6 +52,12 @@ public class NoteController {
 		noteServices.pinNote(notesId, token);
 		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is pinned"));
 
+	}@PostMapping("/note/addColor/{notesId}")
+	public ResponseEntity<Response> addColor(@PathVariable("notesId") Long notesId, @RequestParam("color") String color, @RequestHeader("token") String token)
+	{
+		noteServices.addColor(notesId, token, color);
+		return ResponseEntity.status(HttpStatus.CREATED).body(new Response("note is colored"));
+		
 	}
-
+	
 }

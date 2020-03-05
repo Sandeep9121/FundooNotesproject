@@ -59,7 +59,10 @@ public class NoteServiceImp implements INoteServices {
 	@Transactional
 	public boolean updateNote(NoteUpdate updateInfo, String token) {
 		try {
-			log.info("----------------------ours-----------token " + token);
+		
+			Long userId = generateToken.parseJWTToken(token);
+			log.info("----------------------ours----urs userid " + userId);
+			
 			NotesEntity note = notesRepository.findBynotesId(updateInfo.getNoteId());	
 			if(note!=null) {
 				log.info("--------------------------------------note"+note);
@@ -101,6 +104,16 @@ public class NoteServiceImp implements INoteServices {
 	public boolean pinNote(long notesId, String token) {
 		NotesEntity note=notesRepository.findBynotesId(notesId);
 		note.setPinned(!note.isPinned());
+		notesRepository.createNote(note);
+		return true;
+	}
+
+	@Override
+	public boolean addColor(long notesId, String token, String color) {
+		Long userId = generateToken.parseJWTToken(token);
+		log.info("----------------------ours----urs userid " + userId);
+		NotesEntity note=notesRepository.findBynotesId(notesId);
+		note.setColor(color);
 		notesRepository.createNote(note);
 		return true;
 	}
