@@ -27,8 +27,7 @@ public class NoteServiceImp implements INoteServices {
 	private INoteRepository notesRepository;
 	@Autowired
 	private IUsersRepository usersRespository;
-	@Autowired
-	private UsersRepository repository;
+
 	private NotesEntity notes = new NotesEntity();
 	@Autowired
 	private JWTGenerator generateToken;

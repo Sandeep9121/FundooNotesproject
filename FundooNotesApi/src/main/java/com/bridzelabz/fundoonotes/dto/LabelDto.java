@@ -1,5 +1,8 @@
 package com.bridzelabz.fundoonotes.dto;
 
-public class LabelDto {
+import lombok.Data;
 
+@Data
+public class LabelDto {
+    private String name;
 }
