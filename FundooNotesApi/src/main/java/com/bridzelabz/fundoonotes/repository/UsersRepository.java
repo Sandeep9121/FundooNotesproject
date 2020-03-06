@@ -17,7 +17,7 @@ public class UsersRepository {
 @Transactional
 	public UsersEntity getusersByid(Long userId) {
 		Session session = entityManager.unwrap(Session.class);
-		Query<?> q = session.createQuery("form UsersEntity where user_id=:userId");
+		Query<?> q = session.createQuery("from UsersEntity where user_id=:userId");
 		q.setParameter("userId",userId);
 		return (UsersEntity) q.uniqueResult();
 		
