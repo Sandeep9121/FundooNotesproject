@@ -47,7 +47,7 @@ public class NotesEntity {
 
 	@JoinColumn(name="user_id")
 	@ManyToMany
-	@JoinTable(name="notes_id", joinColumns = {@JoinColumn(name ="notes_id")},inverseJoinColumns = {
+	@JoinTable(name="notes_label", joinColumns = {@JoinColumn(name ="notes_id")},inverseJoinColumns = {
 			@JoinColumn(name="label_id")})
 	private List<Label> list;
 	
