@@ -158,7 +158,7 @@ public class UserImplementation implements IUsersServices {
 	public List<UsersEntity> getUserDetails() {
 		List<UsersEntity> users = new ArrayList<>();
 		userRepository.findAll().forEach(users::add);
-		return null;
+		return users;
 	}
 
 	@Override

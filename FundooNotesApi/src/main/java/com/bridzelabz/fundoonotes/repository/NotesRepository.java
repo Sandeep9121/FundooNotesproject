@@ -71,10 +71,11 @@ public class NotesRepository implements INoteRepository {
 		return false;
 	}
 
-	@Override
+	@Transactional
 	public List<NotesEntity> getAllNotes(long userId) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = entityManager.unwrap(Session.class);
+		Query<NotesEntity> q = session.createQuery(" from NotesEntity ",NotesEntity.class);
+		return q.getResultList();
 	}
 	
 /*	@Transactional

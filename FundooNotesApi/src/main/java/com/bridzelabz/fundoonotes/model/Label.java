@@ -1,5 +1,7 @@
 package com.bridzelabz.fundoonotes.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,5 +20,6 @@ public class Label {
 	private String name;
 	private long userId;
 	
-
+ 
+	private List<NotesEntity> list;
 }

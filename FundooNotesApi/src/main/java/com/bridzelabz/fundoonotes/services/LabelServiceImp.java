@@ -8,11 +8,14 @@ import com.bridzelabz.fundoonotes.dto.LabelDto;
 import com.bridzelabz.fundoonotes.dto.LabelUpdate;
 import com.bridzelabz.fundoonotes.model.Label;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
+import com.bridzelabz.fundoonotes.repository.INoteRepository;
 import com.bridzelabz.fundoonotes.repository.LabelRepository;
 import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class LabelServiceImp implements ILabelServices {
 	@Autowired
@@ -22,10 +25,13 @@ public class LabelServiceImp implements ILabelServices {
     
     @Autowired
     private LabelRepository labelRepository;
-
+    
+    @Autowired
+    private INoteRepository notesRepository;
 
 	public boolean createLabel(LabelDto labelDto,String token) {
       long id=generateToken.parseJWTToken(token);
+      log.info("----------------------------------------------------------token="+token);
         UsersEntity user=usersRepository.getusersByid(id);
         if(user!=null) {
         	Label label=new Label();
@@ -47,10 +53,30 @@ public class LabelServiceImp implements ILabelServices {
 			  if(label!=null) {
 				  label.setName(labelUpdate.getLabelName());
 				  labelRepository.saveLabel(label);
-			  }
+				  
+			  }else {
 			  throw new LabelNotFoundException("there is no label with this user id");
+		  }	}
+		  return true;
 		  }
-		return true;
+
+
+	@Override
+	public boolean addLabel(Long labelId, long notesId, String token) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
+
+
+	/*public boolean addLabel(Long labelId, long notesId, String token) {
+	     NotesEntity note=notesRepository.findBynotesId(notesId);
+	     log.info("----------notes-------------------id="+notesId);
+	     Label label=labelRepository.fetchLabelById(labelId);
+	   //  label.
+		return false;
+	}*/
+
+	
+	
 }

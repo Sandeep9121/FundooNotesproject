@@ -3,7 +3,6 @@ package com.bridzelabz.fundoonotes.services;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import javax.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,7 @@ import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.repository.INoteRepository;
 import com.bridzelabz.fundoonotes.repository.IUsersRepository;
-
+import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,13 +26,15 @@ public class NoteServiceImp implements INoteServices {
 	private INoteRepository notesRepository;
 	@Autowired
 	private IUsersRepository usersRespository;
+	@Autowired
+	private UsersRepository repository;
 
 	private NotesEntity notes = new NotesEntity();
 	@Autowired
 	private JWTGenerator generateToken;
 
-	@Transactional
-	@Override
+
+
 	public boolean createNote(NoteDto notesDto, String token) {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours-----------token " + token);
@@ -56,7 +57,7 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
-	@Transactional
+
 	public boolean updateNote(NoteUpdate updateInfo, String token) {
 		try {
 
@@ -92,7 +93,7 @@ public class NoteServiceImp implements INoteServices {
 			throw new NoteNotFoundException("there is no notes please create");
 	}
 
-	@Transactional
+
 	public boolean archieveNote(long notesId, String token) {
 		NotesEntity notes = notesRepository.findBynotesId(notesId);
 		if (notes != null) {
@@ -103,7 +104,7 @@ public class NoteServiceImp implements INoteServices {
 			throw new NoteNotFoundException("there is no notes please create");
 	}
 
-	@Transactional
+
 	public boolean pinNote(long notesId, String token) {
 		NotesEntity notes = notesRepository.findBynotesId(notesId);
 		if (notes != null) {
@@ -114,7 +115,7 @@ public class NoteServiceImp implements INoteServices {
 			throw new NoteNotFoundException("there is no notes please create");
 	}
 
-	@Transactional
+
 	public boolean addColor(long notesId, String token, String color) {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours----urs userid " + userId);
@@ -128,7 +129,7 @@ public class NoteServiceImp implements INoteServices {
 		}
 	}
 
-	@Transactional
+
 	public boolean trashed(String token, long notesId) {
 		if (notes != null) {
 			if (notesRepository.setTrashed(token, notesId)) {
@@ -139,7 +140,7 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
-	@Transactional
+
 	public boolean restored(String token, long notesId) {
 		Long userId = generateToken.parseJWTToken(token);
 		
@@ -149,7 +150,7 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
-	@Transactional
+
 	public boolean addReminder(String token, Long notesId, ReminderDto reminder) {
 		NotesEntity notes = notesRepository.findBynotesId(notesId);
 		if (notes != null) {
@@ -161,7 +162,6 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
-	@Transactional
 	public boolean removeReminder(String token, Long notesId) {
 		NotesEntity notes = notesRepository.findBynotesId(notesId);
 		if (notes != null) {
@@ -173,9 +173,14 @@ public class NoteServiceImp implements INoteServices {
 		return true;
 	}
 
-	@Override
+
 	public List<NotesEntity> getAllnotes(String token) {
-		// TODO Auto-generated method stub
+		Long userId = generateToken.parseJWTToken(token);
+		UsersEntity user= repository.getusersByid(userId);
+		if(user!=null) {
+			List<NotesEntity> notes=notesRepository.getAllNotes(userId);
+			notes.sort((NotesEntity notes1,NotesEntity notes2)->notes1.getTitle().compareTo(notes2.getTitle()));
+		}
 		return null;
 	}
 
