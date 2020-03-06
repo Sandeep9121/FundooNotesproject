@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.bridzelabz.fundoonotes.dto.LabelDto;
+import com.bridzelabz.fundoonotes.dto.LabelUpdate;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.services.ILabelServices;
 
@@ -19,7 +20,18 @@ private ILabelServices labelServices;
  
  @PostMapping("/label/create")
  public ResponseEntity<Response> createLabel(@RequestBody LabelDto labelDto,@RequestHeader("token") String token){
-	 labelServices.createLabel(labelDto, token);
+	 if(labelServices.createLabel(labelDto, token)) {
 	 return  ResponseEntity.status(HttpStatus.CREATED).body(new Response("label is Created")); 
- } 
+ }
+	return ResponseEntity.status(HttpStatus.CREATED).body(new Response("label is not Created"));
+	 }
+ 
+ 
+ @PutMapping("/label/updateLabel")
+  public ResponseEntity<Response> updateLabel(@RequestBody LabelUpdate lableUpdate,@RequestHeader("token") String token){
+	  if(labelServices.updateLabel(lableUpdate, token)) {
+	 return ResponseEntity.status(HttpStatus.OK).body(new Response("label is Updated"));
+	  }
+	return ResponseEntity.status(HttpStatus.OK).body(new Response("label is not  Updated"));
+ }
 }

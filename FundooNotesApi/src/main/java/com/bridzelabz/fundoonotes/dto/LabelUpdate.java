@@ -1,5 +1,9 @@
 package com.bridzelabz.fundoonotes.dto;
 
-public class LabelUpdate {
+import lombok.Data;
 
+@Data
+public class LabelUpdate {
+   long LabelId;
+   String labelName;
 }

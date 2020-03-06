@@ -142,6 +142,7 @@ public class NoteServiceImp implements INoteServices {
 	@Transactional
 	public boolean restored(String token, long notesId) {
 		Long userId = generateToken.parseJWTToken(token);
+		
 		if (notesRepository.setRestored(userId, notesId)) {
 			return true;
 		}

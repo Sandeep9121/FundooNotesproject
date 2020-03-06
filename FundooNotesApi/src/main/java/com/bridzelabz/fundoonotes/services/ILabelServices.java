@@ -5,5 +5,5 @@ import com.bridzelabz.fundoonotes.dto.LabelUpdate;
 
 public interface ILabelServices {
 	 boolean createLabel(LabelDto labelDto,String token);
-	 boolean editlabel(LabelUpdate labelUpdate,String userId);
+	 boolean updateLabel(LabelUpdate labelUpdate,String token);
 }

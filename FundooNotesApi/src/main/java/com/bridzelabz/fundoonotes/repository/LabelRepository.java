@@ -1,14 +1,16 @@
 package com.bridzelabz.fundoonotes.repository;
 
 import javax.persistence.EntityManager;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bridzelabz.fundoonotes.model.Label;
-@Component
+@Component 
 public class LabelRepository implements ILabelRepository{
    @Autowired
    private EntityManager entityManager;
@@ -21,4 +23,15 @@ public class LabelRepository implements ILabelRepository{
 		return label;
 	}
 
+
+    @Transactional
+	public Label fetchLabelById(long labelId) {
+		Session session = entityManager.unwrap(Session.class);
+		Query<?> q=session.createQuery("from Label where labelId=:labelId");
+		q.setParameter("labelId", labelId);
+		return (Label) q.uniqueResult();
+    }
+    
+    
+    
 }

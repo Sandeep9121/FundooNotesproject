@@ -1,11 +1,8 @@
 package com.bridzelabz.fundoonotes.services;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.bridzelabz.fundoonotes.customexception.LabelNotFoundException;
 import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
 import com.bridzelabz.fundoonotes.dto.LabelDto;
 import com.bridzelabz.fundoonotes.dto.LabelUpdate;
@@ -25,8 +22,8 @@ public class LabelServiceImp implements ILabelServices {
     
     @Autowired
     private LabelRepository labelRepository;
-  
-    @Transactional
+
+
 	public boolean createLabel(LabelDto labelDto,String token) {
       long id=generateToken.parseJWTToken(token);
         UsersEntity user=usersRepository.getusersByid(id);
@@ -41,10 +38,19 @@ public class LabelServiceImp implements ILabelServices {
 		return true;
 	}
 
-	@Override
-	public boolean editlabel(LabelUpdate labelUpdate, String token) {
+
+	public boolean updateLabel(LabelUpdate labelUpdate, String token) {
 		Long userId=generateToken.parseJWTToken(token);
-		return false;
+		UsersEntity user=usersRepository.getusersByid(userId);
+		  if(user!=null) {
+			  Label label=labelRepository.fetchLabelById(labelUpdate.getLabelId());
+			  if(label!=null) {
+				  label.setName(labelUpdate.getLabelName());
+				  labelRepository.saveLabel(label);
+			  }
+			  throw new LabelNotFoundException("there is no label with this user id");
+		  }
+		return true;
 	}
 
 }
