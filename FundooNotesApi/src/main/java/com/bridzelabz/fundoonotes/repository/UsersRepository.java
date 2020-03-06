@@ -1,5 +1,7 @@
 package com.bridzelabz.fundoonotes.repository;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,7 @@ import com.bridzelabz.fundoonotes.model.UsersEntity;
 public class UsersRepository {
 	@Autowired
 	private EntityManager entityManager;
-
+@Transactional
 	public UsersEntity getusersByid(Long id) {
 		Session session = entityManager.unwrap(Session.class);
 		Query<?> q = session.createQuery("form UsersEntity where user_id=:userId");

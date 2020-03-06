@@ -44,8 +44,10 @@
 		<item key="DIALOG_X_ORIGIN" value="434"/>
 		<item key="DIALOG_Y_ORIGIN" value="147"/>
 		<item key="DIALOG_WIDTH" value="563"/>
-		<item key="DIALOG_HEIGHT" value="395"/>
+		<item key="DIALOG_HEIGHT" value="493"/>
 		<item key="TOGGLE_SELECTED" value="false"/>
+		<item key="BUILD_NOW" value="true"/>
+		<item key="BUILD_ALL" value="true"/>
 	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
 		<item key="ShowStatusLine" value="true"/>
