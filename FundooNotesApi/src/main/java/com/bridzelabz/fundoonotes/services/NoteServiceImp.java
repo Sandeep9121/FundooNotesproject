@@ -88,9 +88,8 @@ public class NoteServiceImp implements INoteServices {
 		if (notes != null) {
 			notes.setTrashed(!notes.isTrashed());// it will give false make it true
 			return notesRepository.deleteNote(notesId, notes);
-		} else {
-			throw new NoteNotFoundException("there is no notes please create");
 		}
+			throw new NoteNotFoundException("there is no notes please create");
 	}
 
 	@Transactional
@@ -100,9 +99,8 @@ public class NoteServiceImp implements INoteServices {
 			notes.setArchieved(!notes.isArchieved());
 			notesRepository.createNote(notes);
 			return true;
-		} else {
+		} 
 			throw new NoteNotFoundException("there is no notes please create");
-		}
 	}
 
 	@Transactional
@@ -112,9 +110,8 @@ public class NoteServiceImp implements INoteServices {
 			notes.setPinned(!notes.isPinned());
 			notesRepository.createNote(notes);
 			return true;
-		} else {
+		} 
 			throw new NoteNotFoundException("there is no notes please create");
-		}
 	}
 
 	@Transactional

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
 import com.bridzelabz.fundoonotes.dto.LabelDto;
+import com.bridzelabz.fundoonotes.dto.LabelUpdate;
 import com.bridzelabz.fundoonotes.model.Label;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.repository.LabelRepository;
@@ -38,6 +39,12 @@ public class LabelServiceImp implements ILabelServices {
         	throw new UserNotFoundException("there is no user found");
         }
 		return true;
+	}
+
+	@Override
+	public boolean editlabel(LabelUpdate labelUpdate, String token) {
+		Long userId=generateToken.parseJWTToken(token);
+		return false;
 	}
 
 }
