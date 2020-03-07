@@ -2,7 +2,7 @@ package com.bridzelabz.fundoonotes.services;
 
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 
-public interface CollaboratorServices {
+public interface ICollaboratorServices {
 	NotesEntity addCollaborator(Long notesId,String token);
 	
 
