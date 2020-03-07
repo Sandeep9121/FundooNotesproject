@@ -3,10 +3,12 @@ package com.bridzelabz.fundoonotes.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.bridzelabz.fundoonotes.dto.LabelDto;
 import com.bridzelabz.fundoonotes.dto.LabelUpdate;
@@ -34,4 +36,11 @@ private ILabelServices labelServices;
 	  }
 	return ResponseEntity.status(HttpStatus.OK).body(new Response("label is not  Updated"));
  }
+ 
+ @DeleteMapping("/label/delete")
+ public ResponseEntity<Response> deleteLabel(@RequestParam("labelId") Long labelId,@RequestHeader("token") String token,@RequestParam ("notesId") Long notesId){
+	return null;
+	 
+ }
+ 
 }

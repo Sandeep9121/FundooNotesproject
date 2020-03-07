@@ -34,11 +34,13 @@ public class NoteServiceImp implements INoteServices {
 	private JWTGenerator generateToken;
 
 
-
 	public boolean createNote(NoteDto notesDto, String token) {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours-----------token " + token);
+		
 		Optional<UsersEntity> user = usersRespository.findById(userId);
+		
+		log.info("---------------------user " +user);
 		try {
 			if (user != null) {
 				BeanUtils.copyProperties(notesDto, notes);
@@ -47,6 +49,11 @@ public class NoteServiceImp implements INoteServices {
 				notes.setNotesCreatedDate(LocalDateTime.now());
 				notes.setPinned(false);
 				notes.setTrashed(false);
+				/*
+				 * mapping user to note
+				 */
+				user.get().getNote().add(notes);
+				
 				notesRepository.createNote(notes);
 			} else {
 				throw new NoteNotFoundException("note is note present with given userId");
@@ -75,6 +82,8 @@ public class NoteServiceImp implements INoteServices {
 				notes.setArchieved(updateInfo.isArchieved());
 				notes.setTrashed(updateInfo.isTrashed());
 				notes.setUpdateDate(LocalDateTime.now());
+				
+				notesRepository.createNote(notes);
 			} else {
 				throw new NoteNotFoundException("note is note present with given token");
 			}
@@ -177,9 +186,11 @@ public class NoteServiceImp implements INoteServices {
 	public List<NotesEntity> getAllnotes(String token) {
 		Long userId = generateToken.parseJWTToken(token);
 		UsersEntity user= repository.getusersByid(userId);
+		log.info("--------------------print---user"+user);
 		if(user!=null) {
 			List<NotesEntity> notes=notesRepository.getAllNotes(userId);
 			notes.sort((NotesEntity notes1,NotesEntity notes2)->notes1.getTitle().compareTo(notes2.getTitle()));
+			return notes;
 		}
 		return null;
 	}
@@ -190,9 +201,9 @@ public class NoteServiceImp implements INoteServices {
 	public List<NotesEntity> getAllnotes(String token) {
 		List<NotesEntity> list = null;
 		Long userId = generateToken.parseJWTToken(token);
-		// Optional<UsersEntity> user =usersRespository.findById(userId);
-		// log.info("--------------------------------------------userId all
-		// notes------"+user.get());
+		 Optional<UsersEntity> user =usersRespository.findById(userId);
+		 log.info("--------------------------------------------userId all
+		 notes------"+user.get());
 		try {
 			UsersEntity user= repository.getusersByid(userId);
 			if (user != null) {

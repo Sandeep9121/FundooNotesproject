@@ -117,7 +117,7 @@ public class NoteController {
 	public ResponseEntity<Response> getAllnotes(@RequestHeader("token") String token){
 		List<NotesEntity> allnotes=noteServices.getAllnotes(token);
 		if(allnotes!=null) {
-	    return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("list of your notes"));
+	    return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("list of your notes", allnotes));
 		}
 		return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("List is Empty"));
 	}

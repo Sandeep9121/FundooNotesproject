@@ -1,6 +1,9 @@
 package com.bridzelabz.fundoonotes.reponse;
 
+import java.util.List;
+
 import com.bridzelabz.fundoonotes.dto.UsersDto;
+import com.bridzelabz.fundoonotes.model.NotesEntity;
 
 import lombok.Data;
 
@@ -28,6 +31,11 @@ public class Response {
 	public Response(String message) {
 		super();
 		this.message = message;
+	}
+	public Response(String message,Object object) {
+		super();
+		this.message = message;
+		this.obj=object;
 	}
 	
 	

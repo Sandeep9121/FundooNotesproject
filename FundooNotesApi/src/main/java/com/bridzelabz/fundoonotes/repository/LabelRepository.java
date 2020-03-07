@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.bridzelabz.fundoonotes.model.Label;
 @Component 
-public class LabelRepository implements ILabelRepository{
+public class LabelRepository{
    @Autowired
    private EntityManager entityManager;
 	
