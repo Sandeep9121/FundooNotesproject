@@ -3,6 +3,7 @@ package com.bridzelabz.fundoonotes.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -55,8 +59,12 @@ public class UsersEntity {
 	//@NotNull
 	private boolean isVerified;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="userId")
 	private List<NotesEntity> note;
+	
+	  @JsonManagedReference
+	    @JsonIgnore
+	    private List<NotesEntity> collaborateNotes;
 
 }

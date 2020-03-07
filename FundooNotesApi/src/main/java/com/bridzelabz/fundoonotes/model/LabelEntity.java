@@ -2,6 +2,7 @@ package com.bridzelabz.fundoonotes.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,13 +12,16 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 
 @Data
 
 @Entity
 @Component
-public class Label {
+public class LabelEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int labelId;
@@ -25,8 +29,12 @@ public class Label {
 	private long userId;
 	
     @JoinColumn(name = "user_id")
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name ="notes_label",joinColumns = { @JoinColumn(name="label_id")},inverseJoinColumns = {
     		@JoinColumn(name="notes_id")})
+    
+   @JsonBackReference
 	private List<NotesEntity> list;
+    
+   
 }

@@ -1,9 +1,6 @@
 package com.bridzelabz.fundoonotes.controllers;
 
 import java.util.List;
-
-import javax.annotation.Generated;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

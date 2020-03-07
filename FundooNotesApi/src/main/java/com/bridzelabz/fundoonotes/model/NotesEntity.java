@@ -3,7 +3,7 @@ package com.bridzelabz.fundoonotes.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,9 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-
-import org.hibernate.annotations.ManyToAny;
 import org.springframework.stereotype.Component;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -46,9 +46,17 @@ public class NotesEntity {
 	private LocalDateTime reminder;
 
 	@JoinColumn(name="user_id")
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="notes_label", joinColumns = {@JoinColumn(name ="notes_id")},inverseJoinColumns = {
 			@JoinColumn(name="label_id")})
-	private List<Label> list;
+	@JsonBackReference
+	@JsonIgnore
+	private List<LabelEntity> list;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="collaborator_note",joinColumns={@JoinColumn(name="notes_id")}, 
+	inverseJoinColumns = {@JoinColumn(name="user_id")})
+	@JsonBackReference
+	private List<UsersEntity> collaborateUser;
 	
 }
