@@ -45,18 +45,19 @@ public class NotesEntity {
 	
 	private LocalDateTime reminder;
 
-	@JoinColumn(name="user_id")
+	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="notes_label", joinColumns = {@JoinColumn(name ="notes_id")},inverseJoinColumns = {
-			@JoinColumn(name="label_id")})
+	@JoinTable(name="Label_note", joinColumns = {@JoinColumn(name ="notesId")},inverseJoinColumns = {
+			@JoinColumn(name="labelId")})
 	@JsonBackReference
 	@JsonIgnore
 	private List<Label> list;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="collaborator_note",joinColumns={@JoinColumn(name="notes_id")}, 
-	inverseJoinColumns = {@JoinColumn(name="user_id")})
+	@JoinTable(name="Collaborator",joinColumns={@JoinColumn(name="notesId")}, 
+	inverseJoinColumns = {@JoinColumn(name="userId")})
 	@JsonBackReference
+	@JsonIgnore
 	private List<UsersEntity> collaborateUser;
 	
 }
