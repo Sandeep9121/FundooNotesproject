@@ -3,10 +3,10 @@ package com.bridzelabz.fundoonotes.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.bridzelabz.fundoonotes.model.LabelEntity;
+import com.bridzelabz.fundoonotes.model.Label;
 
-public interface ILabelRepository extends JpaRepository<LabelEntity,Long>{
+public interface ILabelRepository extends JpaRepository<Label,Long>{
  
 	@Query("from Label where user_id=:userId and name=:name")
-   LabelEntity fetchLabel(long userId, String name);
+   Label fetchLabel(long userId, String name);
 }

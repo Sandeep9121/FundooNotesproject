@@ -22,4 +22,10 @@ public class UsersRepository {
 		return (UsersEntity) q.uniqueResult();
 		
 	}
+public UsersEntity getusersByemail(String email) {
+	Session session = entityManager.unwrap(Session.class);
+	Query<?> q = session.createQuery("from UsersEntity where email=:email");
+	q.setParameter("email",email);
+	return (UsersEntity) q.uniqueResult();
+}
 }

@@ -51,7 +51,7 @@ public class NotesEntity {
 			@JoinColumn(name="label_id")})
 	@JsonBackReference
 	@JsonIgnore
-	private List<LabelEntity> list;
+	private List<Label> list;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="collaborator_note",joinColumns={@JoinColumn(name="notes_id")}, 

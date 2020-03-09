@@ -21,7 +21,7 @@ import lombok.Data;
 
 @Entity
 @Component
-public class LabelEntity {
+public class Label {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int labelId;

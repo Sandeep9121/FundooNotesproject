@@ -8,7 +8,7 @@ import com.bridzelabz.fundoonotes.customexception.LabelNotFoundException;
 import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
 import com.bridzelabz.fundoonotes.dto.LabelDto;
 import com.bridzelabz.fundoonotes.dto.LabelUpdate;
-import com.bridzelabz.fundoonotes.model.LabelEntity;
+import com.bridzelabz.fundoonotes.model.Label;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.repository.ILabelRepository;
@@ -38,8 +38,8 @@ public class LabelServiceImp implements ILabelServices {
       log.info("----------------------------------------------------------token="+token);
         UsersEntity user=usersRepository.getusersByid(userId);
         if(user!=null) {
-        	LabelEntity label=new LabelEntity();
-        	LabelEntity label1=iLabelRepository.fetchLabel(userId,labelDto.getName());
+        	Label label=new Label();
+        	Label label1=iLabelRepository.fetchLabel(userId,labelDto.getName());
         	if(label1==null) {
         	BeanUtils.copyProperties(labelDto, label);
         	label.setUserId(user.getUserId());
@@ -58,7 +58,7 @@ public class LabelServiceImp implements ILabelServices {
 		Long userId=generateToken.parseJWTToken(token);
 		UsersEntity user=usersRepository.getusersByid(userId);
 		  if(user!=null) {
-			  LabelEntity label=labelRepository.fetchLabelById(labelUpdate.getLabelId());
+			  Label label=labelRepository.fetchLabelById(labelUpdate.getLabelId());
 			  if(label!=null) {
 				  label.setName(labelUpdate.getLabelName());
 				  labelRepository.saveLabel(label);
@@ -84,7 +84,7 @@ UsersEntity user=usersRepository.getusersByid(userId);
 if(user!=null) {
 		NotesEntity note=notesRepository.findBynotesId(notesId);
 	
-		LabelEntity label=labelRepository.fetchLabelById(labelId);
+		Label label=labelRepository.fetchLabelById(labelId);
 		if(label!=null) {
 		note.getList().remove(label);
 		labelRepository.saveLabel(label);

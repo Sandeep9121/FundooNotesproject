@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.bridzelabz.fundoonotes.model.LabelEntity;
+import com.bridzelabz.fundoonotes.model.Label;
 @Component 
 public class LabelRepository{
    @Autowired
@@ -17,7 +17,7 @@ public class LabelRepository{
 	
 	
     @Transactional
-	public LabelEntity saveLabel(LabelEntity label) {
+	public Label saveLabel(Label label) {
     	Session session = entityManager.unwrap(Session.class);
     	session.save(label);
 		return label;
@@ -25,11 +25,11 @@ public class LabelRepository{
 
 
     @Transactional
-	public LabelEntity fetchLabelById(long labelId) {
+	public Label fetchLabelById(long labelId) {
 		Session session = entityManager.unwrap(Session.class);
 		Query<?> q=session.createQuery("from Label where labelId=:labelId");
 		q.setParameter("labelId", labelId);
-		return (LabelEntity) q.uniqueResult();
+		return (Label) q.uniqueResult();
     }
     
     
