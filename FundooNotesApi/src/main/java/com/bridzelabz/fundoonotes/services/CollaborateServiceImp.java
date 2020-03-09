@@ -53,7 +53,6 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 		}else {
 			throw new UserNotFoundException("user not found");
          		}
-		return null;
 	}
 
 }
