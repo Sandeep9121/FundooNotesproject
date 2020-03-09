@@ -14,14 +14,13 @@ import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.services.ICollaboratorServices;
 
 @RestController
-@RequestMapping("/collaborator")
 public class CollaboratorController {
 @Autowired
 private ICollaboratorServices serviceCollaborator;
 
 
-@PostMapping("/addCollaborator")
-public ResponseEntity<Response> addCollaborator(@RequestParam("notesId") Long notesId,
+@PostMapping("/collaborator/addCollaborator")
+public ResponseEntity<Response> addsCollaborator(@RequestParam("notesId") Long notesId,
 		@RequestParam("email") String email, @RequestHeader("token") String token){
 	NotesEntity note=serviceCollaborator.addCollaborator(notesId, email, token);
 	 if(note!=null) {

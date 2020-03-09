@@ -22,22 +22,19 @@ import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
-
 import com.bridzelabz.fundoonotes.reponse.UserVerification;
 import com.bridzelabz.fundoonotes.services.IUsersServices;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 
-
-
-
 @RestController
+
 public class UserController {
 	@Autowired
 	private UsersEntity user;
 
 	@Autowired
 	private JWTGenerator generateToken;
-	
+
 	@Autowired
 	private IUsersServices usersService;
 
@@ -53,12 +50,11 @@ public class UserController {
 						.body(new Response("U are already Registered"));
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 		return null;
 	}
-
 
 	@PostMapping(value = "/users")
 	public List<UsersEntity> getUsers() {
@@ -83,17 +79,12 @@ public class UserController {
 		return usersService.getuserById(userId);
 	}
 
-	
-	
 	@PostMapping("/users/login")
-	public ResponseEntity<UserVerification> login(@RequestBody LoginDto loginData){
-		UsersEntity userLogin=usersService.login(loginData);
-		  String token = generateToken.generateWebToken(userLogin.getUserId());
+	public ResponseEntity<UserVerification> login(@RequestBody LoginDto loginData) {
+		UsersEntity userLogin = usersService.login(loginData);
+		String token = generateToken.generateWebToken(userLogin.getUserId());
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserVerification(token));
 	}
-	
-	
-	
 
 	@PutMapping("/users/updatePassword/{token}")
 	public ResponseEntity<Response> updatePassword(@Valid @PathVariable("token") String token,
@@ -109,27 +100,16 @@ public class UserController {
 					.body(new Response("password and confirm password is not matched"));
 
 	}
-	
 
 	@PutMapping("/users/forgotpassword/{email}")
-	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email){
-		boolean value=usersService.isUserAlreadyRegistered(email);
-		if(value) {
+	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email) {
+		boolean value = usersService.isUserAlreadyRegistered(email);
+		if (value) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("User is Exists"));
-		}
-		else {
+		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("Users is not Availablle"));
 		}
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

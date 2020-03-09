@@ -1,6 +1,5 @@
 package com.bridzelabz.fundoonotes.model;
 
-
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -17,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
-
 @Component
 @Data
 @Entity
@@ -26,11 +24,11 @@ public class NotesEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long notesId;
-	
+
 	private String title;
-	
+
 	private String description;
-	
+
 	private String color;
 
 	private boolean isArchieved;
@@ -40,24 +38,23 @@ public class NotesEntity {
 	private boolean isTrashed;
 
 	private LocalDateTime notesCreatedDate;
-	
-	private LocalDateTime updateDate; 
-	
+
+	private LocalDateTime updateDate;
+
 	private LocalDateTime reminder;
 
-	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="Label_note", joinColumns = {@JoinColumn(name ="notesId")},inverseJoinColumns = {
-			@JoinColumn(name="labelId")})
+	@JoinTable(name = "Label_note", joinColumns = { @JoinColumn(name = "notesId") }, inverseJoinColumns = {
+			@JoinColumn(name = "labelId") })
 	@JsonBackReference
 	@JsonIgnore
 	private List<Label> list;
-	
+
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="Collaborator",joinColumns={@JoinColumn(name="notesId")}, 
-	inverseJoinColumns = {@JoinColumn(name="userId")})
+	@JoinTable(name = "Collaborator", joinColumns = { @JoinColumn(name = "notesId") }, inverseJoinColumns = {
+			@JoinColumn(name = "userId") })
 	@JsonBackReference
 	@JsonIgnore
 	private List<UsersEntity> collaborateUser;
-	
+
 }
