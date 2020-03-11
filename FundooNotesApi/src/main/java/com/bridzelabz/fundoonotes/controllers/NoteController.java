@@ -150,13 +150,10 @@ public class NoteController {
 	@DeleteMapping("/collaborator/removeCollaborator")
 	public ResponseEntity<Response> removeCollaborator(@RequestParam("notesId") Long notesId,
 			@RequestParam("email") String email, @RequestHeader("token") String token){
-		NotesEntity note=serviceCollaborator.removeCollaborator(notesId, email, token);
-		 if(note!=null) {
-			 return ResponseEntity.status(HttpStatus.CREATED).body(new Response("Collaborator is Added"));
-		 }
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-					.body(new Response("Collaborator is not added"));
+		      serviceCollaborator.removeCollaborator(notesId, email, token);
+			 return ResponseEntity.status(HttpStatus.CREATED).body(new Response("Collaborator is deleted"));
 	
+			
 	}
 	
 	
