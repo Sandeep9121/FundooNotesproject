@@ -27,7 +27,7 @@ public class LabelRepository{
     @Transactional
 	public Label fetchLabelById(long labelId) {
 		Session session = entityManager.unwrap(Session.class);
-		Query<?> q=session.createQuery("from Label where labelId=:labelId");
+		Query<?> q=session.createQuery("from Label where label_id=:labelId");
 		q.setParameter("labelId", labelId);
 		return (Label) q.uniqueResult();
     }
