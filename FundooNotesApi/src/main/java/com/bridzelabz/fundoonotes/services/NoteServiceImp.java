@@ -197,25 +197,7 @@ public class NoteServiceImp implements INoteServices {
 
 	
 	
-/*	@Transactional
-	public List<NotesEntity> getAllnotes(String token) {
-		List<NotesEntity> list = null;
-		Long userId = generateToken.parseJWTToken(token);
-		 Optional<UsersEntity> user =usersRespository.findById(userId);
-		 log.info("--------------------------------------------userId all
-		 notes------"+user.get());
-		try {
-			UsersEntity user= repository.getusersByid(userId);
-			if (user != null) {
-				list = notesRepository.getAllNotes(user.getUserId());
-			} 
-			return list;
-		} catch (Exception e) {
-			throw new UserNotFoundException("there is no UserAvailable");
-		}
 
-	}*/
-	
 	
 	
 	

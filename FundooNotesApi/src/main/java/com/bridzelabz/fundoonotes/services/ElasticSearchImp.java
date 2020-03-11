@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.update.UpdateRequest;
+import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,15 +35,28 @@ private static final String TYPE = "notes_details";
 			e.printStackTrace();} 
 		return indexResponse.getResult().name();
 	}
+	
+	
+	
+	
+	
 
 	public String updateNote(NotesEntity notes) {
-
-		return null;
+		Map noteMapper=objMap.convertValue(notes,Map.class);
+		UpdateRequest updateRequest=new UpdateRequest(INDEX,TYPE,String.valueOf(notes.getNotesId()))
+				.doc(noteMapper);
+		UpdateResponse updateResponse=null;
+		try {
+			updateResponse=config.client().update(updateRequest,RequestOptions.DEFAULT);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return updateResponse.getResult().name();
 	}
 
 
 	public String deleteNotes(NotesEntity notes) {
-
+		Map noteMapper=objMap.convertValue(notes,Map.class);
 		return null;
 	}
 
