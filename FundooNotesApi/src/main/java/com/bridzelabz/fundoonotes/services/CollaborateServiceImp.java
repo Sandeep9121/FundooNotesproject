@@ -1,10 +1,14 @@
 package com.bridzelabz.fundoonotes.services;
 
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.bridzelabz.fundoonotes.customexception.CollaboratorNotFoundExcepton;
 import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
@@ -80,5 +84,12 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 		}
 		return null;
 	}
+
+@Transactional
+public List<NotesEntity> getAllNotesCollaborators(String token)
+		throws JWTVerificationException, IllegalArgumentException, UnsupportedEncodingException {
+	
+	return null;
+}
 
 }
