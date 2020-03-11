@@ -77,9 +77,11 @@ public class LabelServiceImp implements ILabelServices {
 	public boolean addLabel(Long labelId, long notesId, String token) {
 	 NotesEntity notes=notesRepository.findBynotesId(notesId);
 	 Label label=labelRepository.fetchLabelById(labelId);
+	 if(label!=null) {
 	 label.getList().add(notes);
 	 labelRepository.saveLabel(label);
-		return true;
+	 }
+	return true;
 	}
 
 
