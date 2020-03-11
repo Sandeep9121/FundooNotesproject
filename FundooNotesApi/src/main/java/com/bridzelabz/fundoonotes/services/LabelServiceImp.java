@@ -80,6 +80,8 @@ public class LabelServiceImp implements ILabelServices {
 	 if(label!=null) {
 	 label.getList().add(notes);
 	 labelRepository.saveLabel(label);
+	 }else {
+		 throw new LabelNotFoundException("there is no label please create Label");
 	 }
 	return true;
 	}
