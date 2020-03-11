@@ -37,7 +37,7 @@ public class LabelServiceImp implements ILabelServices {
 
     @Transactional
 	public boolean createLabel(LabelDto labelDto,String token) {
-      long userId=generateToken.parseJWTToken(token);
+      Long userId=generateToken.parseJWTToken(token);
       log.info("----------------------------------------------------------token="+token);
         UsersEntity user=usersRepository.getusersByid(userId);
         if(user!=null) {
