@@ -1,5 +1,7 @@
 package com.bridzelabz.fundoonotes.services;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +31,7 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 	private NotesRepository notesRepository;
 	
 
-	@Override
+@Transactional
 	public NotesEntity addCollaborator(Long notesId,String email, String token) {
 		UsersEntity user;
 	
@@ -55,8 +57,7 @@ public class CollaborateServiceImp implements ICollaboratorServices{
          		}
 	}
 
-
-	@Override
+@Transactional
 	public NotesEntity removeCollaborator(Long notesId, String email, String token) {
 		UsersEntity user;
 		
