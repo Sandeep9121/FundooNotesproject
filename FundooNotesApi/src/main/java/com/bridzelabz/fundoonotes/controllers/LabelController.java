@@ -39,7 +39,8 @@ private ILabelServices labelServices;
  
  @DeleteMapping("/label/delete")
  public ResponseEntity<Response> deleteLabel(@RequestParam("labelId") Long labelId,@RequestHeader("token") String token,@RequestParam ("notesId") Long notesId){
-	return null;
+	labelServices.removeLabel(labelId, notesId, token);
+	 return ResponseEntity.status(HttpStatus.OK).body(new Response("label is deleted"));
 	 
  }
  
