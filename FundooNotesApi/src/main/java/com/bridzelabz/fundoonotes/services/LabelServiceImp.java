@@ -1,4 +1,6 @@
 package com.bridzelabz.fundoonotes.services;
+import javax.transaction.Transactional;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,7 @@ public class LabelServiceImp implements ILabelServices {
     @Autowired
     private INoteRepository notesRepository;
 
+    @Transactional
 	public boolean createLabel(LabelDto labelDto,String token) {
       long userId=generateToken.parseJWTToken(token);
       log.info("----------------------------------------------------------token="+token);
@@ -72,8 +75,11 @@ public class LabelServiceImp implements ILabelServices {
 
 	@Override
 	public boolean addLabel(Long labelId, long notesId, String token) {
-	
-		return false;
+	 NotesEntity notes=notesRepository.findBynotesId(notesId);
+	 Label label=labelRepository.fetchLabelById(labelId);
+	 label.getList().add(notes);
+	 labelRepository.saveLabel(label);
+		return true;
 	}
 
 
@@ -98,15 +104,4 @@ return false;
 	}
 
 
-
-	/*public boolean addLabel(Long labelId, long notesId, String token) {
-	     NotesEntity note=notesRepository.findBynotesId(notesId);
-	     log.info("----------notes-------------------id="+notesId);
-	     Label label=labelRepository.fetchLabelById(labelId);
-	   //  label.
-		return false;
-	}*/
-
-	
-	
 }
