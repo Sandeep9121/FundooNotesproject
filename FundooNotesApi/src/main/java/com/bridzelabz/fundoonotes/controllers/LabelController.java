@@ -43,4 +43,11 @@ private ILabelServices labelServices;
 	 
  }
  
+ @PostMapping("/addLabel")
+ public ResponseEntity<Response> addlabel(@RequestParam("labelId") Long labelId,@RequestHeader("token") String token,@RequestParam ("notesId") Long notesId){
+	  labelServices.addLabel(labelId, notesId, token);
+	 return ResponseEntity.status(HttpStatus.OK).body(new Response("label is added"));
+	 
+ }
+ 
 }
