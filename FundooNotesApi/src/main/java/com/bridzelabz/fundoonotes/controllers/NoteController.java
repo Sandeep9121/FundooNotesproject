@@ -17,6 +17,7 @@ import com.bridzelabz.fundoonotes.dto.NoteUpdate;
 import com.bridzelabz.fundoonotes.dto.ReminderDto;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
+import com.bridzelabz.fundoonotes.services.ICollaboratorServices;
 import com.bridzelabz.fundoonotes.services.INoteServices;
 
 @RestController
@@ -24,6 +25,8 @@ import com.bridzelabz.fundoonotes.services.INoteServices;
 public class NoteController {
 	@Autowired
 	private INoteServices noteServices;
+	@Autowired
+	private ICollaboratorServices 	serviceCollaborator;
 
 	@PostMapping("/note/create")
 	public ResponseEntity<Response> createNote(@RequestBody NoteDto noteDto, @RequestHeader("token") String token) {
@@ -119,7 +122,17 @@ public class NoteController {
 		return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("List is Empty"));
 	}
 	
-	
+	@PostMapping("/collaborator/addCollaborator")
+	public ResponseEntity<Response> addsCollaborator(@RequestParam("notesId") Long notesId,
+			@RequestParam("email") String email, @RequestHeader("token") String token){
+		NotesEntity note=serviceCollaborator.addCollaborator(notesId, email, token);
+		 if(note!=null) {
+			 return ResponseEntity.status(HttpStatus.CREATED).body(new Response("Collaborator is Added"));
+		 }
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+					.body(new Response("Collaborator is not added"));
+		
+	}
 	
 	
 	
