@@ -43,7 +43,7 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 		if(user!=null) {
 			if(collaborator!=null) {
 			NotesEntity note=notesRepository.findBynotesId(notesId);
-			//collaborator.getCollaborateNotes().add(note);
+		    collaborator.getCollaborateNotes().add(note);
 			usersRepository.save(collaborator);
 			notesRepository.createNote(note);
 			return note;

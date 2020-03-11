@@ -1,3 +1,38 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package com.bridzelabz.fundoonotes.customexception;
 
 public class ExitsEmailException extends RuntimeException {
