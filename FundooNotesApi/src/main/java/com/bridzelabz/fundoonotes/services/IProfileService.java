@@ -1,5 +1,10 @@
 package com.bridzelabz.fundoonotes.services;
 
-public interface IProfileService {
+import org.springframework.web.multipart.MultipartFile;
 
+import com.bridzelabz.fundoonotes.model.ProfileEntity;
+
+public interface IProfileService {
+   ProfileEntity storeobjectInS3(MultipartFile file,String filename, String contentType, String Token);
+   ProfileEntity updateObjectinS3(MultipartFile file,String filename, String contentType, String Token);
 }
