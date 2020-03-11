@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bridzelabz.fundoonotes.customexception.LabelExitsException;
 import com.bridzelabz.fundoonotes.customexception.LabelNotFoundException;
+import com.bridzelabz.fundoonotes.customexception.NoteNotFoundException;
 import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
 import com.bridzelabz.fundoonotes.dto.LabelDto;
 import com.bridzelabz.fundoonotes.dto.LabelUpdate;
@@ -77,11 +78,14 @@ public class LabelServiceImp implements ILabelServices {
 	public boolean addLabel(Long labelId, long notesId, String token) {
 	 NotesEntity notes=notesRepository.findBynotesId(notesId);
 	 Label label=labelRepository.fetchLabelById(labelId);
+	 if(notes!=null) {
 	 if(label!=null) {
 	 label.getList().add(notes);
 	 labelRepository.saveLabel(label);
 	 }else {
 		 throw new LabelNotFoundException("there is no label please create Label");
+	 }}else {
+		 throw new NoteNotFoundException("unable to  add label create have a note");
 	 }
 	return true;
 	}
