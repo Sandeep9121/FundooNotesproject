@@ -33,7 +33,8 @@ public class NoteServiceImp implements INoteServices {
 	@Autowired
 	private JWTGenerator generateToken;
 
-
+	@Autowired
+	private IElasticSearch elastic;
 	public boolean createNote(NoteDto notesDto, String token) {
 		Long userId = generateToken.parseJWTToken(token);
 		log.info("----------------------ours-----------token " + token);
@@ -53,8 +54,9 @@ public class NoteServiceImp implements INoteServices {
 				 * mapping user to note
 				 */
 				user.get().getNote().add(notes);
-				
+				elastic.createNote(notes);
 				notesRepository.createNote(notes);
+			
 			} else {
 				throw new NoteNotFoundException("note is note present with given userId");
 			}
@@ -82,8 +84,9 @@ public class NoteServiceImp implements INoteServices {
 				notes.setArchieved(updateInfo.isArchieved());
 				notes.setTrashed(updateInfo.isTrashed());
 				notes.setUpdateDate(LocalDateTime.now());
-				
+				elastic.updateNote(notes);
 				notesRepository.createNote(notes);
+				
 			} else {
 				throw new NoteNotFoundException("note is note present with given token");
 			}
@@ -198,9 +201,6 @@ public class NoteServiceImp implements INoteServices {
 	
 	
 
-	
-	
-	
 	
 
 }
