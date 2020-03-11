@@ -55,4 +55,29 @@ public class CollaborateServiceImp implements ICollaboratorServices{
          		}
 	}
 
+
+	@Override
+	public NotesEntity removeCollaborator(Long notesId, String email, String token) {
+		UsersEntity user;
+		
+		UsersEntity	collaborator=repository.getusersByemail(email);
+		try {
+			Long userId=generateToken.parseJWTToken(token);
+			user=repository.getusersByid(userId);
+		}catch (Exception e) {
+		    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id");
+		}
+		if(user!=null) {
+			if(collaborator!=null) {
+				NotesEntity note=notesRepository.findBynotesId(notesId);
+				note.getCollaborateUser().remove(collaborator);
+				notesRepository.createNote(note);
+			}else {
+				throw new CollaboratorNotFoundExcepton("there is no collaborator");
+			}
+			
+		}
+		return null;
+	}
+
 }
