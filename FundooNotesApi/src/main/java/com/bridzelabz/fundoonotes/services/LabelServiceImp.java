@@ -3,6 +3,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.bridzelabz.fundoonotes.customexception.LabelExitsException;
@@ -49,10 +50,10 @@ public class LabelServiceImp implements ILabelServices {
         	label.setUserId(user.getUserId());
         	labelRepository.saveLabel(label);
         	}else {
-        	throw new LabelExitsException("already label exits");
+        	throw new LabelExitsException("already label exits",HttpStatus.NOT_ACCEPTABLE);
         	}
         }else {
-        	throw new UserNotFoundException("there is no user found");
+        	throw new UserNotFoundException("there is no user found",HttpStatus.NOT_FOUND);
         }
 		return true;
 	}
@@ -68,7 +69,7 @@ public class LabelServiceImp implements ILabelServices {
 				  labelRepository.saveLabel(label);
 				  return true;
 			  }else {
-			  throw new LabelNotFoundException("there is no label with this user id");
+			  throw new LabelNotFoundException("there is no label with this user id",HttpStatus.NOT_FOUND);
 		  }	}
 		  return false;
 		  }
@@ -83,9 +84,9 @@ public class LabelServiceImp implements ILabelServices {
 	 label.getList().add(notes);
 	 labelRepository.saveLabel(label);
 	 }else {
-		 throw new LabelNotFoundException("there is no label please create Label");
+		 throw new LabelNotFoundException("there is no label please create Label",HttpStatus.NOT_FOUND);
 	 }}else {
-		 throw new NoteNotFoundException("unable to  add label create have a note");
+		 throw new NoteNotFoundException("unable to  add label create have a note",HttpStatus.NOT_FOUND);
 	 }
 	return true;
 	}
@@ -105,7 +106,7 @@ if(user!=null) {
 		return true;
 		}
 }else {
-	throw new UserNotFoundException("user is not availabe");
+	throw new UserNotFoundException("user is not availabe",HttpStatus.NOT_FOUND);
 }
 return false;
 		

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import com.bridzelabz.fundoonotes.customexception.NoteNotFoundException;
 import com.bridzelabz.fundoonotes.customexception.UserNotFoundException;
@@ -59,10 +60,10 @@ public class NoteServiceImp implements INoteServices {
 				//elastic.createNote(notes);
 			
 			} else {
-				throw new NoteNotFoundException("note is note present with given userId");
+				throw new NoteNotFoundException("note is note present with given userId",HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			throw new UserNotFoundException("user is not present with the given id ");
+			throw new UserNotFoundException("user is not present with the given id ",HttpStatus.NOT_FOUND);
 		}
 		return true;
 	}
@@ -89,10 +90,10 @@ public class NoteServiceImp implements INoteServices {
 				notesRepository.createNote(notes);
 				
 			} else {
-				throw new NoteNotFoundException("note is note present with given token");
+				throw new NoteNotFoundException("note is note present with given token",HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			throw new UserNotFoundException("user is not present with the given id ");
+			throw new UserNotFoundException("user is not present with the given id ",HttpStatus.NOT_FOUND);
 		}
 		return true;
 	}
@@ -103,7 +104,7 @@ public class NoteServiceImp implements INoteServices {
 			notes.setTrashed(!notes.isTrashed());// it will give false make it true
 			return notesRepository.deleteNote(notesId, notes);
 		}
-			throw new NoteNotFoundException("there is no notes please create");
+			throw new NoteNotFoundException("there is no notes please create",HttpStatus.NOT_FOUND);
 	}
 
 
@@ -114,7 +115,7 @@ public class NoteServiceImp implements INoteServices {
 			notesRepository.createNote(notes);
 			return true;
 		} 
-			throw new NoteNotFoundException("there is no notes please create");
+			throw new NoteNotFoundException("there is no notes please create",HttpStatus.NOT_FOUND);
 	}
 
 
@@ -125,7 +126,7 @@ public class NoteServiceImp implements INoteServices {
 			notesRepository.createNote(notes);
 			return true;
 		} 
-			throw new NoteNotFoundException("there is no notes please create");
+			throw new NoteNotFoundException("there is no notes please create",HttpStatus.NOT_FOUND);
 	}
 
 
@@ -138,7 +139,7 @@ public class NoteServiceImp implements INoteServices {
 			notesRepository.createNote(notes);
 			return true;
 		} else {
-			throw new NoteNotFoundException("there is no notes please create");
+			throw new NoteNotFoundException("there is no notes please create",HttpStatus.NOT_FOUND);
 		}
 	}
 
@@ -148,7 +149,7 @@ public class NoteServiceImp implements INoteServices {
 			if (notesRepository.setTrashed(token, notesId)) {
 				return true;
 			}
-			throw new NoteNotFoundException("there is no notes please create");
+			throw new NoteNotFoundException("there is no notes please create",HttpStatus.NOT_FOUND);
 		}
 		return true;
 	}
@@ -170,7 +171,7 @@ public class NoteServiceImp implements INoteServices {
 			notes.setReminder(reminder.getReminder());
 			notesRepository.createNote(notes);
 		} else {
-			throw new NoteNotFoundException("there is no notes on userId please create a note");
+			throw new NoteNotFoundException("there is no notes on userId please create a note",HttpStatus.NOT_FOUND);
 		}
 		return true;
 	}
@@ -181,7 +182,7 @@ public class NoteServiceImp implements INoteServices {
 			notes.setReminder(null);
 			notesRepository.createNote(notes);
 		} else {
-			throw new NoteNotFoundException("there is no notes on userId please create a note");
+			throw new NoteNotFoundException("there is no notes on userId please create a note",HttpStatus.NOT_FOUND);
 		}
 		return true;
 	}

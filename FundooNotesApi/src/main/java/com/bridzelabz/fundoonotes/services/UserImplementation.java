@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -57,7 +58,7 @@ public class UserImplementation implements IUsersServices {
 		// UsersEntity user = new UsersEntity();
 		Optional<UsersEntity> emailExists = userRepository.findOneByEmail(usersdto.getEmail());
 		if (emailExists.isPresent()) {
-			throw new ExitsEmailException("u have been already registered");
+			throw new ExitsEmailException("u have been already registered",HttpStatus.NOT_FOUND);
 		}
 
 		BeanUtils.copyProperties(usersdto, user);
@@ -143,12 +144,12 @@ public class UserImplementation implements IUsersServices {
 				String body = "http://192.168.1.127:8081/users/verify/"
 						+ generateToken.generateWebToken(userPresent.getUserId());
 				em.sendMail(logindto.getEmail(), "login failed click here for verification", body);
-				throw new UserNotVerifiedException("Not a valid credentials");
+				throw new UserNotVerifiedException("Not a valid credentials",HttpStatus.NOT_ACCEPTABLE);
 			}
 		} // if
 		else {
 
-			throw new MailNotFoundException("user not found");
+			throw new MailNotFoundException("user not found",HttpStatus.NOT_FOUND);
 		}
 
 	}

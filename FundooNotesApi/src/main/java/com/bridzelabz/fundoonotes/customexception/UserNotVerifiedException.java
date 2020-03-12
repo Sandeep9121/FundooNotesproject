@@ -1,15 +1,19 @@
 package com.bridzelabz.fundoonotes.customexception;
-
+import org.springframework.http.HttpStatus;
+import lombok.Getter;
+@Getter
 public class UserNotVerifiedException extends RuntimeException {
 
 
 	private static final long serialVersionUID = 1L;
 
-	public UserNotVerifiedException(String message) {
-		super(message);
-	
+	  private String message;
+	  private HttpStatus statusCode;
+	public UserNotVerifiedException(String message, HttpStatus statusCode) {
+		super();
+		this.message = message;
+		this.statusCode = statusCode;
 	}
 
-	
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +44,7 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 			Long userId=generateToken.parseJWTToken(token);
 			user=repository.getusersByid(userId);
 		}catch (Exception e) {
-		    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id");
+		    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id",HttpStatus.NOT_FOUND);
 		}
 		if(user!=null) {
 			if(collaborator!=null) {
@@ -53,10 +54,10 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 			notesRepository.createNote(note);
 			return note;
 			}else {
-				throw new CollaboratorNotFoundExcepton("Collaborator is null");
+				throw new CollaboratorNotFoundExcepton("Collaborator is null",HttpStatus.NOT_FOUND);
 			}
 		}else {
-			throw new UserNotFoundException("user not found");
+			throw new UserNotFoundException("user not found",HttpStatus.NOT_FOUND);
          		}
 	}
 
@@ -69,7 +70,7 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 			Long userId=generateToken.parseJWTToken(token);
 			user=repository.getusersByid(userId);
 		}catch (Exception e) {
-		    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id");
+		    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id",HttpStatus.NOT_FOUND);
 		}
 		if(user!=null) {
 			if(collaborator!=null) {
@@ -77,7 +78,7 @@ public class CollaborateServiceImp implements ICollaboratorServices{
 				note.getCollaborateUser().remove(collaborator);
 				notesRepository.createNote(note);
 			}else {
-				throw new CollaboratorNotFoundExcepton("there is no collaborator");
+				throw new CollaboratorNotFoundExcepton("there is no collaborator",HttpStatus.NOT_FOUND);
 			}
 			
 		}
@@ -90,7 +91,7 @@ try {
 	Long userId=generateToken.parseJWTToken(token);
 	user=repository.getusersByid(userId);
 }catch (Exception e) {
-    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id");
+    throw new UserNotFoundException("USER NOT FOUND WITH GIVEN Id",HttpStatus.NOT_FOUND);
 }
 	List<NotesEntity> notes=user.getCollaborateNotes();
 	return notes;
