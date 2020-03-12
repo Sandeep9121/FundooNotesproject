@@ -156,6 +156,15 @@ public class NoteController {
 			
 	}
 	
+	@GetMapping("/collaborator/getAllCollaborators")
+	public ResponseEntity<Response> getAllCollaborators(@RequestHeader("token") String token){
+		List<NotesEntity> collabNotes=serviceCollaborator.getAllNotesCollaborators(token);
+		if(collabNotes!=null) {
+			return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("list of your Collaborated  notes", collabNotes));
+		}
+		return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("No collaborator notes", collabNotes));
+		
+	}
 	
 	
 	

@@ -1,9 +1,6 @@
 package com.bridzelabz.fundoonotes.services;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
-
-import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 
 public interface ICollaboratorServices {
@@ -11,6 +8,5 @@ public interface ICollaboratorServices {
 	
 	NotesEntity removeCollaborator(Long notesId,String email,String token);
 	
-	List<NotesEntity> getAllNotesCollaborators(String token) throws JWTVerificationException,
-	IllegalArgumentException,UnsupportedEncodingException;
+	List<NotesEntity> getAllNotesCollaborators(String token);
 }

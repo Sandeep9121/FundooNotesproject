@@ -54,8 +54,9 @@ public class NoteServiceImp implements INoteServices {
 				 * mapping user to note
 				 */
 				user.get().getNote().add(notes);
-				elastic.createNote(notes);
+				
 				notesRepository.createNote(notes);
+				//elastic.createNote(notes);
 			
 			} else {
 				throw new NoteNotFoundException("note is note present with given userId");

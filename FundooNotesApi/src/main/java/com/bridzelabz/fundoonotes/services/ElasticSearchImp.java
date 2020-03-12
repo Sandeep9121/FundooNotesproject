@@ -13,12 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bridzelabz.fundoonotes.configuration.ElasticSearchConfig;
+import com.bridzelabz.fundoonotes.constants.ElasticConstants;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 @Service
 public class ElasticSearchImp implements IElasticSearch{
- private static final String INDEX = "springboot";
-private static final String TYPE = "notes_details";
+
+
 @Autowired
  private ElasticSearchConfig  config;
  @Autowired
@@ -26,7 +27,8 @@ private static final String TYPE = "notes_details";
 
 	public String createNote(NotesEntity notes) {
 		Map noteMapper=objMap.convertValue(notes,Map.class);
-		IndexRequest indexRequest=new IndexRequest(INDEX,TYPE,String.valueOf(notes.getNotesId()))
+		IndexRequest indexRequest=new IndexRequest(ElasticConstants.INDEX,ElasticConstants.TYPE,
+				String.valueOf(notes.getNotesId()))
 				.source(noteMapper);
 	    IndexResponse indexResponse = null;
 	       try {
@@ -43,7 +45,8 @@ private static final String TYPE = "notes_details";
 
 	public String updateNote(NotesEntity notes) {
 		Map noteMapper=objMap.convertValue(notes,Map.class);
-		UpdateRequest updateRequest=new UpdateRequest(INDEX,TYPE,String.valueOf(notes.getNotesId()))
+		UpdateRequest updateRequest=new UpdateRequest(ElasticConstants.INDEX,ElasticConstants.TYPE,
+				String.valueOf(notes.getNotesId()))
 				.doc(noteMapper);
 		UpdateResponse updateResponse=null;
 		try {
