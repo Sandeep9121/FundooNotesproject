@@ -20,32 +20,44 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bridzelabz.fundoonotes.dto.LoginDto;
 import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
+import com.bridzelabz.fundoonotes.model.ProfileEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.reponse.UserVerification;
+import com.bridzelabz.fundoonotes.repository.IProfilePicRepository;
 import com.bridzelabz.fundoonotes.services.IUsersServices;
+import com.bridzelabz.fundoonotes.services.ProfileServiceImp;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
+
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 
 public class UserController {
 	@Autowired
 	private UsersEntity user;
-
+    
+	
 	@Autowired
 	private JWTGenerator generateToken;
 
 	@Autowired
 	private IUsersServices usersService;
+	
+	@Autowired
+	private ProfileServiceImp profileService;
 
 	@PostMapping("/users/register")
 	// @RequestMapping(method = RequestMethod.POST,value = "users/register")
@@ -114,6 +126,13 @@ public class UserController {
 
 	}
 
+	@PostMapping("/uploadProfilePicture")
+	@ApiOperation(value = "Api to upload profile pic of User for Fundoonotes", response = Response.class)
+	public ResponseEntity<Response> addProfilePic(@ModelAttribute MultipartFile file,
+			@RequestHeader("token") String token) {
+		ProfileEntity profile = profileService.storeobjectInS3(file,file.getOriginalFilename(), file.getContentType(),
+				token);
+		return null;
 
-
+	}
 }
