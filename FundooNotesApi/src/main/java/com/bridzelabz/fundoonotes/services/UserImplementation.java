@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.bridzelabz.fundoonotes.configuration.RabbitMQSender;
 import com.bridzelabz.fundoonotes.customexception.ExitsEmailException;
 import com.bridzelabz.fundoonotes.customexception.MailNotFoundException;
 import com.bridzelabz.fundoonotes.customexception.UserNotVerifiedException;
@@ -54,7 +55,9 @@ public class UserImplementation implements IUsersServices {
 
 	@Autowired
 	private EmailProviderService em;
-	
+  
+	@Autowired
+	private RabbitMQSender rabbitMqSender;
 
 
 	@Transactional
@@ -94,8 +97,8 @@ public class UserImplementation implements IUsersServices {
 
 		emailData.setBody(body);
 
-		em.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
-
+		//em.sendMail(emailData.getEmail(), emailData.getSubject(), emailData.getBody());
+        rabbitMqSender.send(emailData);
 		return true;
 	}
 
