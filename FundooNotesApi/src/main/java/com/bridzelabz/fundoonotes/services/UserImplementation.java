@@ -25,6 +25,7 @@ import com.bridzelabz.fundoonotes.dto.UsersDto;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.EmailData;
 import com.bridzelabz.fundoonotes.repository.IUsersRepository;
+import com.bridzelabz.fundoonotes.repository.RedisCacheRepository;
 import com.bridzelabz.fundoonotes.utility.EmailProviderService;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +47,9 @@ public class UserImplementation implements IUsersServices {
 	private EmailData emailData;
 	@Autowired
 	private UpdatePassword psw;
-
+   
+	@Autowired
+	private RedisCacheRepository redis;
 
 	@Autowired
 	private EmailProviderService em;
@@ -69,6 +72,11 @@ public class UserImplementation implements IUsersServices {
 
 		user.setVerified(false);
 
+		/*
+		 * redisCache saving
+		 */
+	      redis.save(user);
+		
 		userRepository.save(user);
 
 		String token = generateToken.generateWebToken(user.getUserId());
