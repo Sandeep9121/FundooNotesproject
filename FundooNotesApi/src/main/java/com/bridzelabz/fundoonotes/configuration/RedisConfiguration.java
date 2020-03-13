@@ -9,6 +9,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class RedisConfiguration {
 	   @Bean
 	    JedisConnectionFactory jedisConnectionFactory() {
+		  // redisStandaloneConfiguration.setPassword(RedisPassword.of("password"));
 			return  new JedisConnectionFactory(); 
 	   }
 	   @Bean
@@ -20,17 +21,3 @@ public class RedisConfiguration {
 	    }
 	   
 }
-/*  RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration("localhost", 6379);
-	        redisStandaloneConfiguration.setPassword(RedisPassword.of("password"));
-	        return new JedisConnectionFactory(redisStandaloneConfiguration);
-	    }
-
-	   
-}*/
-	 /*   @Bean
-	    public RedisTemplate redisTemplate() {
-	        RedisTemplate template = new RedisTemplate<>();
-	        template.setConnectionFactory(jedisConnectionFactory());
-	        return template;
-	    }
-	}*/
