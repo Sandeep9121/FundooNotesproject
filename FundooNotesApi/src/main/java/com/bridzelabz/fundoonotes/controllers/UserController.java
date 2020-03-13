@@ -12,7 +12,6 @@
 package com.bridzelabz.fundoonotes.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -98,7 +97,7 @@ public class UserController {
 	public ResponseEntity<UserVerification> login(@RequestBody LoginDto loginData) {
 		UsersEntity userLogin = usersService.login(loginData);
 		String token = generateToken.generateWebToken(userLogin.getUserId());
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserVerification(token));
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new UserVerification(token,"u have been Successfully Login",userLogin));
 	}
 
 	@PutMapping("/users/updatePassword/{token}")

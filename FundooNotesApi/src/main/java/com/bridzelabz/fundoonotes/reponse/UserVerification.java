@@ -1,20 +1,18 @@
 package com.bridzelabz.fundoonotes.reponse;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class UserVerification {
 	private String token;  
-	private  int statusCode;
+	private String message;
 	private  Object obj;
-	public UserVerification(String token, int sta, Object obj) {
+	public UserVerification(String token, String message, Object obj) {
 		super();
 		this.token = token;
+		this.message=message;
 		this.obj = obj;
 	}
-	public UserVerification(String token) {
-		super();
-		this.token = token;
-	}
+
 
 }
