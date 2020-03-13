@@ -18,7 +18,7 @@ public class RedisCacheRepository {
 	public RedisCacheRepository(RedisTemplate<String, Object> redisTemplate) {
 		super();
 		this.redisTemplate = redisTemplate;
-		hashOperation = redisTemplate.opsForHash();
+		hashOperation = this.redisTemplate.opsForHash();
 	}
      
 	public void save(NotesEntity notes) {

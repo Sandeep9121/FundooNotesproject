@@ -85,11 +85,14 @@ public class UserController {
 		}
 	}
 
-	@GetMapping(value = "/users/{userId}")
+	@GetMapping(value = "/users/{token}")
 	public ResponseEntity<Response> getUserById(@PathVariable("token") String token) {
 		UsersEntity user=usersService.getuserById(token);
-		return ResponseEntity.status(HttpStatus.OK).body(new Response("password is updated Succesfully",user));
+		if(user!=null) {
+		return ResponseEntity.status(HttpStatus.OK).body(new Response("User is fetched",user));
 	}
+		return ResponseEntity.status(HttpStatus.OK).body(new Response("Unable to  fetch",user));
+		}
 
 	@PostMapping("/users/login")
 	public ResponseEntity<UserVerification> login(@RequestBody LoginDto loginData) {
