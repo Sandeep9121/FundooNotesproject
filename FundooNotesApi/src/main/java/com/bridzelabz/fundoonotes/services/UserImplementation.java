@@ -72,12 +72,13 @@ public class UserImplementation implements IUsersServices {
 
 		user.setVerified(false);
 
+	
+		
+		userRepository.save(user);
 		/*
 		 * redisCache saving
 		 */
 	    // redis.save(user); //need serialization
-		
-		userRepository.save(user);
 
 		String token = generateToken.generateWebToken(user.getUserId());
 		/*

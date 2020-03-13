@@ -24,7 +24,13 @@ public class RedisCacheRepository {
 	public void save(NotesEntity notes) {
 		 hashOperation.put("notes", notes.getNotesId(),notes );
 	}
-	public void save(UsersEntity user) {
-		hashOperation.put("user",user.getUserId(), user);
+	 
+	
+	public void save(UsersEntity userId) {
+		hashOperation.put("userId",userId.getUserId(), userId);
 	}
+	public UsersEntity findByuserId(UsersEntity userId) {
+		return  (UsersEntity) hashOperation.get("user", userId);
+		 
+	 }
 }
