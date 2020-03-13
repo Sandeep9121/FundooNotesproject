@@ -2,8 +2,6 @@ package com.bridzelabz.fundoonotes.services;
 
 import java.util.List;
 
-import java.util.Optional;
-
 import com.bridzelabz.fundoonotes.dto.LoginDto;
 import com.bridzelabz.fundoonotes.dto.UpdatePassword;
 import com.bridzelabz.fundoonotes.dto.UsersDto;
@@ -15,9 +13,6 @@ public interface IUsersServices {
 	
 	public boolean isUserAlreadyRegistered(String email);
 	
-	public boolean getUserById(long userId);
-	
-	//public boolean forgotPassword(UsersEntity user);
 	
 	public UsersEntity updatePassword(String token,UpdatePassword password);
 

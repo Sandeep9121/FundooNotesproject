@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridzelabz.fundoonotes.dto.LoginDto;
@@ -115,15 +114,6 @@ public class UserController {
 
 	}
 
-	@PutMapping("/users/forgotpassword/{email}")
-	public ResponseEntity<Response> forgotPassword(@RequestParam("email") String email) {
-		boolean value = usersService.isUserAlreadyRegistered(email);
-		if (value) {
-			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("User is Exists"));
-		} else {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("Users is not Availablle"));
-		}
 
-	}
 
 }

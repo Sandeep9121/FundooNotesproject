@@ -28,6 +28,7 @@ import com.bridzelabz.fundoonotes.repository.IUsersRepository;
 import com.bridzelabz.fundoonotes.repository.RedisCacheRepository;
 import com.bridzelabz.fundoonotes.utility.EmailProviderService;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -72,8 +73,6 @@ public class UserImplementation implements IUsersServices {
 
 		user.setVerified(false);
 
-	
-		
 		userRepository.save(user);
 		/*
 		 * redisCache saving
@@ -100,10 +99,6 @@ public class UserImplementation implements IUsersServices {
 		return true;
 	}
 
-	@Transactional
-	public boolean getUserById(long userId) {
-		return false;
-	}
 
 	@Transactional
 	public UsersEntity getuserById(String token) {
@@ -217,10 +212,10 @@ public class UserImplementation implements IUsersServices {
 	}
 
 	@Transactional
-	public boolean forgotPassword(UsersEntity user) {
+	public boolean forgotPassword(UsersEntity user,String token) {
 		long userId=user.getUserId();
 		String password=user.getPassword();
-		String encryptpass= encryptPass.encode(password);
+		String encryptpass= encryptPass.encode(password); 
 	    Optional<UsersEntity> userUpdate= userRepository.findById(userId);
 	    if(userUpdate.isPresent()) {
 	    	userRepository.save(user);
@@ -228,5 +223,8 @@ public class UserImplementation implements IUsersServices {
 	    }
 		return false;
 	}
+
+
+
 
 }
