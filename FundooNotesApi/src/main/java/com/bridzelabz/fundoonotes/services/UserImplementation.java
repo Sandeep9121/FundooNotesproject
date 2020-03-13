@@ -78,7 +78,7 @@ public class UserImplementation implements IUsersServices {
 		/*
 		 * redisCache saving
 		 */
-	    // redis.save(user); //need serialization
+	     redis.save(user); //need serialization
 
 		String token = generateToken.generateWebToken(user.getUserId());
 		/*
@@ -106,8 +106,8 @@ public class UserImplementation implements IUsersServices {
 	}
 
 	@Transactional
-	public Optional<UsersEntity> getuserById(long userId) {
-		return userRepository.findById(userId);
+	public UsersEntity getuserById(String token) {
+		return redis.findByuserId(token);
 	}
 
 	@Override

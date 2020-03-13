@@ -21,7 +21,7 @@ public interface IUsersServices {
 	
 	public UsersEntity updatePassword(String token,UpdatePassword password);
 
-	public Optional<UsersEntity> getuserById(long userId);
+	public UsersEntity getuserById(String token);
 	
 	public boolean verify(String token);
 	

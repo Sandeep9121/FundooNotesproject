@@ -86,8 +86,9 @@ public class UserController {
 	}
 
 	@GetMapping(value = "/users/{userId}")
-	public Optional<UsersEntity> getUserById(@PathVariable long userId) {
-		return usersService.getuserById(userId);
+	public ResponseEntity<Response> getUserById(@PathVariable("token") String token) {
+		UsersEntity user=usersService.getuserById(token);
+		return ResponseEntity.status(HttpStatus.OK).body(new Response("password is updated Succesfully",user));
 	}
 
 	@PostMapping("/users/login")
