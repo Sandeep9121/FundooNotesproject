@@ -37,6 +37,8 @@ import lombok.extern.slf4j.Slf4j;
 public class UserImplementation implements IUsersServices {
 
 	@Autowired
+	
+	
 	private EntityManager entityManager;
 	private UsersEntity user = new UsersEntity();
 	@Autowired
