@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.bridzelabz.fundoonotes</groupId>
 	<artifactId>FundooNotesApi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+
 	<name>FundooNotesApi</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -34,16 +34,16 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.2.Final</version>
 		</dependency>
- 		<dependency>
+		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.9.2</version>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
-		</dependency> 
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
@@ -116,40 +116,56 @@
 
 
 
-<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-high-level-client</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
+             
+             
+             
+             <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-s3</artifactId>
+    <version>1.11.714</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-core -->
 <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-amqp</artifactId>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-core</artifactId>
+    <version>1.11.706</version>
 </dependency>
 
- <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-
-</dependency>
-  <dependency>
-    <groupId>org.elasticsearch</groupId>
-    <artifactId>elasticsearch</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>org.elasticsearch.client</groupId>
-    <artifactId>elasticsearch-rest-high-level-client</artifactId>
-  </dependency>
-
-
-
-<dependency>
-     <groupId>org.springframework.boot</groupId>
-     <artifactId>spring-boot-starter-data-redis</artifactId>
-  </dependency>
-
-
-<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
-<dependency>
-    <groupId>redis.clients</groupId>
-    <artifactId>jedis</artifactId>
-</dependency>
 
 	</dependencies>
 
