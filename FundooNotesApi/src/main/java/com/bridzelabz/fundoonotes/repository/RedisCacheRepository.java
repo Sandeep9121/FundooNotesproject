@@ -4,6 +4,7 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.bridzelabz.fundoonotes.constants.Constants;
 import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 
@@ -22,7 +23,7 @@ public class RedisCacheRepository {
 	}
      
 	public void save(NotesEntity notes) {
-		 hashOperation.put("notes", notes.getNotesId(),notes );
+		 hashOperation.put(Constants.KEY, notes.getNotesId(),notes );
 	}
 	 
 	

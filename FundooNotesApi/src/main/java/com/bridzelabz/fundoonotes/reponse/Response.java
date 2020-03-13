@@ -1,9 +1,6 @@
 package com.bridzelabz.fundoonotes.reponse;
 
-import java.util.List;
-
 import com.bridzelabz.fundoonotes.dto.UsersDto;
-import com.bridzelabz.fundoonotes.model.NotesEntity;
 
 import lombok.Data;
 
