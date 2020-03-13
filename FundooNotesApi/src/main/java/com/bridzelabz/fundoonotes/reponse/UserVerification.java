@@ -11,6 +11,7 @@ public class UserVerification {
 		super();
 		this.token = token;
 		this.message=message;
+		
 		this.obj = obj;
 	}
 
