@@ -75,7 +75,7 @@ public class UserImplementation implements IUsersServices {
 		/*
 		 * redisCache saving
 		 */
-	      redis.save(user);
+	    // redis.save(user); //need serialization
 		
 		userRepository.save(user);
 

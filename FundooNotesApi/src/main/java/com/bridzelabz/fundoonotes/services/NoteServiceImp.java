@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import com.bridzelabz.fundoonotes.customexception.NoteNotFoundException;
@@ -16,6 +17,7 @@ import com.bridzelabz.fundoonotes.model.NotesEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.repository.INoteRepository;
 import com.bridzelabz.fundoonotes.repository.IUsersRepository;
+import com.bridzelabz.fundoonotes.repository.RedisCacheRepository;
 import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +35,10 @@ public class NoteServiceImp implements INoteServices {
 	private NotesEntity notes = new NotesEntity();
 	@Autowired
 	private JWTGenerator generateToken;
-
+    @Autowired
+    private RedisTemplate<String , Object> template; 
+    @Autowired
+    private RedisCacheRepository redis;
 	@Autowired
 	private IElasticSearch elastic;
 	public boolean createNote(NoteDto notesDto, String token) {
@@ -56,7 +61,12 @@ public class NoteServiceImp implements INoteServices {
 				 */
 				user.get().getNote().add(notes);
 				
+				
 				notesRepository.createNote(notes);
+				/*
+				 * redis save
+				 */
+				//redis.save(notes);
 				//elastic.createNote(notes);
 			
 			} else {
@@ -73,6 +83,7 @@ public class NoteServiceImp implements INoteServices {
 		try {
 
 			Long userId = generateToken.parseJWTToken(token);
+			
 			log.info("----------------------ours----urs userid " + userId);
 
 			NotesEntity notes = notesRepository.findBynotesId(updateInfo.getNoteId());

@@ -1,4 +1,6 @@
 package com.bridzelabz.fundoonotes.repository;
+
+
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
@@ -11,7 +13,7 @@ import com.bridzelabz.fundoonotes.model.UsersEntity;
 
 
 @Component
-public class UsersRepository {
+public class UsersRepository  {
 	@Autowired
 	private EntityManager entityManager;
 @Transactional
