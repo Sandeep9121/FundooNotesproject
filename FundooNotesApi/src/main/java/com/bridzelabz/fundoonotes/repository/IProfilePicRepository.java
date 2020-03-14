@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.bridzelabz.fundoonotes.model.ProfileEntity;
 @Repository
 public interface IProfilePicRepository extends JpaRepository<ProfileEntity,Long> {
-     @Query(value ="select *from profile where user_id=?")
+     @Query(value ="select *from profile where user_id=:userId")
 	ProfileEntity findByUserid(Long userId);
 
 	

@@ -36,7 +36,6 @@ import com.bridzelabz.fundoonotes.model.ProfileEntity;
 import com.bridzelabz.fundoonotes.model.UsersEntity;
 import com.bridzelabz.fundoonotes.reponse.Response;
 import com.bridzelabz.fundoonotes.reponse.UserVerification;
-import com.bridzelabz.fundoonotes.repository.IProfilePicRepository;
 import com.bridzelabz.fundoonotes.services.IUsersServices;
 import com.bridzelabz.fundoonotes.services.ProfileServiceImp;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
@@ -126,13 +125,18 @@ public class UserController {
 
 	}
 
-	@PostMapping("/uploadProfilePicture")
+	@PostMapping("/users/uploadProfilePicture")
 	@ApiOperation(value = "Api to upload profile pic of User for Fundoonotes", response = Response.class)
 	public ResponseEntity<Response> addProfilePic(@ModelAttribute MultipartFile file,
 			@RequestHeader("token") String token) {
 		ProfileEntity profile = profileService.storeobjectInS3(file,file.getOriginalFilename(), file.getContentType(),
 				token);
-		return null;
+		if(profile.getUserlabel()!=null) {
+			return  ResponseEntity.status(HttpStatus.OK)
+					.body(new Response("profile added sucessfully"));
+		}
+		return  ResponseEntity.status(HttpStatus.NOT_FOUND)
+				.body(new Response("profile is not added"));
 
 	}
 }

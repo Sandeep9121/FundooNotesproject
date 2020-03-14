@@ -6,8 +6,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
@@ -21,6 +21,7 @@ import com.bridzelabz.fundoonotes.repository.UsersRepository;
 import com.bridzelabz.fundoonotes.utility.JWTGenerator;
 
 import lombok.extern.slf4j.Slf4j;
+@Service
 @Slf4j
 public class ProfileServiceImp implements IProfileService {
 	@Autowired
@@ -66,7 +67,7 @@ public class ProfileServiceImp implements IProfileService {
 		}
 		return s3object;
 	}
-     
+
 	public void deleteObject(String key) {
 		try {
 			amazonS3Client.deleteObject(bucketName, key);
@@ -76,29 +77,26 @@ public class ProfileServiceImp implements IProfileService {
 			log.error("Error while deleting File.");
 		}
 	}
-	
-	
+
 	@Transactional
 	public ProfileEntity updateObjectinS3(MultipartFile file, String filename, String contentType, String Token) {
 
 		try {
 			Long userId = generateToken.parseJWTToken(Token);
 			UsersEntity user = userRepository.getusersByid(userId);
-			ProfileEntity profile =profileRepo.findByUserid(userId);
+			ProfileEntity profile = profileRepo.findByUserid(userId);
 			if (user != null && profile != null) {
-
 				deleteObject(profile.getProfilePictureName());
 				profileRepo.delete(profile);
 				ObjectMetadata objectMetadata = new ObjectMetadata();
 				objectMetadata.setContentType(contentType);
 				objectMetadata.setContentLength(file.getSize());
-
 				amazonS3Client.putObject(bucketName, filename, file.getInputStream(), objectMetadata);
 				profileRepo.save(profile);
 				return profile;
 			}
 		} catch (Exception e) {
-		e.printStackTrace();
+			e.printStackTrace();
 		}
 		return null;
 	}
